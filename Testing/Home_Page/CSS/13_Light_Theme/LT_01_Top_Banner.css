@@ -1,0 +1,80 @@
+/* ============================================================
+   LIGHT THEME — 01 TOP BANNER
+============================================================ */
+
+body.light #top-banner {
+  background: linear-gradient(180deg, #006fb9, #c4c4c4);
+  border-bottom-color: rgb(0, 0, 0);
+  border-top-color: rgb(0, 0, 0);
+}
+/* ---- Update status dot glow to match light theme colors ---- */
+body.light .top-banner__text {
+  text-shadow: 0 0 4px rgb(142, 142, 142);
+  color: rgb(0, 0, 0);
+}
+
+/* ---- Highlighted "SECURE CONNECTION" label ---- */
+body.light .top-banner__secure-label {
+  text-shadow: 0 0 4px rgb(142, 142, 142);
+  color: rgb(0, 0, 0);
+}
+
+/* ---- Status dot: update glow to match teal green variable ---- */
+body.light .top-banner__status-indicator {
+  box-shadow: 0 0 0 2px rgb(0, 255, 128);
+}
+
+/* ---- Theme toggle pill wrap ---- */
+body.light .theme-toggle-wrap {
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.70), rgba(226, 233, 240, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* ---- Theme label ---- */
+body.light .Theme\: {
+  color: rgba(0, 0, 0, 0.75);
+  border-right: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+/* ---- Theme button base ---- */
+body.light .Theme--dark {
+  color: rgb(245, 248, 252);
+  border: 1px solid rgba(28, 36, 48, 0.70);
+  background: linear-gradient(180deg, rgb(74, 82, 92), rgb(36, 42, 50));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.light .Theme--light {
+  color: rgb(20, 35, 52);
+  border: 1px solid rgba(120, 145, 175, 0.45);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(231, 238, 247, 0.96));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+/* ---- Theme button hover ---- */
+body.light .Theme--dark:hover {
+  background: linear-gradient(180deg, rgb(88, 96, 108), rgb(44, 50, 60));
+  color: rgb(255, 255, 255);
+  border-color: rgba(0, 90, 200, 0.42);
+}
+body.light .Theme--light:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(238, 244, 252, 1));
+  color: rgb(0, 56, 120);
+  border-color: rgba(0, 90, 200, 0.35);
+}
+
+/* ---- Theme button active state ---- */
+body.light .Theme--dark.active {
+  background: linear-gradient(180deg, rgb(42, 48, 56), rgb(18, 24, 30));
+  border-color: rgba(0, 90, 200, 0.50);
+  color: rgb(255, 255, 255);
+}
+
+body.light .Theme--light.active {
+  background: linear-gradient(180deg, rgba(220, 235, 255, 1), rgba(197, 221, 248, 1));
+  border-color: rgba(0, 90, 200, 0.50);
+  color: rgb(0, 56, 120);
+}

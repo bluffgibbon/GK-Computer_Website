@@ -1,0 +1,30 @@
+/* ============================================================
+   MAIN CONTENT LAYOUT
+============================================================ */
+/* This CSS file defines the layout and structure of the main content area on the home page. 
+ It includes styles for the main content container, which serves as the primary 
+ wrapper for all page content, 
+ as well as a page container that holds all main content sections. 
+ The layout is designed to be flexible and responsive, ensuring that the content is
+  displayed effectively across different screen sizes and devices. 
+ The main content container also features an animated diagonal gradient background,
+  adding visual interest and enhancing the overall aesthetic of the page. */
+#main-content {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+
+  margin: 0 auto;
+  margin-top: 85px;
+
+  padding: 80px 0 120px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  position: relative;
+}

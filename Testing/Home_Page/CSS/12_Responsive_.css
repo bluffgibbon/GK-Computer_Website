@@ -1,0 +1,426 @@
+/* ============================================================
+   GK COMPUTER BUSINESS - RESPONSIVE OVERRIDES
+   File: 12_Responsive_.css
+   Section: All responsive breakpoint overrides
+   Purpose: Mobile-first responsive adjustments for all components
+   
+   Dependencies:
+   - All component CSS files (00-11)
+   
+   Contains:
+   - Header responsive styles
+   - Navigation responsive styles
+   - Navigation dropdown responsive styles
+   - Main content responsive styles
+   - Welcome section responsive styles
+   - Why Choose Us responsive styles
+   - Services section responsive styles
+   - Side menu responsive styles
+   - Footer responsive styles
+   - Reduced motion global support
+   
+   Breakpoints Used:
+   - 1200px: Large tablets / small desktops
+   - 1100px: Services grid adjustment
+   - 900px: Tablet portrait / layout shifts
+   - 820px: Header layout change
+   - 768px: Navigation and content adjustments
+   - 700px: Navigation list adjustments
+   - 600px: Mobile devices
+   - 560px: Footer grid final collapse
+   
+   Note: This file should be loaded LAST after all component CSS
+============================================================ */
+
+/* ============================================================
+   HEADER RESPONSIVE
+   From: 02_Header_Logo_Section.css
+============================================================ */
+
+/* === HEADER: 900px BREAKPOINT === */
+@media (max-width: 900px) {
+  #header-logo-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: unset;
+    padding: 18px 2vw 10px;
+    border-bottom-width: 1px;
+    z-index: 1000;
+    background: linear-gradient(180deg, #050a15 0%, #0a1628 100%);
+  }
+  /* === Adjust body padding to accommodate fixed header === */
+  body {
+    padding-top: 180px !important;
+  }
+  /* === Header inner layout adjustments === */
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  /* === Right side adjustments === */
+  .site-header__right {
+    width: 100%;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 8px;
+  }
+  /* === Actions adjustments === */
+  .site-header__actions {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  /* === Brand link adjustments === */
+  .site-header__brand-link {
+    gap: 10px;
+  }
+  /* === Logo size adjustment === */
+  .site-header__logo {
+    width: 54px;
+  }
+}
+
+/* === HEADER: 820px BREAKPOINT === */
+@media (max-width: 820px) {
+  #header-logo-section {
+    padding: 26px 5% 18px;
+  }
+  /* === Header inner layout adjustments === */
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* === Right side adjustments === */
+  .site-header__right {
+    width: 100%;
+    align-items: flex-start;
+  }
+  /* === Actions adjustments === */
+  .site-header__actions {
+    justify-content: flex-start;
+  }
+  /* === Brand text adjustments === */
+  .site-header__brand-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-header__name,
+  .site-header__tagline {
+    white-space: normal;
+  }
+}
+
+/* === HEADER: 600px BREAKPOINT === */
+@media (max-width: 600px) {
+  #header-logo-section {
+    padding: 8px 2vw 6px;
+  }
+  /* === Logo and text size adjustments === */
+  .site-header__logo {
+    width: 40px;
+  }
+  /* === Brand text adjustments === */
+  .site-header__brand-text {
+    gap: 2px;
+  }
+  /* ===  Name and tagline font size adjustments === */
+  .site-header__name {
+    font-size: 1.1rem;
+  }
+  /* === Tagline font size adjustments === */
+  .site-header__tagline {
+    font-size: 0.8rem;
+  }
+  /* === Actions adjustments === */
+  .site-header__actions {
+    gap: 4px;
+  }
+}
+
+/* ============================================================
+   NAVIGATION BAR RESPONSIVE
+   From: 03_Navigation_Bar.css
+============================================================ */
+
+/* === NAVIGATION: 900px BREAKPOINT === */
+@media (max-width: 900px) {
+  #main-navigation {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    overflow-x: auto;
+    padding: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    margin: 0;
+    background: linear-gradient(180deg, #060a12 0%, #0a0f1a 100%);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.35);
+  }
+  /* === Nav scroll container adjustments === */
+  .nav-scroll {
+    overflow-x: auto;
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  /* === Navigation list adjustments === */
+  .main-navigation__list {
+    flex-wrap: nowrap;
+    width: max-content;
+    min-width: 600px;
+    max-width: none;
+    overflow-x: auto;
+    gap: 2px;
+  }
+}
+
+/* === NAVIGATION: 768px BREAKPOINT === */
+@media (max-width: 768px) {
+  #main-navigation {
+    padding: 0 8px;
+  }
+  /* === Navigation list adjustments === */
+  .main-navigation__link {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+  /* === Dropdown arrow adjustments === */
+  .main-navigation__dropdown-arrow {
+    padding: 0 6px 0 2px;
+  }
+}
+
+/* === NAVIGATION: 600px BREAKPOINT === */
+@media (max-width: 600px) {
+  #main-navigation {
+    padding: 0 0 0 0;
+  }
+  /* === Navigation list adjustments === */
+  .main-navigation__list {
+    min-width: 400px;
+    font-size: 0.8rem;
+  }
+  /* === First item margin removal === */
+  #main-navigation .nav-scroll {
+    padding-left: 0;
+    margin-left: 0;
+    overflow-x: auto;
+  }
+  /* === First item margin removal === */
+  #main-navigation .main-navigation__list {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  /* === First item margin removal === */
+  #main-navigation .main-navigation__item:first-child {
+    margin-left: 0;
+  }
+}
+
+/* ============================================================
+   NAVIGATION DROPDOWN RESPONSIVE
+   From: 04_Navigation_Bar_Menu_Dropdown.css
+============================================================ */
+
+/* === DROPDOWN: 768px BREAKPOINT === */
+@media (max-width: 768px) {
+  .main-navigation__dropdown {
+    min-width: 220px;
+    padding: 10px;
+  }
+  /* === Dropdown link adjustments === */
+  .main-navigation__dropdown li a {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================
+   MAIN CONTENT RESPONSIVE
+   From: 05_Main_Content.css
+============================================================ */
+
+/* === MAIN CONTENT: 768px BREAKPOINT === */
+@media (max-width: 768px) {
+  #main-content {
+    padding: 40px 0 60px;
+  }
+  /* === Page container adjustments === */
+  .page-container {
+    padding: 0 15px;
+    gap: 40px;
+  }
+}
+
+/* === MAIN CONTENT: 600px BREAKPOINT === */
+@media (max-width: 600px) {
+  #TitleHomePageContainer {
+    max-width: 95vw;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.3rem 0;
+    gap: 0.5rem;
+  }
+  /* === Title text adjustments === */
+  #TitleHomePage {
+    font-size: 1.1rem;
+    padding: 0.2em 0.5em;
+    border-radius: 0.3em;
+  }
+  /* === Title line adjustments === */
+  .title-line {
+    width: 24px;
+    height: 2px;
+  }
+}
+
+/* ============================================================
+   WELCOME SECTION RESPONSIVE
+   From: 06_Section_Welcome.css
+============================================================ */
+
+/* === WELCOME: 900px BREAKPOINT === */
+@media (max-width: 900px) {
+  #section-welcome {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+    gap: 30px;
+  }
+  /* === Welcome content adjustments === */
+  .welcome__content {
+    align-items: center;
+    text-align: center;
+  }
+  /* === Welcome heading row adjustments === */
+  .welcome__heading-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+  /* === Welcome line separator adjustments === */
+  .line_separator {
+    width: 90vw;
+    max-width: 98vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* === Welcome description and image adjustments === */
+  .welcome__description {
+    max-width: 100%;
+  }
+  /* === Welcome image adjustments === */
+  .welcome__image {
+    max-width: 220px;
+    justify-self: center;
+  }
+  /* === Welcome label adjustments === */
+  .content-section--welcome .content-section__label01 {
+    padding: 6px 20px;
+    font-size: 0.72rem;
+  }
+  /* === Welcome label line adjustments === */
+  .content-section--welcome .content-section__label01::before {
+    width: 100vw;
+  }
+}
+
+/* ============================================================
+   SERVICES SECTION RESPONSIVE
+   From: 08_Section_Services.css
+============================================================ */
+
+/* === SERVICES: 1100px BREAKPOINT === */
+@media (max-width: 1100px) {
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* === SERVICES: 900px BREAKPOINT === */
+@media (max-width: 900px) {
+  #section-services {
+    padding: 40px 5%;
+  }
+  /* === Services grid adjustments === */
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+  /* === Services label adjustments === */
+  .content-section--services .content-section__label03 {
+    padding: 6px 16px;
+    font-size: 0.72rem;
+  }
+}
+
+/* ============================================================
+   SIDE MENU RESPONSIVE
+   From: 09_Side_Menus.css
+============================================================ */
+
+/* === SIDE MENU: 900px BREAKPOINT === */
+@media (max-width: 900px) {
+  #sideMenu {
+    width: 300px;
+  }
+}
+
+/* ============================================================
+   FOOTER RESPONSIVE
+   From: 10_Footer.css
+============================================================ */
+
+/* === FOOTER: 1200px BREAKPOINT === */
+@media (max-width: 1200px) {
+  .footer__content-grid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+
+/* === FOOTER: 820px BREAKPOINT === */
+@media (max-width: 820px) {
+  .footer__content-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+/* === FOOTER: 700px BREAKPOINT === */
+@media (max-width: 700px) {
+  .footer__container {
+    padding: 22px 18px;
+  }
+}
+
+/* === FOOTER: 560px BREAKPOINT === */
+@media (max-width: 560px) {
+  .footer__content-grid {
+    grid-template-columns: 1fr;
+  }
+  /* === Footer label adjustments === */
+  #content-section_label04 {
+    padding: 6px 16px;
+    padding-right: 50px;
+    font-size: 0.72rem;
+  }
+}
+
+/* ============================================================
+   GLOBAL REDUCED MOTION SUPPORT
+   Applies to all animations site-wide
+============================================================ */
+
+/* === ACCESSIBILITY: REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}

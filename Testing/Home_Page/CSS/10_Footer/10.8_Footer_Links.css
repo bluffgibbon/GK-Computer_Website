@@ -1,0 +1,95 @@
+/* ============================================================
+   LINKS
+============================================================ */
+/* This section defines the styles for the links in the footer of the home page. 
+ The links are designed to be visually appealing and attention-grabbing, with a 
+ bold font and shadow effects. 
+ The links are positioned prominently to clearly identify the content and draw attention to the
+  key message of the section. 
+ A hover effect is included to enhance interactivity, allowing the links to translate slightly
+  for added emphasis. 
+ These styles work together to create visually appealing and effective links that encourage visitors
+  to explore further. */
+
+/* === LIST CONTAINER === */
+/* .footer__links-list (Footer links unordered list) */
+.footer__links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* === LIST ITEM === */
+/* .footer__links-item (Footer links list item) */
+.footer__links-item {
+  margin: 0 0 8px 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: none;
+  border: none;
+  border-radius: 0;
+
+  transition: transform 200ms ease;
+}
+
+/* === LINK TEXT === */
+/* .footer__links-item a, .footer__links-item (Footer link text base styles) */
+.footer__links-item a,
+.footer__links-item {
+  color: rgba(220, 230, 245, 0.9);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+
+  transition: all 200ms ease;
+}
+
+/* === LINK ANCHOR === */
+/* .footer__links-item a (Footer link anchor element) */
+.footer__links-item a {
+  display: inline-block;
+  padding: 6px 0;
+  position: relative;
+  flex: 1;
+}
+
+/* === LINK UNDERLINE === */
+/* .footer__links-item a::after (Footer link animated underline) */
+.footer__links-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(90deg, rgb(200, 0, 30) 0%, #ffffff 100%);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+
+  transition: width 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* === LINK ITEM HOVER === */
+/* .footer__links-item:hover (Footer link item hover — slide right) */
+.footer__links-item:hover {
+  transform: translateX(6px);
+}
+
+/* === LINK TEXT HOVER === */
+/* .footer__links-item:hover a (Footer link text hover — cyan glow) */
+.footer__links-item:hover a {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* === LINK UNDERLINE HOVER === */
+/* .footer__links-item:hover a::after (Footer link underline hover — full width) */
+.footer__links-item:hover a::after {
+  width: 100%;
+}

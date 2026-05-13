@@ -1,0 +1,162 @@
+<!-- Nav item: Schedule an Appointment -->
+<li class="main-navigation__item main-navigation__item--has-dropdown" id="scheduleAppointmentNavItem">
+    <span class="main-navigation__link">Schedule an Appointment</span>
+    <span class="main-navigation__dropdown-arrow">▾</span>
+    <ul class="main-navigation__dropdown">
+        <li class="main-navigation__dropdown-item--has-flyout">
+            <span class="main-navigation__flyout-label">Why Schedule? <span class="main-navigation__flyout-arrow">▸</span></span>
+            <div class="main-navigation__flyout">
+                <div class="flyout__content">
+                    <div class="flyout__text-col">
+                        <h2 class="flyout__heading">Why Schedule an Appointment?</h2>
+                        <p class="flyout__text">Scheduling an appointment with GK Computer Business ensures you receive personalized, professional IT support and computer repair services. By booking in advance, you can secure a convenient time slot, allowing us to prepare for your specific needs and provide efficient, high-quality service.</p>
+                        <ul class="flyout__list">
+                            <li class="flyout__list-item">Guaranteed dedicated time for your issue</li>
+                            <li class="flyout__list-item">Personalized preparation before your visit</li>
+                            <li class="flyout__list-item">Diagnostics, repairs, and consultations available</li>
+                            <li class="flyout__list-item">On-site and remote appointments offered</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="main-navigation__dropdown-item--has-flyout" id="appointmentSchedulerFlyoutTrigger">
+            <span class="main-navigation__flyout-label">Appointment Scheduler <span class="main-navigation__flyout-arrow">▸</span></span>
+            <div class="main-navigation__flyout">
+
+                <div class="flyout__content flyout__content--appointment">
+
+                    <div class="flyout-appointment-row">
+
+                        <!-- LEFT: FORM -->
+                        <div class="flyout-appointment__form-card">
+                            <form id="flyoutAppointmentForm" class="flyout-appointment__form" autocomplete="on">
+
+                                <fieldset class="flyout-appointment__fieldset">
+                                    <legend class="flyout-appointment__legend"><span>👤</span> Your Information</legend>
+                                    <div class="flyout-appointment__form-row">
+                                        <div class="flyout-appointment__form-group">
+                                            <label for="flyoutClientName">Full Name <span class="flyout-appointment__required">*</span></label>
+                                            <input type="text" id="flyoutClientName" name="clientName" required placeholder="e.g. John Doe" autocomplete="name">
+                                        </div>
+                                        <div class="flyout-appointment__form-group">
+                                            <label for="flyoutClientEmail">Email Address <span class="flyout-appointment__required">*</span></label>
+                                            <input type="email" id="flyoutClientEmail" name="clientEmail" required placeholder="you@email.com" autocomplete="email">
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <hr class="flyout-appointment__divider" />
+
+                                <fieldset class="flyout-appointment__fieldset">
+                                    <legend class="flyout-appointment__legend"><span>🛠️</span> Service Details</legend>
+                                    <div class="flyout-appointment__form-row">
+                                        <div class="flyout-appointment__form-group">
+                                            <label for="flyoutServiceType">Service Type <span class="flyout-appointment__required">*</span></label>
+                                            <select id="flyoutServiceType" name="serviceType" required>
+                                                <option value="" disabled selected>Select a service</option>
+                                                <option value="Virus & Malware Removal">Virus &amp; Malware Removal</option>
+                                                <option value="Network Setup & Security">Network Setup &amp; Security</option>
+                                                <option value="Custom PC Builds">Custom PC Builds</option>
+                                                <option value="Remote IT Assistance">Remote IT Assistance</option>
+                                                <option value="Data Backup & Recovery">Data Backup &amp; Recovery</option>
+                                                <option value="Smart Phone & Tablet Support">Smart Phone &amp; Tablet Support</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="flyout-appointment__form-group">
+                                            <label for="flyoutAppointmentDate">Preferred Date <span class="flyout-appointment__required">*</span></label>
+                                            <input type="date" id="flyoutAppointmentDate" name="appointmentDate" required>
+                                        </div>
+                                        <div class="flyout-appointment__form-group">
+                                            <label for="flyoutAppointmentTime">Preferred Time <span class="flyout-appointment__required">*</span></label>
+                                            <select id="flyoutAppointmentTime" name="appointmentTime" required></select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <hr class="flyout-appointment__divider" />
+
+                                <fieldset class="flyout-appointment__fieldset">
+                                    <legend class="flyout-appointment__legend"><span>📝</span> Additional Notes</legend>
+                                    <div class="flyout-appointment__form-group">
+                                        <label for="flyoutNotes">Describe your issue or request</label>
+                                        <textarea id="flyoutNotes" name="notes" rows="3" placeholder="Briefly describe your needs or any special requests..."></textarea>
+                                        <span class="flyout-appointment__helper">Optional: The more details you provide, the better we can help!</span>
+                                    </div>
+                                </fieldset>
+
+                                <button type="submit" class="flyout-appointment__submit-btn">Book Appointment</button>
+                            </form>
+                        </div>
+
+                        <!-- RIGHT: CALENDAR -->
+                        <div class="flyout-appointment__calendar">
+                            <div class="flyout-calendar__header">
+                                <button type="button" id="flyoutPrevMonth">‹</button>
+                                <span id="flyoutCalendarMonth"></span>
+                                <button type="button" id="flyoutNextMonth">›</button>
+                            </div>
+
+                            <div class="flyout-calendar__grid flyout-calendar__weekdays">
+                                <span>Sun</span><span>Mon</span><span>Tue</span>
+                                <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                            </div>
+
+                            <div id="flyoutCalendarDays" class="flyout-calendar__grid"></div>
+
+                            <div class="flyout-calendar__legend">
+                                <span><i class="flyout-calendar__dot flyout-calendar__dot--available"></i> Available</span>
+                                <span><i class="flyout-calendar__dot flyout-calendar__dot--booked"></i> Booked</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="main-navigation__dropdown-item--has-flyout">
+            <span class="main-navigation__flyout-label">Reschedule or Cancel <span class="main-navigation__flyout-arrow">▸</span></span>
+            <div class="main-navigation__flyout">
+                <div class="flyout__content">
+                    <div class="flyout__text-col">
+                        <h2 class="flyout__heading">Reschedule or Cancel</h2>
+                        <p class="flyout__text">If you need to reschedule or cancel your appointment, please contact us as soon as possible. We understand that plans can change, and we will do our best to accommodate your needs.</p>
+                        <form class="flyout__form" action="../../Make_An_Appiontment/HTML/Apiontment.html#reschedule" method="get">
+                            <label class="flyout__form-label" for="rescheduleInvoice">Invoice Number</label>
+                            <input class="flyout__form-input" type="text" id="rescheduleInvoice" name="invoiceNumber" placeholder="e.g. INV-10234" required />
+                            <button class="flyout__form-button" type="submit">Look Up Appointment</button>
+                        </form>
+                        <ul class="flyout__list">
+                            <li class="flyout__list-item">Call: (561) 342-1197</li>
+                            <li class="flyout__list-item">Email: gkcomputersbusiness@gmail.com</li>
+                            <li class="flyout__list-item">Or enter your invoice number above to manage your appointment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="main-navigation__dropdown-item--has-flyout">
+            <span class="main-navigation__flyout-label">Confirmation <span class="main-navigation__flyout-arrow">▸</span></span>
+            <div class="main-navigation__flyout">
+                <div class="flyout__content">
+                    <div class="flyout__text-col">
+                        <h2 class="flyout__heading">Appointment Confirmation</h2>
+                        <p class="flyout__text">After you submit your appointment request, you will receive a confirmation email or text message (based on your contact preference) with the details of your appointment. This confirmation will include the date, time, service type, and any additional notes you provided. Please review the confirmation carefully and contact us if you need to make any changes.</p>
+                        <form class="flyout__form" action="../../Make_An_Appiontment/HTML/Apiontment.html#confirmation" method="get">
+                            <label class="flyout__form-label" for="confirmInvoice">Invoice Number</label>
+                            <input class="flyout__form-input" type="text" id="confirmInvoice" name="invoiceNumber" placeholder="e.g. INV-10234" required />
+                            <button class="flyout__form-button" type="submit">Resend Confirmation</button>
+                        </form>
+                        <ul class="flyout__list">
+                            <li class="flyout__list-item">Confirmation sent via email or text based on your preference</li>
+                            <li class="flyout__list-item">Includes date, time, service type, and notes</li>
+                            <li class="flyout__list-item">Enter your invoice number above to resend if needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>

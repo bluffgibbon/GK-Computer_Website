@@ -1,0 +1,51 @@
+/* ============================================================
+   NAV BACKGROUND
+============================================================ */
+/* This CSS file defines the styles and animations for the navigation bar's background, 
+including a dynamic cyber grid effect that animates on hover. It also includes 
+keyframes for the background movement and ensures that the navigation bar 
+has a visually appealing gradient background with a subtle border for 
+separation from the header. The animated background layer is positioned 
+behind the navigation items and responds to user interactions for an 
+enhanced visual experience. */
+#main-navigation {
+  background: linear-gradient(
+    180deg,
+    #080808 0%,
+    #060606 100%
+  );
+
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   ANIMATED BACKGROUND LAYER
+============================================================ */
+/* The animated background layer is an absolutely positioned element that sits behind the
+navigation items. It features a cyber grid pattern created with multiple background layers, 
+and it animates continuously to create a dynamic visual effect. On hover, the background 
+becomes more vibrant with increased brightness and saturation. */
+.main-navigation__Background_animated {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(180deg, #080808 0%, #060606 100%),
+    repeating-linear-gradient(135deg, rgba(200, 0, 30, 0.06) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(45deg, rgba(0, 110, 141, 0.06) 0 2px, transparent 2px 40px);
+
+  /* FIXED: changed from "ease" to match master's cubic-bezier */
+  transition: opacity 300ms cubic-bezier(.4, 0, .2, 1);
+  animation: navCyberGrid 12s linear infinite;
+}
+
+/* Hover effect */
+/* FIXED: added box-shadow from master */
+#main-navigation:hover .main-navigation__Background_animated {
+  opacity: 1;
+  box-shadow: 0 0 32px 0 rgba(255, 255, 255, 0.12), 0 0 64px 0 rgba(200, 0, 30, 0.1);
+  filter: brightness(1.08) saturate(1.2);
+}

@@ -1,0 +1,178 @@
+/* ============================================================
+   ITEM
+============================================================ */
+/* This section defines the styles for the individual items in the side menu of the home page. 
+ Each item is designed to be visually appealing and interactive, with a background color
+  that changes on hover, 
+ and a subtle transform effect that creates a sense of depth and engagement. 
+ The use of padding and border-radius enhances the overall look and feel of the items,
+  while the font styles ensure that the text is clear and easy to read. 
+ The addition of pseudo-elements for the arrow and underline effects further enhances 
+ the visual appeal of the items, creating a dynamic and engaging user experience when
+  interacting with the side menu. */
+#sideMenu li {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 4px 0;
+  padding: 13px 16px;
+  padding-right: 40px;
+
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  background: rgba(0, 0, 0, 0.35);
+
+  box-shadow:
+    0 2px 8px rgba(254, 254, 254, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  cursor: pointer;
+
+  transition:
+    background 220ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 220ms ease;
+}
+
+/* Subtle divider line between items */
+#sideMenu li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================================
+   HOVER STATE
+============================================================ */
+
+/* Even items — red */
+#sideMenu li:nth-child(even):hover {
+  background: linear-gradient(120deg, rgba(160, 0, 0, 0.9) 0%, rgba(8, 0, 0, 0.95) 100%);
+  border-color: rgba(200, 0, 30, 0.6);
+  box-shadow:
+    0 4px 20px rgb(255, 0, 0),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 20px rgba(200, 0, 30, 0.08);
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+/* Odd items (excluding header) — teal */
+#sideMenu li:nth-child(odd):not(:first-child):hover {
+  background: linear-gradient(120deg, rgba(0, 90, 115, 0.9) 0%, rgba(0, 4, 8, 0.95) 100%);
+  border-color: rgba(0, 110, 141, 0.6);
+  box-shadow:
+    0 4px 20px rgb(0, 200, 255),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 20px rgba(0, 110, 141, 0.08);
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+/* ACTIVE */
+#sideMenu li:active {
+  transform: translateX(2px);
+}
+
+/* ============================================================
+   ARROW
+============================================================ */
+/* This section defines the styles for the arrow indicator that appears on the right
+ side of each item in the side menu when hovered. 
+ The arrow is created using a pseudo-element and is positioned absolutely to the right of the item. 
+ It uses a Unicode character to represent the arrow shape and is styled with a color
+  that matches the overall design of the menu. 
+ The opacity and transform properties are used to create a smooth transition effect,
+  making the arrow fade in and slide into place when the item is hovered. 
+ These styles work together to enhance the interactivity of the side menu items,
+  providing a clear visual cue that indicates they are clickable and encouraging users
+   to engage with the menu. */
+#sideMenu li::before {
+  content: "\25B6";
+  position: absolute;
+
+  right: 14px;
+  top: 50%;
+
+  transform: translateY(-50%) translateX(-6px);
+
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+
+  opacity: 0;
+
+  transition: opacity 180ms ease, transform 180ms ease, color 180ms ease;
+  pointer-events: none;
+}
+
+/* Even items — red arrow */
+#sideMenu li:nth-child(even):hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  color: rgba(255, 100, 100, 0.9);
+}
+
+/* Odd items — teal arrow */
+#sideMenu li:nth-child(odd):not(:first-child):hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  color: rgba(0, 180, 220, 0.9);
+}
+
+/* ============================================================
+   UNDERLINE
+============================================================ */
+/* This section defines the styles for the underline effect that 
+appears below each item in the side menu when hovered. 
+ The underline is created using a pseudo-element and is positioned absolutely
+  at the bottom of the item. 
+ It spans the width of the item with some padding on the sides and is styled
+  with a gradient background
+  that adds visual interest. 
+ The opacity and transform properties are used to create a smooth transition
+  effect, allowing the underline
+  to fade in and expand from the center when the item is hovered. 
+ These styles work together to enhance the visual appeal of the side menu items,
+  providing an additional
+  interactive element that encourages users to engage with the menu and explore its contents. */
+/* Base underline structure */
+#sideMenu li::after {
+  content: "";
+  position: absolute;
+
+  left: 16px;
+  right: 16px;
+  bottom: 8px;
+
+  height: 2px;
+
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: opacity 180ms ease, transform 180ms ease;
+  border-radius: 2px;
+}
+
+/* Even items hover — red underline */
+#sideMenu li:nth-child(even):hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, rgb(200, 0, 30), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 6px rgba(200, 0, 30, 0.6);
+}
+
+/* Odd items (excluding header) hover — teal underline */
+#sideMenu li:nth-child(odd):not(:first-child):hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, rgb(0, 110, 141), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 6px rgba(0, 110, 141, 0.6);
+}

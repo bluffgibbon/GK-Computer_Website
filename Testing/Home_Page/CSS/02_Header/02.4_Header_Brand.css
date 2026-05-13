@@ -1,0 +1,95 @@
+/* ============================================================
+   BRAND LINK (.site-header__brand-link)
+   (Clickable brand block containing the logo and text)
+============================================================ */
+/* BRAND LINK (.site-header__brand-link) (Clickable brand block containing the logo and text) */
+.site-header__brand-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  transition: transform 200ms ease;
+}
+
+/* Brand link hover effect */
+.site-header__brand-link:hover {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   BRAND LOGO (.site-header__logo)
+   (Company logo image inside the brand link)
+============================================================ */
+/* BRAND LOGO (.site-header__logo) (Company logo image inside the brand link) */
+.site-header__logo {
+  width: 72px;
+  height: auto;
+  opacity: 0.95;
+  filter: brightness(1.2);
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.site-header__logo--clickable {
+  cursor: pointer;
+}
+
+.site-header__logo--clickable:hover {
+  opacity: 1;
+  filter: brightness(1.4);
+}
+
+/* ============================================================
+   BRAND TEXT WRAPPER (.site-header__brand-text)
+   (Container for business name and tagline)
+============================================================ */
+/* BRAND TEXT WRAPPER (.site-header__brand-text) (Container for business name and tagline) */
+.site-header__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* ============================================================
+   BRAND NAME (.site-header__name)
+   (Main business name text in the header)
+============================================================ */
+/* BRAND NAME (.site-header__name) (Main business name text in the header) */
+.site-header__name {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  line-height: 1.1;
+  white-space: nowrap;
+  transition: color 200ms ease;
+}
+
+/* Brand name hover effect */
+.site-header__brand-link:hover .site-header__name {
+  font-weight: 900;
+  letter-spacing: 1px;
+  filter: brightness(1.18) drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+}
+
+/* ============================================================
+   BRAND TAGLINE (.site-header__tagline)
+   (Smaller supporting text below the business name)
+============================================================ */
+/* BRAND TAGLINE (.site-header__tagline) (Smaller supporting text below the business name) */
+.site-header__tagline {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #c8d4e8;
+  white-space: nowrap;
+  transition: color 200ms ease;
+}
+
+/* Brand tagline hover effect */
+.site-header__brand-link:hover .site-header__tagline {
+  font-weight: 700;
+  filter: brightness(1.15) drop-shadow(0 0 4px rgba(0, 0, 0, 0.08));
+}

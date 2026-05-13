@@ -1,0 +1,46 @@
+/* ============================================================
+   HEADER WRAPPER (#header-logo-section)
+   (Main fixed header container positioned below the top banner)
+============================================================ */
+/* HEADER WRAPPER (#header-logo-section) (Main fixed header container positioned below the top banner) */
+#header-logo-section {
+  position: fixed;
+  top: 32px;
+  left: 0;
+  z-index: 3000;
+  width: 100%;
+  min-height: 100px;
+  padding: 34px 5% 26px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* ============================================================
+   HEADER INNER LAYOUT (.site-header__inner)
+   (Flex container that holds the menu, brand, page title, and right column)
+============================================================ */
+/* HEADER INNER LAYOUT (.site-header__inner) (Flex container that holds the menu, brand, page title, and right column) */
+.site-header__inner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+/* ============================================================
+   RIGHT COLUMN (.site-header__right)
+   (Container for the trust badge and CTA buttons)
+============================================================ */
+/* RIGHT COLUMN (.site-header__right) (Container for the trust badge and CTA buttons) */
+.site-header__right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}

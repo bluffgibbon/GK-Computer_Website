@@ -1,0 +1,35 @@
+/* ============================================================
+   SECTION LAYOUT
+============================================================ */
+/* This section defines the layout and styles for the services section of the home page. 
+ The section is designed to be visually appealing and engaging, with a clean and modern
+  design that highlights the key services offered by the business. 
+ The layout includes padding and a maximum width to ensure that the content 
+ is displayed properly across different screen sizes, while the hover effect
+  adds interactivity by creating a slight lift when users interact with the section. 
+ These styles work together to create an attractive and effective presentation 
+ of the services offered, encouraging visitors to explore further. */
+#section-services {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+  margin-bottom: 100px;
+
+  padding: 48px 5%;
+
+  box-sizing: border-box;
+
+  position: relative;
+  overflow: clip;
+
+  border-radius: 12px;
+
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Hover */
+#section-services:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}

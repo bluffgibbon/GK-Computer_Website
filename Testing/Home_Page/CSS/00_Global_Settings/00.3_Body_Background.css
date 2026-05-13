@@ -1,0 +1,47 @@
+/* ============================================================
+   BODY BACKGROUND
+============================================================ */
+/* Layered background with radial gradients for glowing accents and a dark linear 
+gradient base, creating a deep space ambiance with subtle light sources */
+body {
+  background:
+    radial-gradient(1200px 620px at 18% -10%, rgba(0, 102, 255, 0.16), transparent 58%),
+    radial-gradient(900px 520px at 92% 10%, rgba(0, 212, 255, 0.12), transparent 55%),
+    linear-gradient(180deg, #0b1323 0%, #080e1a 50%, #060a12 100%);
+}
+
+/* ============================================================
+   GRID OVERLAY
+============================================================ */
+/* Subtle grid overlay using pseudo-element for texture and depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+
+  background-size: 64px 64px;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+}
+
+/* ============================================================
+   LIGHT THEME BODY BACKGROUND
+============================================================ */
+body.light {
+  background:
+    radial-gradient(1200px 620px at 18% -10%, rgba(0, 102, 255, 0.07), transparent 58%),
+    radial-gradient(900px 520px at 92% 10%,  rgba(0, 180, 220, 0.06), transparent 55%),
+    linear-gradient(180deg, #eef2f8 0%, #e8edf4 50%, #dfe5ef 100%);
+}
+
+body.light::before {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}

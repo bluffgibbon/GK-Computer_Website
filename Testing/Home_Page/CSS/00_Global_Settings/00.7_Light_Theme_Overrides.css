@@ -1,0 +1,11 @@
+/* ============================================================
+   LIGHT THEME GLOBAL OVERRIDES
+   Early-cascade light theme adjustments.
+   Section-specific light theme rules live in 13_Light_Theme/.
+============================================================ */
+
+/* ---- Suppress dark-mode grid overlay on light bg ---- */
+body.light::before {
+  opacity: 0.10;
+  mix-blend-mode: multiply;
+}

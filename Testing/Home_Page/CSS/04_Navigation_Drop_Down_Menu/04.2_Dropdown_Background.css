@@ -1,0 +1,51 @@
+/* ============================================================
+   DROPDOWN PANEL (VISUALS)
+============================================================ */
+/* This section defines the visual styles for the dropdown panel, including its background, 
+borders, and shadows. 
+ The panel features a dark gradient background with a subtle cyber grid overlay created 
+ using a pseudo-element (::before). 
+ The borders and shadows add depth and a futuristic aesthetic to the dropdown menu, making 
+ it visually appealing and consistent with the overall design of the navigation bar. */
+.main-navigation__dropdown {
+  background: linear-gradient(
+    180deg,
+    #080808 0%,
+    #060606 100%
+  );
+
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 212, 255, 0.15);
+}
+
+/* ============================================================
+   CYBER GRID BACKGROUND
+============================================================ */
+/* The cyber grid background is created using a pseudo-element (::before) that is absolutely 
+positioned to cover the entire dropdown panel. 
+ It uses multiple layered backgrounds, including a solid gradient and two repeating linear 
+ gradients, to create a dynamic grid effect. 
+ The opacity and animation of the grid add visual interest and a futuristic vibe to the 
+ dropdown menu, enhancing the overall user experience. */
+.main-navigation__dropdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    linear-gradient(180deg, #080808 0%, #060606 100%),
+    repeating-linear-gradient(135deg, rgba(200, 0, 30, 0.06) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(45deg, rgba(0, 110, 141, 0.06) 0 2px, transparent 2px 40px);
+
+  opacity: 0.6;
+  border-radius: 10px;
+
+  animation: dropdownCyberGrid 12s linear infinite;
+}

@@ -1,0 +1,21 @@
+/* ============================================================
+   LIGHT THEME — 12 RESPONSIVE OVERRIDES
+   These must mirror the responsive breakpoints in 12_Responsive/
+   but scoped to body.light so they win the cascade.
+============================================================ */
+
+/* ---- Header at 900px ---- */
+@media (max-width: 900px) {
+  body.light #header-logo-section {
+    background: linear-gradient(180deg, #dce4ee 0%, #e4eaf2 100%);
+    border-bottom-color: rgba(0, 80, 160, 0.25);
+  }
+}
+
+/* ---- Navigation at 900px ---- */
+@media (max-width: 900px) {
+  body.light #main-navigation {
+    background: linear-gradient(180deg, #dce4ee 0%, #d4dce8 100%);
+    border-bottom: 1px solid rgba(0, 100, 180, 0.35);
+  }
+}

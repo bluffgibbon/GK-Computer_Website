@@ -1,0 +1,40 @@
+/* ============================================================
+   BACKGROUND
+============================================================ */
+/* This section defines the styles for the background of the "Services" section on the home page.
+ The background features a dynamic gradient with a diagonal flow animation, creating an engaging visual
+  experience for visitors.
+ The borders and shadows add depth and emphasis to the section, while the hover effect enhances
+  interactivity by intensifying the shadows and adding a glowing outline. */
+#section-services {
+  position: relative;
+  overflow: clip;
+
+  background: linear-gradient(
+    160deg,
+    #080808 0%,
+    #0a0a0a 30%,
+    #1e1e1e 50%,
+    #0a0a0a 70%,
+    #080808 100%
+  );
+
+  background-size: 300% 300%;
+
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+
+  animation:
+    diagonalFlow 18s linear infinite,
+    borderPulse 7s ease infinite;
+
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Hover */
+#section-services:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}

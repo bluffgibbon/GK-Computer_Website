@@ -1,0 +1,46 @@
+/* ============================================================
+   DROPDOWN ANIMATIONS
+============================================================ */
+/* This CSS file defines the animations and keyframes for the dropdown menu in the navigation bar. 
+ It includes a fade-in animation for the dropdown panel and a 
+ continuous animation for the cyber grid background. 
+ The dropdownFadeIn keyframes create a smooth transition from an invisible and slightly lifted 
+ state to a fully visible and positioned state. 
+ The dropdownCyberGrid keyframes animate the background position to create a dynamic grid 
+ effect. Additionally, there is a media query to disable animations for users who prefer
+  reduced motion, ensuring accessibility for all users. */
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownCyberGrid {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 80px 80px, -80px -80px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+/* This section ensures that users who prefer reduced motion are not subjected to animations. 
+ It disables all animations and transitions for the dropdown panel and its child elements, 
+ providing a more static experience for those who may be sensitive to motion. */
+@media (prefers-reduced-motion: reduce) {
+  .main-navigation__dropdown,
+  .main-navigation__dropdown::before,
+  .main-navigation__dropdown li a {
+    animation: none;
+    transition: none;
+  }
+}

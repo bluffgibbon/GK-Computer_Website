@@ -1,0 +1,11 @@
+/* ============================================================
+   DROPDOWN ITEMS
+============================================================ */
+/* Dropdown item wrapper */
+.main-navigation__dropdown li {
+  margin: 0;
+  width: 100%;
+
+  position: relative;
+  z-index: 2;
+}

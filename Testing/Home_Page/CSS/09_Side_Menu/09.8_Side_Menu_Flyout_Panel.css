@@ -1,0 +1,64 @@
+/* ============================================================
+   SIDE MENU — FLYOUT PANEL LAYOUT & ANIMATION
+   The panel that slides out to the right of the side menu.
+   Position/height set dynamically by initSideMenuFlyouts() in Home_Java.js.
+============================================================ */
+
+/* ---------- FLYOUT PANEL ---------- */
+.side-menu__flyout {
+  position: fixed;
+  top: 0;   /* set by JS */
+  left: 0;  /* set by JS — right edge of side menu */
+
+  width: 55vw;
+  min-width: 400px;
+  height: 100vh; /* overridden by JS to fill from side menu top to viewport bottom */
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: linear-gradient(135deg, rgba(72, 0, 0, 0.8) 0%, #080808 100%);
+
+  border-left: 2px solid rgb(200, 0, 30);
+
+  box-shadow: 8px 0 40px rgba(0, 0, 0, 0.85), 0 0 20px rgba(200, 0, 30, 0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-16px);
+
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease,
+    visibility 260ms ease;
+
+  z-index: 100001;
+}
+
+.side-menu__flyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* ---------- SCROLLBAR ---------- */
+.side-menu__flyout::-webkit-scrollbar {
+  width: 3px;
+}
+.side-menu__flyout::-webkit-scrollbar-track {
+  background: transparent;
+}
+.side-menu__flyout::-webkit-scrollbar-thumb {
+  background: rgba(200, 0, 30, 0.4);
+  border-radius: 2px;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .side-menu__flyout {
+    transition: opacity 80ms ease, visibility 80ms ease;
+    transform: none;
+  }
+}

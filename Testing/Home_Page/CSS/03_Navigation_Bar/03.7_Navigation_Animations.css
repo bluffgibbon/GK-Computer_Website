@@ -1,0 +1,48 @@
+/* ============================================================
+   NAV ANIMATIONS
+============================================================ */
+/* This CSS file defines the animations and transitions for the 
+navigation bar, including hover effects, active states, and a 
+dynamic background animation. It also includes keyframes for 
+sliding down the navigation items and creating a cyber grid 
+effect on the background. Additionally, it respects user preferences 
+for reduced motion by disabling animations and transitions when necessary. */
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navCyberGrid {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 80px 80px, -80px -80px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+/* Respect user preferences for reduced motion by disabling animations and transitions 
+for users who have indicated this preference in their system settings, 
+ensuring a more comfortable browsing experience for those sensitive to motion effects. */
+@media (prefers-reduced-motion: reduce) {
+  #main-navigation,
+  .main-navigation__Background_animated {
+    animation: none;
+  }
+
+  .main-navigation__link,
+  .main-navigation__item,
+  .main-navigation__dropdown-arrow {
+    transition: none;
+  }
+}

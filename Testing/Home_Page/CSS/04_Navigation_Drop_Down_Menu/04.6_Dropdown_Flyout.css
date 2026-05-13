@@ -1,0 +1,670 @@
+/* ============================================================
+   DROPDOWN FLYOUT PANEL
+============================================================ */
+/* Full-height side panel fixed to the right edge of the viewport.
+   Fills from the bottom of the nav bar to the bottom of the screen.
+   Width covers ~60% of the viewport — pushing well into the left.
+   Shown/hidden via .is-open toggled by Home_Java.js initFlyout(). */
+
+/* ---------- FLYOUT-ENABLED ITEM ---------- */
+.main-navigation__dropdown:has(.main-navigation__dropdown-item--has-flyout) {
+  overflow: visible;
+}
+
+.main-navigation__flyout-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background: transparent;
+
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Hover — teal dropdown */
+.dropdown--teal .main-navigation__flyout-label:hover {
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* Hover — red/blue dropdown */
+.dropdown--blue .main-navigation__flyout-label:hover {
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* ---------- FLYOUT ARROW ---------- */
+.main-navigation__flyout-arrow {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.main-navigation__dropdown-item--has-flyout:hover .main-navigation__flyout-arrow {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateX(4px);
+}
+
+/* ---------- FLYOUT PANEL ---------- */
+.main-navigation__flyout {
+  position: fixed;
+  top: 0;       /* set by JS */
+  /* left / right set dynamically by JS based on available space */
+  height: 100vh; /* overridden by JS to fill from nav bottom to screen bottom */
+
+  min-width: 320px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: rgb(9, 9, 9);
+
+  border-left: 2px solid rgb(200, 0, 30);
+
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.85);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(32px);
+
+  transition:
+    opacity 500ms ease-in-out,
+    transform 500ms ease-in-out,
+    visibility 500ms ease-in-out;
+
+  z-index: 100000;
+}
+
+/* ---------- TWO-COLUMN DROPDOWN LAYOUT ---------- */
+/* Used for Privacy Policy — splits items into two even columns */
+.main-navigation__dropdown--two-col {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 12px;
+  min-width: 560px;
+}
+
+/* ---------- SHOW STATE ---------- */
+.main-navigation__flyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* ---------- CONTENT LAYOUT ---------- */
+.flyout__content {
+  padding: 40px 44px 40px 44px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* "Who I Am" has image — lay it out side by side */
+.flyout__content:has(.flyout__image-col) {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+.flyout__text-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.flyout__image-col {
+  flex-shrink: 0;
+  width: 160px;
+  padding-top: 6px;
+}
+
+/* ---------- HEADING ---------- */
+.flyout__heading {
+  margin: 0 0 20px 0;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(255, 60, 80); /* fallback — overridden per dropdown color below */
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+  position: relative;
+}
+
+.flyout__heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+}
+
+/* ---------- ALTERNATING PANEL BACKGROUNDS ---------- */
+.main-navigation__flyout.flyout--teal {
+  background: linear-gradient(135deg, rgb(0, 86, 109) 0%, rgb(0, 0, 0) 100%) !important;
+  border-left-color: rgb(0, 200, 255);
+}
+
+.main-navigation__flyout.flyout--blue {
+  background: linear-gradient(rgb(98, 0, 0), rgb(0, 0, 0)) !important;
+  border-left-color: rgb(255, 0, 0);
+}
+
+/* Teal dropdown — heading matches flyout-label hover background */
+.main-navigation__flyout.flyout--teal .flyout__heading {
+  color: rgb(0, 200, 255);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.main-navigation__flyout.flyout--teal .flyout__heading::after {
+  background: rgb(0, 110, 141);
+  box-shadow: 0 0 8px rgba(0, 110, 141, 0.8);
+}
+
+/* Red dropdown — heading matches flyout-label hover background */
+.main-navigation__flyout.flyout--blue .flyout__heading {
+  color: rgb(255, 0, 0);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.main-navigation__flyout.flyout--blue .flyout__heading::after {
+  background: rgb(200, 0, 30);
+  box-shadow: 0 0 8px rgba(200, 0, 30, 0.8);
+}
+
+/* ---------- BODY TEXT ---------- */
+.flyout__text {
+  margin: 0 0 28px 0;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgb(253, 253, 253);
+}
+
+/* ---------- BULLET LIST ---------- */
+.flyout__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.flyout__list-item {
+  position: relative;
+  padding: 13px 0 13px 22px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.flyout__list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgb(200, 0, 30);
+}
+
+/* ---------- FLYOUT FORM (Pay an Invoice, etc.) ---------- */
+.flyout__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.flyout__form-label {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.flyout__form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.flyout__form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.flyout__form-input:focus {
+  border-color: rgb(0, 110, 141);
+  box-shadow: 0 0 8px rgba(0, 110, 141, 0.4);
+}
+
+.flyout__form-button {
+  margin-top: 6px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 70, 100) 100%);
+  color: #ffffff;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease, transform 180ms ease;
+}
+
+.flyout__form-button:hover {
+  background: linear-gradient(135deg, rgb(0, 130, 165) 0%, rgb(0, 90, 125) 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.flyout__form-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------- HEAD SHOT IMAGE ---------- */
+.flyout__headshot {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+}
+
+/* ---------- SCROLLBAR ---------- */
+.main-navigation__flyout::-webkit-scrollbar {
+  width: 3px;
+}
+.main-navigation__flyout::-webkit-scrollbar-track {
+  background: transparent;
+}
+.main-navigation__flyout::-webkit-scrollbar-thumb {
+  background: rgba(200, 0, 30, 0.35);
+  border-radius: 2px;
+}
+
+/* ---------- BACKDROP OVERLAY ---------- */
+/* Dims and blurs the rest of the page when a flyout is open.
+   Starts below the nav bar so nav + dropdown remain interactive. */
+.flyout-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 500ms ease-in-out,
+    visibility 500ms ease-in-out;
+}
+
+.flyout-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Hide scroll buttons when flyout is open */
+.flyout-backdrop.is-active ~ .scroll-button,
+body.flyout-open .scroll-button {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .main-navigation__flyout {
+    transition: opacity 80ms ease, visibility 80ms ease;
+    transform: none;
+  }
+  .flyout-backdrop {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   APPOINTMENT SCHEDULER — FLYOUT VARIANT
+   Side-by-side form (left) + calendar (right) inside a flyout panel.
+============================================================ */
+
+/* Override default flyout content for appointment layout */
+.flyout__content--appointment {
+  padding: 24px 28px;
+}
+
+/* ---------- SIDE-BY-SIDE ROW ---------- */
+.flyout-appointment-row {
+  display: flex;
+  gap: 28px;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.flyout-appointment__form-card {
+  flex: 1 1 58%;
+  min-width: 0;
+}
+
+.flyout-appointment__calendar {
+  flex: 1 1 42%;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgba(5, 8, 16, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* ---------- FORM ---------- */
+.flyout-appointment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flyout-appointment__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.flyout-appointment__legend {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #00d4ff;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.flyout-appointment__legend span {
+  margin-right: 6px;
+}
+
+.flyout-appointment__form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.flyout-appointment__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flyout-appointment__form-group label {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #c5d1de;
+}
+
+.flyout-appointment__required {
+  color: rgb(200, 0, 30);
+  font-weight: 700;
+}
+
+.flyout-appointment__form-group input,
+.flyout-appointment__form-group select,
+.flyout-appointment__form-group textarea {
+  width: 100%;
+  padding: 9px 10px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: rgba(5, 8, 16, 0.9);
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.flyout-appointment__form-group input::placeholder,
+.flyout-appointment__form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.flyout-appointment__form-group input:focus,
+.flyout-appointment__form-group select:focus,
+.flyout-appointment__form-group textarea:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.25);
+}
+
+.flyout-appointment__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0 14px 0;
+}
+
+.flyout-appointment__helper {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+.flyout-appointment__submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0a0f1a;
+  background: linear-gradient(90deg, #00d4ff, #00ff88);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: transform 180ms ease, box-shadow 200ms ease;
+}
+
+.flyout-appointment__submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.3);
+}
+
+.flyout-appointment__submit-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------- CALENDAR ---------- */
+.flyout-calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.flyout-calendar__header span {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #00d4ff;
+  text-transform: uppercase;
+}
+
+.flyout-calendar__header button {
+  width: 30px;
+  height: 30px;
+  background: rgba(10, 15, 26, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 6px;
+  color: #c5d1de;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.flyout-calendar__header button:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.flyout-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.flyout-calendar__weekdays {
+  margin-bottom: 6px;
+}
+
+.flyout-calendar__weekdays span {
+  text-align: center;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.68rem;
+  color: #8899aa;
+  letter-spacing: 0.8px;
+}
+
+#flyoutCalendarDays {
+  flex: 1 1 auto;
+  min-height: 0;
+  align-content: start;
+}
+
+.flyout-calendar__day {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.78rem;
+  border-radius: 6px;
+  background: rgba(10, 15, 26, 0.8);
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  color: #c5d1de;
+  cursor: default;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.flyout-calendar__day--available {
+  border-color: rgba(0, 255, 136, 0.4);
+  color: #00ff88;
+  cursor: pointer;
+}
+
+.flyout-calendar__day--available:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+.flyout-calendar__day--booked {
+  border-color: rgba(255, 80, 80, 0.5);
+  background: rgba(255, 80, 80, 0.08);
+  color: #ff6b6b;
+}
+
+.flyout-calendar__day--empty {
+  background: transparent;
+  border: none;
+}
+
+.flyout-calendar__day--selected {
+  border-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  font-weight: 700;
+}
+
+.flyout-calendar__legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.72rem;
+  color: #8899aa;
+}
+
+.flyout-calendar__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.flyout-calendar__dot--available { background: #00ff88; }
+.flyout-calendar__dot--booked { background: #ff6b6b; }
+
+/* ---------- APPOINTMENT FLYOUT RESPONSIVE ---------- */
+@media (max-width: 700px) {
+  .flyout-appointment-row {
+    flex-direction: column;
+  }
+  .flyout-appointment__calendar {
+    min-width: unset;
+  }
+}

@@ -1,0 +1,81 @@
+/* ============================================================
+   FOOTER BACKGROUND
+============================================================ */
+/* This CSS file defines the styles for the footer section of the home page, including
+ the background, borders, and shadows. 
+ The footer features a dynamic background with a diagonal flow animation and a pulsing border effect,
+  creating an engaging visual experience for visitors. 
+ The borders and shadows add depth and emphasis to the section, while the hover effect enhances
+  interactivity by intensifying the shadows and adding a glowing outline. 
+ These styles work together to create a visually appealing and attention-grabbing backdrop for the
+  content within the footer, encouraging visitors to explore further. */
+
+/* === FOOTER CONTAINER === */
+/* #site-footer (Main footer wrapper — background and border properties) */
+#site-footer {
+  background: linear-gradient(
+    160deg,
+    #080808 0%,
+    #0a0a0a 30%,
+    #282727 50%,
+    #0a0a0a 70%,
+    #080808 100%
+  );
+
+  background-size: 300% 300%;
+
+  animation: diagonalFlow 18s linear infinite, borderPulse 6s ease infinite;
+
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+
+  box-shadow:
+    0 -4px 40px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(255, 255, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+/* === FOOTER TOP BLUE AURA === */
+#site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 0%,
+    rgb(107, 0, 0),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === FOOTER BOTTOM GREEN AURA === */
+#site-footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 100%,
+    rgb(255, 255, 255),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === FOOTER HOVER STATE === */
+/* #site-footer:hover (Footer hover — border and shadow response) */
+#site-footer:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.12);
+}

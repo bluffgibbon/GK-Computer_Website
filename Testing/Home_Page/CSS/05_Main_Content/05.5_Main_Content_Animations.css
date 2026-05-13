@@ -1,0 +1,30 @@
+/* ============================================================
+   TITLE ANIMATION
+============================================================ */
+/* This section defines a diagonal sheen animation for the main title on the home page. 
+ The animation creates a shimmering effect that moves across the title text,
+  enhancing its visual appeal and drawing attention to it. 
+ The keyframes for the TitleHomePage_DiagonalSheen animation specify the background
+  position at the start and end of the animation, creating a smooth diagonal movement
+   of the sheen across the title. */
+@keyframes TitleHomePage_DiagonalSheen {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+/* This media query ensures that users who prefer reduced motion are not
+ subjected to animations. 
+ It disables the diagonal flow animation for the main content background, 
+ providing a more static experience for those who may be sensitive to motion. */
+@media (prefers-reduced-motion: reduce) {
+  #main-content {
+    animation: none;
+  }
+}

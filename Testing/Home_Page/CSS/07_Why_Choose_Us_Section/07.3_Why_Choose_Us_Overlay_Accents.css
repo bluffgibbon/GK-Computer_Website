@@ -1,0 +1,75 @@
+/* ============================================================
+   CORNER BRACKETS (#section-why-choose-us::before, ::after)
+   (Decorative corner brackets for the section container)
+============================================================ */
+
+/* Top red aura */
+#section-why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 0%,
+    rgb(107, 0, 0),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Bottom white aura */
+#section-why-choose-us::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.326),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   BACKGROUND ANIMATION LAYER (.why-choose_us_backgorund_Animited)
+   (Animated background layer inside #section-why-choose-us)
+============================================================ */
+.why-choose_us_backgorund_Animited {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 12px;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(520px 260px at 12% 22%, rgba(200, 0, 30, 0.10), transparent 55%),
+    radial-gradient(520px 260px at 88% 78%, rgba(0, 110, 141, 0.08), transparent 55%);
+
+  background-size: 180% 180%;
+
+  animation: diagonalFlow 34s linear infinite;
+
+  opacity: 0.22;
+
+  transition: opacity 300ms ease;
+}
+
+/* Optional hover effect for animated background layer */
+#section-why-choose-us:hover .why-choose_us_backgorund_Animited {
+  opacity: 0.38;
+}
+
+/* Ensure all direct children (except label) are above background */
+#section-why-choose-us > *:not(.content-section__label02) {
+  position: relative;
+  z-index: 2;
+}

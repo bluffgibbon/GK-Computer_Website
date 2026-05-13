@@ -1,0 +1,367 @@
+/* ============================================================
+   COLUMNS
+============================================================ */
+/* This section defines the styles for the columns in the footer of the home page. 
+ The columns are designed to be visually appealing and attention-grabbing, with a bold font and shadow effects. 
+ The columns are positioned prominently to clearly identify the content and draw attention to the key message
+  of the section. 
+ A hover effect is included to enhance interactivity, allowing the columns to translate slightly for added emphasis. 
+ These styles work together to create visually appealing and effective columns that encourage visitors to
+  explore further. */
+
+/* === COLUMN BASE === */
+.footer__column_GK_Computer_Business,
+.footer__column_Business_Hours,
+.footer__column_Contact,
+.footer__column_Quick_Links,
+.footer__column_Services {
+  position: relative;
+  overflow: hidden;
+
+  padding: 32px 26px;
+
+  border-radius: 14px;
+  border: 3px solid rgb(46, 46, 46);
+  background: linear-gradient(160deg, rgb(0, 40, 52) 0%, rgb(6, 6, 10) 100%);
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 8px 40px rgba(187, 187, 187, 0.378),
+    0 0 0 1px rgb(111, 111, 111) inset,
+    inset 0 1px 0 rgb(0, 0, 0),
+    inset 0 0 40px rgb(0, 200, 255),
+    0 0 20px rgba(0, 110, 141, 0.08);
+
+  transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease, background 280ms ease;
+}
+
+/* === COLUMN TOP ACCENT BAR === */
+.footer__column_GK_Computer_Business::before,
+.footer__column_Business_Hours::before,
+.footer__column_Contact::before,
+.footer__column_Quick_Links::before,
+.footer__column_Services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+
+  border-radius: 14px 14px 0 0;
+  opacity: 0.75;
+  transition: opacity 280ms ease, left 280ms ease, right 280ms ease;
+  pointer-events: none;
+}
+
+/* === COLUMN BOTTOM ACCENT BAR === */
+.footer__column_GK_Computer_Business::after,
+.footer__column_Business_Hours::after,
+.footer__column_Contact::after,
+.footer__column_Quick_Links::after,
+.footer__column_Services::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 110, 141, 0.5) 50%,
+    transparent 100%
+  );
+  border-radius: 0 0 14px 14px;
+  transition: left 280ms ease, right 280ms ease, opacity 280ms ease;
+  pointer-events: none;
+}
+
+/* === COLUMN HOVER === */
+.footer__column_GK_Computer_Business:hover,
+.footer__column_Business_Hours:hover,
+.footer__column_Contact:hover,
+.footer__column_Quick_Links:hover,
+.footer__column_Services:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: linear-gradient(160deg, rgb(80, 0, 0) 0%, rgb(8, 4, 6) 100%);
+  border-color: rgb(255, 0, 0);
+  box-shadow:
+    0 20px 60px rgb(255, 0, 0),
+    0 0 30px rgba(255, 0, 0, 0.25),
+    0 0 60px rgba(255, 0, 0, 0.1),
+    inset 0 0 50px rgba(255, 0, 0, 0.07),
+    inset 0 1px 0 rgb(255, 0, 0),
+    0 0 0 1px rgba(255, 0, 0, 0.2) inset;
+}
+
+/* Top bar expands full width on hover */
+.footer__column_GK_Computer_Business:hover::before,
+.footer__column_Business_Hours:hover::before,
+.footer__column_Contact:hover::before,
+.footer__column_Quick_Links:hover::before,
+.footer__column_Services:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(200, 0, 30) 40%,
+    rgb(255, 60, 60) 50%,
+    rgb(200, 0, 30) 60%,
+    transparent 100%
+  );
+}
+
+/* Bottom bar expands on hover */
+.footer__column_GK_Computer_Business:hover::after,
+.footer__column_Business_Hours:hover::after,
+.footer__column_Contact:hover::after,
+.footer__column_Quick_Links:hover::after,
+.footer__column_Services:hover::after {
+  left: 5%;
+  right: 5%;
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 0, 30, 0.6) 50%,
+    transparent 100%
+  );
+}
+
+/* === HIDE COLUMN BACKGROUNDS === */
+/* .footer__column_*_background (Hidden column background elements) */
+.footer__column_GK_Computer_Business_background,
+.footer__column_Business_Hours_background,
+.footer__column_Contact_background,
+.footer__column_Quick_Links_background,
+.footer__column_Services_background {
+  display: none;
+}
+
+/* ============================================================
+   COLUMN TITLES
+============================================================ */
+/* This section defines the styles for the column titles within the footer columns. */
+
+/* === COLUMN TITLE === */
+.footer__column-title_Computer_Business,
+.footer__column-title_Business_Hours,
+.footer__column-title_Contact,
+.footer__column-title_Quick_Links,
+.footer__column-title_Services {
+  margin: 0 0 20px 0;
+  padding: 0 0 14px 0;
+
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: rgb(251, 251, 251);
+  text-shadow:
+    0 0 16px rgba(0, 110, 141, 0.6),
+    0 0 4px rgba(0, 180, 220, 0.3);
+
+  border-bottom: 2px solid rgba(0, 110, 141, 0.35);
+  position: relative;
+  transition: all 260ms ease;
+}
+
+/* Underline accent bar beneath title */
+.footer__column-title_Computer_Business::after,
+.footer__column-title_Business_Hours::after,
+.footer__column-title_Contact::after,
+.footer__column-title_Quick_Links::after,
+.footer__column-title_Services::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: rgb(200, 0, 30);
+  box-shadow: 0 0 8px rgba(200, 0, 30, 0.7);
+  transition: width 260ms ease;
+}
+
+/* === COLUMN TITLE HOVER === */
+.footer__column_GK_Computer_Business:hover .footer__column-title_Computer_Business,
+.footer__column_Business_Hours:hover .footer__column-title_Business_Hours,
+.footer__column_Contact:hover .footer__column-title_Contact,
+.footer__column_Quick_Links:hover .footer__column-title_Quick_Links,
+.footer__column_Services:hover .footer__column-title_Services {
+  color: #ffffff;
+  text-shadow:
+    0 0 20px rgba(200, 0, 30, 0.7),
+    0 0 8px rgba(255, 80, 80, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(200, 0, 30, 0.5);
+}
+
+/* Accent bar widens on hover */
+.footer__column_GK_Computer_Business:hover .footer__column-title_Computer_Business::after,
+.footer__column_Business_Hours:hover .footer__column-title_Business_Hours::after,
+.footer__column_Contact:hover .footer__column-title_Contact::after,
+.footer__column_Quick_Links:hover .footer__column-title_Quick_Links::after,
+.footer__column_Services:hover .footer__column-title_Services::after {
+  width: 80%;
+}
+
+/* ============================================================
+   FOOTER TEXT
+============================================================ */
+/* Paragraph content with status dots */
+
+/* === TEXT BASE (01-03) === */
+/* .footer__text01-03 (Footer text lines — first group) */
+.footer__text01,
+.footer__text02,
+.footer__text03 {
+  margin: 0 0 12px 0;
+  padding: 0;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  transition: all 200ms ease;
+}
+
+/* === TEXT BASE (04-10 + HIGHLIGHT) === */
+/* .footer__text04-10, .footer__text--highlight (Footer text lines — second group) */
+.footer__text04,
+.footer__text05,
+.footer__text06,
+.footer__text07,
+.footer__text08,
+.footer__text09,
+.footer__text10,
+.footer__text--highlight {
+  margin: 0 0 12px 0;
+  padding: 0;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  transition: all 200ms ease;
+}
+
+/* === TEXT HIGHLIGHT VARIANT === */
+/* .footer__text--highlight (Footer highlighted text — cyan accent) */
+.footer__text--highlight {
+  color: #fbfbfb;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* === TEXT HOVER (01-03) === */
+.footer__text01:hover,
+.footer__text02:hover,
+.footer__text03:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 180, 220, 0.5);
+}
+
+/* === TEXT HOVER (04-10 + HIGHLIGHT) === */
+.footer__text04:hover,
+.footer__text05:hover,
+.footer__text06:hover,
+.footer__text07:hover,
+.footer__text08:hover,
+.footer__text09:hover,
+.footer__text10:hover,
+.footer__text--highlight:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 180, 220, 0.5);
+}
+
+/* ============================================================
+   STATUS DOTS
+============================================================ */
+/* Color-coded indicator dots */
+
+/* === GREEN DOT === */
+/* .footer__text-dot (Green status indicator dot) */
+.footer__text-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 8px;
+
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 1);
+}
+
+/* === BLUE DOT === */
+/* .footer__text-dot--blue (Blue/cyan status indicator dot) */
+.footer__text-dot--blue {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 8px;
+
+  border-radius: 50%;
+  background: var(--cyan, #00d4ff);
+}
+
+/* === CYAN DOT (INLINE) === */
+/* .footer__text-dot--cyan (Cyan inline status indicator dot) */
+.footer__text-dot--cyan {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 0;
+
+  border-radius: 50%;
+  background: #4dd0e1;
+  box-shadow: 0 0 8px rgba(77, 208, 225, 0.6);
+}
+
+/* === PURPLE DOT (remapped to cyan) === */
+/* .footer__text-dot--purple (Cyan status indicator dot — theme aligned) */
+.footer__text-dot--purple {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 8px;
+
+  border-radius: 50%;
+  background: var(--cyan, #00d4ff);
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+}
+
+/* === RED DOT (INLINE) === */
+/* .footer__text-dot--red (Red inline status indicator dot) */
+.footer__text-dot--red {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 0;
+
+  border-radius: 50%;
+  background: #ff4444;
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.6);
+}

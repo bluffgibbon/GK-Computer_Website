@@ -1,0 +1,54 @@
+/* ============================================================
+   KEYFRAMES
+============================================================ */
+/* This section defines the keyframe animations used for the side menu on the home page. 
+ The animations include a slide-in effect for the menu panel, a fade-in effect for the menu items, 
+ and a pulse effect for the menu border. 
+ These animations enhance the user experience by providing smooth and visually appealing transitions when
+  interacting with the side menu. 
+ The use of keyframes allows for precise control over the timing and behavior of each animation,
+  creating a dynamic and engaging interface for users. */
+@keyframes navBorderPulse {
+  0%,100% {
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    border-color: rgba(200, 0, 30, 0.8);
+  }
+}
+
+@keyframes navCyberGrid {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 80px 80px, -80px -80px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+/* This section defines styles for users who prefer reduced motion in their system settings. 
+ It disables animations and transitions for the side menu, ensuring that users who are sensitive to
+  motion
+  can still navigate the menu without discomfort. 
+ By using the @media (prefers-reduced-motion: reduce) media query, we can target users who have
+  explicitly
+  indicated a preference for reduced motion, providing an accessible and inclusive experience for
+   all users. */
+@media (prefers-reduced-motion: reduce) {
+  #sideMenu,
+  #sideMenu::before {
+    animation: none;
+  }
+
+  #sideMenu li {
+    transition: none;
+  }
+
+  #sideMenu li:hover,
+  #sideMenu li:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,90 @@
+/* ============================================================
+   TOP SECTION
+============================================================ */
+/* This section defines the styles for the top section wrapper in the footer,
+ which contains the label and header. It includes a bottom border and a subtle
+ gradient background overlay. */
+
+/* === TOP SECTION WRAPPER === */
+/* .footer-top-section (Footer top section container) */
+.footer-top-section {
+  position: relative;
+  z-index: 2;
+  padding: 60px 5% 32px;
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+}
+
+/* === HIDE UNUSED TOP BACKGROUND === */
+/* #Animatedbackground-footer-top (Hidden unused background element) */
+#Animatedbackground-footer-top {
+  display: none;
+}
+
+/* ============================================================
+   LABEL
+============================================================ */
+/* This section defines the styles for the section label in the footer of the home page. 
+ The label is designed to be visually striking and attention-grabbing, with a bold font,
+  and shadow effects. 
+ The label is positioned prominently to clearly identify the content and draw attention 
+ to the key message of the section. */
+
+/* === SECTION LABEL === */
+/* #content-section_label04 (Footer section label badge) */
+#content-section_label04 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+  z-index: 10;
+
+  display: inline-block;
+  margin: 0;
+  padding: 10px 24px;
+
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  color: #fff;
+
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+
+  box-shadow:
+    0 4px 15px rgb(255, 255, 255),
+    0 0 30px rgba(255, 255, 255, 0.2);
+
+  transition: all 200ms ease;
+}
+
+/* === SECTION LABEL HOVER === */
+/* #content-section_label04:hover (Label own hover) */
+#content-section_label04:hover {
+  transform: translateX(-5px) scale(1.02);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 6px 20px rgba(255, 255, 255, 0.6),
+    0 0 40px rgba(255, 255, 255, 0.25);
+}
+
+/* === HIDE DUPLICATE LABEL === */
+/* #content-section_label4 (Hidden duplicate label) */
+#content-section_label4 {
+  display: none;
+}
+
+/* === LABEL HOVER (FOOTER HOVER) === */
+/* #site-footer:hover #content-section_label04 (Section-level label hover) */
+#site-footer:hover #content-section_label04 {
+  transform: translateX(-5px) scale(1.02);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 6px 20px rgba(255, 255, 255, 0.6),
+    0 0 40px rgba(255, 255, 255, 0.25);
+}

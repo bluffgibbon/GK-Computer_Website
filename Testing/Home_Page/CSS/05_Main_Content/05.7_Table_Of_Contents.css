@@ -1,0 +1,121 @@
+/* ============================================================
+   TABLE OF CONTENTS – LAYOUT & STYLES
+============================================================ */
+.toc {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 18px 5%;
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: linear-gradient(
+        160deg,
+        #080808 0%,
+        #0d1117 30%,
+        #080808 50%,
+        #0d1117 70%,
+        #080808 100%
+    );
+
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+/* ---- Label ---- */
+.toc__label {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgb(253, 253, 253);
+}
+
+/* ---- Navigation Row ---- */
+.toc__nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ---- Link Items ---- */
+.toc__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 4px;
+
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.85);
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    transition: all 220ms ease;
+    cursor: pointer;
+}
+
+.toc__link:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg,  rgb(0, 110, 141) 0%, rgba(0, 0, 0, 0.3) 100%);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.923);
+    transform: translateY(-1px);
+}
+
+.toc__link:active {
+    transform: translateY(0);
+}
+
+/* ---- Numbered Icon ---- */
+.toc__icon {
+    font-size: 0.85rem;
+    color: rgba(0, 180, 220, 0.7);
+    transition: color 220ms ease;
+}
+
+.toc__link:hover .toc__icon {
+    color: rgba(0, 220, 255, 1);
+}
+
+/* ---- Separator ---- */
+.toc__separator {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 1rem;
+    user-select: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+    .toc {
+        padding: 14px 3%;
+    }
+
+    .toc__nav {
+        gap: 8px;
+    }
+
+    .toc__link {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+
+    .toc__separator {
+        display: none;
+    }
+}

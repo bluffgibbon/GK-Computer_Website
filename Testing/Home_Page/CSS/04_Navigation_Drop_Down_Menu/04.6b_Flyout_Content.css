@@ -1,0 +1,139 @@
+/* ============================================================
+   DROPDOWN FLYOUT — CONTENT LAYOUT
+   Content column layout, heading (including alternating theme colors),
+   body text, bullet list, and headshot image.
+============================================================ */
+
+/* ---------- CONTENT LAYOUT ---------- */
+.flyout__content {
+  padding: 40px 44px 40px 44px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* "Who I Am" has image — lay it out side by side */
+.flyout__content:has(.flyout__image-col) {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+.flyout__text-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.flyout__image-col {
+  flex-shrink: 0;
+  width: 160px;
+  padding-top: 6px;
+}
+
+/* ---------- HEADING ---------- */
+.flyout__heading {
+  margin: 0 0 20px 0;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(255, 60, 80); /* fallback — overridden per dropdown color below */
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+  position: relative;
+}
+
+.flyout__heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+}
+
+/* ---------- ALTERNATING PANEL BACKGROUNDS + HEADING COLORS ---------- */
+.main-navigation__flyout.flyout--teal {
+  background: linear-gradient(135deg, rgb(0, 86, 109) 0%, rgb(0, 0, 0) 100%) !important;
+  border-left-color: rgb(0, 200, 255);
+}
+
+.main-navigation__flyout.flyout--blue {
+  background: linear-gradient(rgb(98, 0, 0), rgb(0, 0, 0)) !important;
+  border-left-color: rgb(255, 0, 0);
+}
+
+/* Teal dropdown — heading matches flyout-label hover background */
+.main-navigation__flyout.flyout--teal .flyout__heading {
+  color: rgb(0, 200, 255);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.main-navigation__flyout.flyout--teal .flyout__heading::after {
+  background: rgb(0, 110, 141);
+  box-shadow: 0 0 8px rgba(0, 110, 141, 0.8);
+}
+
+/* Red dropdown — heading matches flyout-label hover background */
+.main-navigation__flyout.flyout--blue .flyout__heading {
+  color: rgb(255, 0, 0);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.main-navigation__flyout.flyout--blue .flyout__heading::after {
+  background: rgb(200, 0, 30);
+  box-shadow: 0 0 8px rgba(200, 0, 30, 0.8);
+}
+
+/* ---------- BODY TEXT ---------- */
+.flyout__text {
+  margin: 0 0 28px 0;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgb(253, 253, 253);
+}
+
+/* ---------- BULLET LIST ---------- */
+.flyout__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.flyout__list-item {
+  position: relative;
+  padding: 13px 0 13px 22px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.flyout__list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgb(200, 0, 30);
+}
+
+/* ---------- HEADSHOT IMAGE ---------- */
+.flyout__headshot {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+}

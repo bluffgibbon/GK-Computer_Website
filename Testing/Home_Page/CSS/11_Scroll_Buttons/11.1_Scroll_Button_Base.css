@@ -1,0 +1,51 @@
+/* ============================================================
+   BASE BUTTON
+============================================================ */
+/* This section defines the base styles for the scroll buttons on the home page. 
+ The scroll buttons are designed to be visually appealing and attention-grabbing, with a fixed
+  position at the bottom of the viewport. 
+ The buttons have a specific padding, font weight, and font size to ensure they are easily readable and clickable. 
+ The color scheme includes a combination of light and dark tones, with a semi-transparent background and
+  border to create a modern and stylish appearance. 
+ The buttons also feature a backdrop blur effect to enhance their visual appeal and make them stand out
+  against the content on the page. 
+ These styles work together to create visually appealing and effective scroll buttons that enhance the
+  user experience on the home page. */
+.scroll-button {
+  position: fixed;
+  z-index: 2147483648;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 72px;
+  height: 26px;
+  padding: 0;
+
+  color: #fff;
+
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+  box-shadow:
+    0 4px 15px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Large arrow icon */
+.scroll-button__arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  pointer-events: none;
+}

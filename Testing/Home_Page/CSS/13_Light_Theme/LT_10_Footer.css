@@ -1,0 +1,245 @@
+/* ============================================================
+   LIGHT THEME — 10 FOOTER
+============================================================ */
+
+/* ---- Main footer background ---- */
+body.light #site-footer {
+  background: linear-gradient(160deg, #dce4ee 0%, #e0e8f2 30%, #d8e0ea 50%, #e0e8f2 70%, #dce4ee 100%);
+  border-top: 2px solid rgba(0, 80, 160, 0.25);
+  animation: none;
+  box-shadow:
+    0 -4px 40px rgba(0, 0, 0, 0.07),
+    0 0 80px rgba(0, 80, 160, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.50);
+}
+
+/* Corner bracket borders (10.3) + aura background (10.2) both apply to ::before/::after */
+body.light #site-footer::before {
+  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgba(0, 80, 160, 0.08), transparent 100%);
+  border-top-color: rgba(0, 80, 160, 0.30);
+  border-left-color: rgba(0, 80, 160, 0.30);
+}
+
+body.light #site-footer::after {
+  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(0, 80, 160, 0.06), transparent 100%);
+  border-bottom-color: rgba(0, 80, 160, 0.30);
+  border-right-color: rgba(0, 80, 160, 0.30);
+}
+
+/* ---- Animated radial bg layer: replace white/teal with blue ---- */
+body.light #Animatedbackground-footer {
+  background:
+    radial-gradient(520px 260px at 12% 22%, rgba(0, 90, 200, 0.07), transparent 55%),
+    radial-gradient(520px 260px at 88% 78%, rgba(0, 110, 141, 0.05), transparent 55%);
+}
+
+body.light #site-footer:hover {
+  border-color: rgba(0, 80, 160, 0.40);
+  box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.07), 0 0 40px rgba(0, 80, 160, 0.08);
+}
+
+/* ---- Top section wrapper ---- */
+body.light .footer-top-section {
+  border-bottom-color: rgba(0, 80, 160, 0.15);
+  background: linear-gradient(180deg, rgba(0, 80, 160, 0.04) 0%, transparent 100%);
+}
+
+/* ---- Section label badge → blue ---- */
+body.light #content-section_label04 {
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 40, 110) 100%);
+  box-shadow: 0 4px 15px rgba(0, 90, 200, 0.25), 0 0 30px rgba(0, 90, 200, 0.10);
+}
+
+body.light #content-section_label04:hover,
+body.light #site-footer:hover #content-section_label04 {
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 50, 80) 100%);
+  box-shadow: 0 6px 20px rgba(0, 110, 141, 0.35), 0 0 40px rgba(0, 110, 141, 0.15);
+}
+
+/* ---- Footer header ---- */
+body.light #Footer_Header {
+  color: var(--text-0);
+  filter: drop-shadow(0 2px 8px rgba(0, 80, 160, 0.10));
+}
+
+/* Header underline → blue */
+body.light #Footer_Header::after {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 90, 200, 0) 0%,
+    rgba(0, 90, 200, 0.70) 30%,
+    rgba(0, 140, 220, 0.55) 70%,
+    rgba(0, 90, 200, 0) 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 90, 200, 0.10);
+}
+
+/* ---- Footer columns ---- */
+body.light .footer__column_GK_Computer_Business,
+body.light .footer__column_Business_Hours,
+body.light .footer__column_Contact,
+body.light .footer__column_Quick_Links,
+body.light .footer__column_Services {
+  background: linear-gradient(160deg, rgba(0, 80, 160, 0.06) 0%, #eef2f8 100%);
+  border-color: rgba(0, 80, 160, 0.25);
+  box-shadow:
+    0 8px 40px rgba(0, 80, 160, 0.10),
+    0 0 0 1px rgba(0, 80, 160, 0.12) inset,
+    inset 0 1px 0 rgba(255, 255, 255, 0.70),
+    inset 0 0 40px rgba(0, 100, 180, 0.04);
+}
+
+body.light .footer__column_GK_Computer_Business:hover,
+body.light .footer__column_Business_Hours:hover,
+body.light .footer__column_Contact:hover,
+body.light .footer__column_Quick_Links:hover,
+body.light .footer__column_Services:hover {
+  background: linear-gradient(160deg, rgba(0, 90, 200, 0.12) 0%, #dce8f4 100%);
+  border-color: rgba(0, 90, 200, 0.55);
+  box-shadow:
+    0 20px 60px rgba(0, 90, 200, 0.18),
+    0 0 30px rgba(0, 90, 200, 0.10),
+    inset 0 0 50px rgba(0, 90, 200, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.80);
+}
+
+body.light .footer__column_GK_Computer_Business:hover::before,
+body.light .footer__column_Business_Hours:hover::before,
+body.light .footer__column_Contact:hover::before,
+body.light .footer__column_Quick_Links:hover::before,
+body.light .footer__column_Services:hover::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 90, 200, 0.55) 40%,
+    rgba(0, 140, 220, 0.75) 50%,
+    rgba(0, 90, 200, 0.55) 60%,
+    transparent 100%
+  );
+}
+
+/* ---- Column titles ---- */
+body.light .footer__column-title_Computer_Business,
+body.light .footer__column-title_Business_Hours,
+body.light .footer__column-title_Contact,
+body.light .footer__column-title_Quick_Links,
+body.light .footer__column-title_Services {
+  color: var(--text-0);
+  text-shadow: none;
+  border-bottom-color: rgba(0, 80, 160, 0.25);
+}
+
+body.light .footer__column-title_Computer_Business::after,
+body.light .footer__column-title_Business_Hours::after,
+body.light .footer__column-title_Contact::after,
+body.light .footer__column-title_Quick_Links::after,
+body.light .footer__column-title_Services::after {
+  background: var(--blue);
+  box-shadow: 0 0 8px rgba(0, 80, 160, 0.40);
+}
+
+body.light .footer__column_GK_Computer_Business:hover .footer__column-title_Computer_Business,
+body.light .footer__column_Business_Hours:hover .footer__column-title_Business_Hours,
+body.light .footer__column_Contact:hover .footer__column-title_Contact,
+body.light .footer__column_Quick_Links:hover .footer__column-title_Quick_Links,
+body.light .footer__column_Services:hover .footer__column-title_Services {
+  color: var(--text-0);
+  text-shadow: 0 0 20px rgba(0, 80, 160, 0.25);
+  border-bottom-color: rgba(0, 90, 200, 0.45);
+}
+
+/* ---- Footer text ---- */
+body.light .footer__text01,
+body.light .footer__text02,
+body.light .footer__text03,
+body.light .footer__text04,
+body.light .footer__text05,
+body.light .footer__text06,
+body.light .footer__text07,
+body.light .footer__text08,
+body.light .footer__text09,
+body.light .footer__text10,
+body.light .footer__text--highlight {
+  color: var(--text-2);
+}
+
+body.light .footer__text--highlight {
+  color: var(--text-1);
+  text-shadow: none;
+}
+
+body.light .footer__text01:hover,
+body.light .footer__text02:hover,
+body.light .footer__text03:hover,
+body.light .footer__text04:hover,
+body.light .footer__text05:hover,
+body.light .footer__text06:hover,
+body.light .footer__text07:hover,
+body.light .footer__text08:hover,
+body.light .footer__text09:hover,
+body.light .footer__text10:hover,
+body.light .footer__text--highlight:hover {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+/* ---- Footer links ---- */
+body.light .footer__links-item a,
+body.light .footer__links-item {
+  color: var(--text-2);
+}
+
+body.light .footer__links-item a::after {
+  background: linear-gradient(90deg, rgb(0, 90, 200) 0%, rgba(0, 140, 220, 0.60) 100%);
+  box-shadow: 0 0 8px rgba(0, 90, 200, 0.20);
+}
+
+body.light .footer__links-item:hover a {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+/* ---- Bottom bar ---- */
+body.light .footer__bottom-bar {
+  background: linear-gradient(180deg, rgba(210, 220, 235, 0.70) 0%, rgba(200, 212, 230, 0.85) 100%);
+  border-top-color: rgba(0, 80, 160, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.50);
+}
+
+body.light .footer__bottom-bar:hover {
+  background: linear-gradient(180deg, rgba(210, 220, 235, 0.80) 0%, rgba(200, 212, 230, 0.90) 100%);
+  border-top-color: rgba(0, 80, 160, 0.25);
+}
+
+body.light .footer__copyright {
+  color: var(--text-2);
+}
+
+body.light .footer__copyright:hover {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+/* Tagline gradient → blue spectrum */
+body.light .footer__tagline {
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 153, 187) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: none;
+}
+
+body.light .footer__credit {
+  color: var(--text-2);
+}
+
+body.light .footer__credit:hover {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+/* Bottom bar logos: screen blend disappears on light bg → use normal */
+body.light .footer__bottom-images img {
+  mix-blend-mode: normal;
+  opacity: 0.85;
+}

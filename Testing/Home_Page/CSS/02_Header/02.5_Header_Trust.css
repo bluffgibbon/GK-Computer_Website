@@ -1,0 +1,80 @@
+/* ============================================================
+   TRUST BADGE (.site-header__trust)
+   (Small badge showing local support / licensing message)
+============================================================ */
+/* TRUST BADGE (.site-header__trust) (Small badge showing local support / licensing message) */
+.site-header__trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: rgba(10, 16, 30, 0.7);
+  transition:
+    border-color 200ms ease,
+    background 200ms ease,
+    transform 200ms ease;
+}
+
+/* Trust badge hover effect */
+.site-header__trust:hover {
+  border-color: rgba(255, 255, 255, 1);
+  background: rgba(160, 0, 20, 0.85);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   STATUS DOT (.site-header__status-dot)
+   (Green pulsing dot inside the trust badge)
+============================================================ */
+/* STATUS DOT (.site-header__status-dot) (Green pulsing dot inside the trust badge) */
+.site-header__status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 1);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.7);
+  animation: statusPulse 2s ease infinite;
+}
+
+/* ============================================================
+   TRUST TEXT (.site-header__trust-text)
+   (Text content displayed inside the trust badge)
+============================================================ */
+/* TRUST TEXT (.site-header__trust-text) (Text content displayed inside the trust badge) */
+.site-header__trust-text {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e0e8f0;
+  letter-spacing: 0.4px;
+}
+
+/* ============================================================
+   OWNER PHOTO (.site-header__owner-photo)
+   (Circular headshot displayed inline with the CTA buttons)
+============================================================ */
+.site-header__owner-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+/* Owner photo hover */
+.site-header__owner-photo:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.25);
+  transform: scale(1.08);
+}

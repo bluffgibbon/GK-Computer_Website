@@ -1,0 +1,39 @@
+/* ============================================================
+   FOOTER LAYOUT
+============================================================ */
+/* This section defines the layout and styles for the footer section of the home page. 
+ The footer is designed to be visually appealing and engaging, with a dynamic background, 
+ prominent header and label, and a grid of informative cards. 
+ The layout includes padding and a maximum width to ensure that the content is displayed properly
+  across different screen sizes, while the hover effect adds interactivity by creating a slight lift
+   when users interact with the section. 
+ These styles work together to create an attractive and effective presentation of the key features
+  or benefits that the business offers, encouraging visitors to explore further. */
+
+/* === FOOTER CONTAINER === */
+/* #site-footer (Main footer wrapper — layout properties) */
+#site-footer {
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 1;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+/* === FOOTER HOVER STATE === */
+/* #site-footer:hover (Footer hover — layout response) */
+#site-footer:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}

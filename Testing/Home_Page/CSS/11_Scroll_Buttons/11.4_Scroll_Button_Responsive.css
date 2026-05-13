@@ -1,0 +1,18 @@
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+============================================================ */
+/* This section defines the responsive adjustments for the scroll buttons on the home page.
+ At smaller viewport widths (600px and below), the scroll buttons are repositioned closer
+  to the bottom edge of the screen to better accommodate mobile layouts and ensure the
+  buttons remain accessible and visually balanced on smaller devices.
+ These styles work together to create a responsive scroll button experience that adapts
+  to different screen sizes and enhances usability across devices. */
+@media (max-width: 600px) {
+  .scroll-button {
+    width: 60px;
+    height: 22px;
+  }
+  .scroll-button__arrow {
+    font-size: 0.95rem;
+  }
+}

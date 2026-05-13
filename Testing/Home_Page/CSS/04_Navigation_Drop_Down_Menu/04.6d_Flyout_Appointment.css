@@ -1,0 +1,285 @@
+/* ============================================================
+   DROPDOWN FLYOUT — APPOINTMENT SCHEDULER
+   Side-by-side layout: booking form (left) + mini calendar (right).
+   Only used by the "Schedule an Appointment" flyout panel.
+============================================================ */
+
+/* ---------- CONTENT OVERRIDE ---------- */
+/* Override default flyout content padding for appointment layout */
+.flyout__content--appointment {
+  padding: 24px 28px;
+}
+
+/* ---------- SIDE-BY-SIDE ROW ---------- */
+.flyout-appointment-row {
+  display: flex;
+  gap: 28px;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.flyout-appointment__form-card {
+  flex: 1 1 58%;
+  min-width: 0;
+}
+
+.flyout-appointment__calendar {
+  flex: 1 1 42%;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgba(5, 8, 16, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* ---------- BOOKING FORM ---------- */
+.flyout-appointment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flyout-appointment__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.flyout-appointment__legend {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #00d4ff;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.flyout-appointment__legend span {
+  margin-right: 6px;
+}
+
+.flyout-appointment__form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.flyout-appointment__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flyout-appointment__form-group label {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #c5d1de;
+}
+
+.flyout-appointment__required {
+  color: rgb(200, 0, 30);
+  font-weight: 700;
+}
+
+.flyout-appointment__form-group input,
+.flyout-appointment__form-group select,
+.flyout-appointment__form-group textarea {
+  width: 100%;
+  padding: 9px 10px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: rgba(5, 8, 16, 0.9);
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.flyout-appointment__form-group input::placeholder,
+.flyout-appointment__form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.flyout-appointment__form-group input:focus,
+.flyout-appointment__form-group select:focus,
+.flyout-appointment__form-group textarea:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.25);
+}
+
+.flyout-appointment__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0 14px 0;
+}
+
+.flyout-appointment__helper {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+.flyout-appointment__submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0a0f1a;
+  background: linear-gradient(90deg, #00d4ff, #00ff88);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: transform 180ms ease, box-shadow 200ms ease;
+}
+
+.flyout-appointment__submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.3);
+}
+
+.flyout-appointment__submit-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------- CALENDAR ---------- */
+.flyout-calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.flyout-calendar__header span {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #00d4ff;
+  text-transform: uppercase;
+}
+
+.flyout-calendar__header button {
+  width: 30px;
+  height: 30px;
+  background: rgba(10, 15, 26, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 6px;
+  color: #c5d1de;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.flyout-calendar__header button:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.flyout-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.flyout-calendar__weekdays {
+  margin-bottom: 6px;
+}
+
+.flyout-calendar__weekdays span {
+  text-align: center;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.68rem;
+  color: #8899aa;
+  letter-spacing: 0.8px;
+}
+
+#flyoutCalendarDays {
+  flex: 1 1 auto;
+  min-height: 0;
+  align-content: start;
+}
+
+.flyout-calendar__day {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.78rem;
+  border-radius: 6px;
+  background: rgba(10, 15, 26, 0.8);
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  color: #c5d1de;
+  cursor: default;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.flyout-calendar__day--available {
+  border-color: rgba(0, 255, 136, 0.4);
+  color: #00ff88;
+  cursor: pointer;
+}
+
+.flyout-calendar__day--available:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+.flyout-calendar__day--booked {
+  border-color: rgba(255, 80, 80, 0.5);
+  background: rgba(255, 80, 80, 0.08);
+  color: #ff6b6b;
+}
+
+.flyout-calendar__day--empty {
+  background: transparent;
+  border: none;
+}
+
+.flyout-calendar__day--selected {
+  border-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.15);
+  color: #00d4ff;
+  font-weight: 700;
+}
+
+.flyout-calendar__legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.72rem;
+  color: #8899aa;
+}
+
+.flyout-calendar__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.flyout-calendar__dot--available { background: #00ff88; }
+.flyout-calendar__dot--booked    { background: #ff6b6b; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+  .flyout-appointment-row {
+    flex-direction: column;
+  }
+  .flyout-appointment__calendar {
+    min-width: unset;
+  }
+}

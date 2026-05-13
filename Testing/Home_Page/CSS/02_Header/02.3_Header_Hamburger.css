@@ -1,0 +1,169 @@
+/* ============================================================
+   HAMBURGER BUTTON (#hamburger-menu_left)
+   (Left-side services menu toggle button)
+============================================================ */
+/* HAMBURGER BUTTON (#hamburger-menu_left) (Left-side services menu toggle button) */
+#hamburger-menu_left {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  gap: 8px;
+  width: fit-content;
+  border-radius: 8px;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(200, 0, 30, 0.4);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  flex: 0 0 auto;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Shine effect */
+#hamburger-menu_left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgb(255, 255, 255) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 400ms ease;
+}
+
+/* Hamburger button hover effect */
+#hamburger-menu_left:hover {
+  transform: translateX(5px) scale(0.98);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.25),
+    0 0 20px rgba(0, 110, 141, 0.4);
+}
+
+/* Shine hover */
+#hamburger-menu_left:hover::before {
+  transform: translateX(100%);
+}
+
+/* Hamburger button active press effect */
+#hamburger-menu_left:active {
+  transform: translateX(5px) scale(0.97);
+}
+
+/* Hamburger button active menu-open state */
+#hamburger-menu_left.active {
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.25),
+    0 0 20px rgba(0, 110, 141, 0.4);
+}
+
+/* ============================================================
+   HAMBURGER LINES (.hamburger-lines)
+   (Vertical stack container for the three menu lines)
+============================================================ */
+/* HAMBURGER LINES (.hamburger-lines) (Vertical stack container for the three menu lines) */
+.hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ============================================================
+   HAMBURGER LINE (.hamburger-menu__line_left)
+   (Individual line inside the hamburger button)
+============================================================ */
+/* HAMBURGER LINE (.hamburger-menu__line_left) (Individual line inside the hamburger button) */
+.hamburger-menu__line_left {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Hamburger line hover effect */
+#hamburger-menu_left:hover .hamburger-menu__line_left {
+  background: #f8f9f9;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger line active menu-open effect */
+#hamburger-menu_left.active .hamburger-menu__line_left {
+  background: rgb(220, 50, 50);
+  box-shadow: 0 0 12px rgba(200, 0, 30, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Top line transforms into X shape */
+#hamburger-menu_left.active .hamburger-menu__line_left:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+/* Middle line hides during X shape */
+#hamburger-menu_left.active .hamburger-menu__line_left:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Bottom line transforms into X shape */
+#hamburger-menu_left.active .hamburger-menu__line_left:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================================
+   HAMBURGER LABEL (.arrow_inward_left)
+   (Text label shown next to the hamburger icon)
+============================================================ */
+/* HAMBURGER LABEL (.arrow_inward_left) (Text label shown next to the hamburger icon) */
+.arrow_inward_left {
+  color: rgba(255, 255, 255, 1);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition:
+    color 200ms ease,
+    transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    text-shadow 200ms ease;
+}
+
+/* Hamburger label hover effect */
+#hamburger-menu_left:hover .arrow_inward_left {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateX(-3px);
+}
+
+/* Hamburger label active menu-open effect */
+#hamburger-menu_left.active .arrow_inward_left {
+  color: rgb(255, 80, 80);
+  text-shadow: 0 0 10px rgba(200, 0, 30, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateX(-3px);
+}

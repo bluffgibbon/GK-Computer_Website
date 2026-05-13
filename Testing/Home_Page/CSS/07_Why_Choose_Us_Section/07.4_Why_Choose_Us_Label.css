@@ -1,0 +1,48 @@
+/* ============================================================
+   SECTION LABEL (.content-section__label02)
+   (Label badge in top-left of section, absolutely positioned)
+============================================================ */
+.content-section--why-choose-us .content-section__label02 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+
+  display: inline-block;
+  margin: 0;
+  padding: 10px 24px;
+
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  color: #fff;
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+
+  box-shadow:
+    0 4px 15px rgb(255, 255, 255),
+    0 0 30px rgba(255, 255, 255, 0.2);
+
+  transition: all 200ms ease;
+}
+
+/* Label own hover */
+.content-section--why-choose-us .content-section__label02:hover {
+  transform: translateX(-5px) scale(1.02);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 6px 20px rgba(255, 255, 255, 0.6),
+    0 0 40px rgba(255, 255, 255, 0.25);
+}
+
+/* Section hover triggers label */
+#section-why-choose-us:hover .content-section__label02 {
+  transform: translateX(-5px) scale(1.02);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 6px 20px rgba(255, 255, 255, 0.6),
+    0 0 40px rgba(255, 255, 255, 0.25);
+}

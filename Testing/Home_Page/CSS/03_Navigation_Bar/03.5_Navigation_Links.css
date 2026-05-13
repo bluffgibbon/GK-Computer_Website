@@ -1,0 +1,56 @@
+/* ============================================================
+   NAV LINK
+============================================================ */
+/* This section defines the styles for the navigation links within the navigation bar.
+Each link is styled with padding, font properties, and a color that contrasts with the
+ background for readability. The links also include a hover effect that slightly lifts 
+ the link and reveals an animated underline using a pseudo-element. The active state 
+ of the link is visually distinguished with a different gradient color for the underline,
+  providing clear feedback to users about their current location within the site. */
+.main-navigation__link {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 14px 16px;
+
+  /* ADDED: missing font-family from master */
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  color: #ffffff;
+  white-space: nowrap;
+
+  position: relative;
+
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+/* ============================================================
+   UNDERLINE
+============================================================ */
+/* The underline for each navigation link is created using a pseudo-element (::after) that is
+ absolutely positioned at the bottom of the link. It starts with zero opacity and a scaleX of 0,
+ making it invisible. On hover, the opacity transitions to 1 and the scaleX transitions to 1,
+ creating a smooth underline animation that enhances the visual feedback for users interacting
+ with the navigation links. The active state of the link also uses this underline, but with a
+ different gradient color to indicate the current page or section. */
+/* No underline */
+.main-navigation__link::after {
+  display: none;
+}
+
+/* Hover */
+.main-navigation__item:hover .main-navigation__link {
+  color: #ffffff;
+}
+
+/* Active link */
+.main-navigation__item.active .main-navigation__link {
+  color: #ffffff;
+}

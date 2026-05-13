@@ -1,0 +1,71 @@
+/* ============================================================
+   CTA BUTTON
+============================================================ */
+/* CTA button */
+.welcome__cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #ececec;
+  background: linear-gradient(135deg, rgb(143, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  border: 3px solid rgb(255, 0, 0);
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 0 20px rgb(255, 0, 0);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+/* Shine effect */
+.welcome__cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+
+  transition: transform 400ms ease;
+}
+
+/* Hover */
+.welcome__cta-button:hover {
+  transform: translateX(5px) scale(0.98);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  border: 3px solid rgb(0, 157, 255);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+/* Shine hover */
+.welcome__cta-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* CTA button hover triggered by section hover */
+#section-welcome:hover .welcome__cta-button {
+  transform: translateX(5px) scale(0.98);
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 0 12px rgb(0, 157, 255),
+    0 0 30px rgba(0, 157, 255, 0.25);
+  border-color: rgb(0, 157, 255);
+}

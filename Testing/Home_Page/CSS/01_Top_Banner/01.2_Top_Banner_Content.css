@@ -1,0 +1,23 @@
+/* ============================================================
+   TOP BANNER TEXT (.top-banner__text)
+   (Main copyright, licensing, and business status text)
+============================================================ */
+/* TOP BANNER TEXT (.top-banner__text) (Main copyright, licensing, and business status text) */
+.top-banner__text {
+  margin: 0;
+  font-size: 0.80em;
+  color: rgba(160, 176, 200, 0.90);
+  letter-spacing: 0.25px;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   SECURE LABEL (.top-banner__secure-label)
+   (Highlighted "SECURE CONNECTION" label inside the banner text)
+============================================================ */
+/* SECURE LABEL (.top-banner__secure-label) (Highlighted "SECURE CONNECTION" label inside the banner text) */
+.top-banner__secure-label {
+  color: rgba(200, 212, 228, 0.95);
+  font-weight: 600;
+  letter-spacing: 0.35px;
+}

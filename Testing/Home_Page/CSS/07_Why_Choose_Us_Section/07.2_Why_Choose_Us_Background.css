@@ -1,0 +1,80 @@
+/* ============================================================
+   BACKGROUND
+============================================================ */
+/* This section defines the styles for the background of the "Why Choose Us" section on the home page.
+ The background features a dynamic gradient with a diagonal flow animation, creating an engaging visual
+  experience for visitors.
+ The borders and shadows add depth and emphasis to the section, while the hover effect enhances
+  interactivity by intensifying the shadows and adding a glowing outline. */
+#section-why-choose-us {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    160deg,
+    #080808 0%,
+    #292929 30%,
+    #282828 50%,
+    #0a0a0a 70%,
+    #080808 100%
+  );
+
+  background-size: 300% 300%;
+
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.55),
+    0 -4px 20px rgba(200, 0, 30, 0.15),
+    0 4px 20px rgba(0, 110, 141, 0.12);
+
+  animation:
+    diagonalFlow 18s linear infinite,
+    borderPulse 7s ease infinite;
+
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* === TOP RED AURA === */
+#section-why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 0%,
+    rgb(107, 0, 0),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === BOTTOM WHITE AURA === */
+#section-why-choose-us::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.28),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hover */
+#section-why-choose-us:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 50px rgba(0, 0, 0, 0.7),
+    0 -6px 30px rgba(200, 0, 30, 0.22),
+    0 6px 30px rgba(0, 110, 141, 0.18);
+}

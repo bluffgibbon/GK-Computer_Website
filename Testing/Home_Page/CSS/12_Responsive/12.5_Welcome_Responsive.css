@@ -1,0 +1,49 @@
+/* ============================================================
+   WELCOME RESPONSIVE
+============================================================ */
+
+/* 900px */
+@media (max-width: 900px) {
+  #section-welcome {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+    gap: 30px;
+  }
+
+  .welcome__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome__heading-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .line_separator {
+    width: 90vw;
+    max-width: 98vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .welcome__description {
+    max-width: 100%;
+  }
+
+  .welcome__image {
+    max-width: 220px;
+    justify-self: center;
+  }
+
+  .content-section--welcome .content-section__label01 {
+    padding: 6px 20px;
+    font-size: 0.72rem;
+  }
+
+  .content-section--welcome .content-section__label01::before {
+    width: 100vw;
+  }
+}

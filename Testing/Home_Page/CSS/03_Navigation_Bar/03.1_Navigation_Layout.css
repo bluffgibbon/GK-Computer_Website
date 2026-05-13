@@ -1,0 +1,36 @@
+/* ============================================================
+   MAIN CONTENT OFFSET
+============================================================ */
+/* This section adjusts the top margin of the main content to
+account for the fixed navigation bar height, ensuring that the
+content is not hidden behind the nav bar and maintains proper spacing
+from the top of the page. */
+#main-content {
+  margin-top: 70px;
+}
+
+/* ============================================================
+   NAV CONTAINER
+============================================================ */
+/* The main navigation container is fixed below the header, spanning
+the full width of the viewport. It uses flexbox to center its content
+horizontally and vertically, with a background gradient and a subtle
+border for visual separation from the header. */
+#main-navigation {
+  position: fixed;
+  top: 210px;
+  left: 0;
+
+  width: 100%;
+  min-width: 100%;
+  height: 48px;
+
+  z-index: 6000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  overflow: hidden;
+}

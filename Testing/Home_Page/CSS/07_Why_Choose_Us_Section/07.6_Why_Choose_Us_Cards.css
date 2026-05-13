@@ -1,0 +1,174 @@
+/* ============================================================
+   CARDS GRID (.why-choose-us__cards)
+   (Grid container for all cards in the section)
+============================================================ */
+.why-choose-us__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ============================================================
+   CARD (.why-choose-us__card)
+   (Individual card elements inside the grid)
+============================================================ */
+.why-choose-us__card {
+  position: relative;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, rgba(72, 0, 0, 0.705) 0%, #080808 100%);
+
+  border: 3px solid rgb(219, 0, 0);
+
+  box-shadow:
+    0 10px 30px rgba(104, 104, 104, 0.55),
+    0 0 18px rgba(0, 110, 141, 0.35),
+    inset 0 0 30px rgb(255, 0, 0),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  animation: fadeInUp 0.6s ease-out both;
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  --cardPad: 18px;
+  --iconSize: clamp(80px, 9vw, 155px);
+
+  box-sizing: border-box;
+  padding: var(--cardPad);
+
+  display: grid;
+  grid-template-columns: 1fr var(--iconSize);
+  grid-template-rows: auto auto 1fr;
+  gap: 0 16px;
+  align-items: start;
+
+  min-height: calc(var(--iconSize) + (var(--cardPad) * 2));
+}
+
+/* Staggered animation delay for card 1 */
+.why-choose-us__card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+/* Staggered animation delay for card 2 */
+.why-choose-us__card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+/* Staggered animation delay for card 3 */
+.why-choose-us__card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Card hover effect (card lifts and highlights) */
+.why-choose-us__card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(0, 170, 210, 0.9);
+  background: linear-gradient(135deg, rgb(0, 121, 155) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 20px 50px rgb(255, 255, 255),
+    0 0 30px rgba(0, 110, 141, 0.5),
+    0 0 60px rgba(0, 110, 141, 0.2),
+    inset 0 0 40px rgb(0, 139, 178),
+    inset 0 1px 0 rgba(255, 255, 255, 0.969);
+}
+
+/* All elements inside card use border-box and max-width */
+.why-choose-us__card * {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Card heading elements wrap and break as needed */
+.why-choose-us__card h1,
+.why-choose-us__card h2,
+.why-choose-us__card h3 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Card icon style */
+.why-choose-us__card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  transition: transform 200ms ease;
+}
+
+/* Icon shrink on card hover */
+.why-choose-us__card:hover .why-choose-us__card-icon {
+  transform: scale(0.95);
+}
+
+/* Card title style */
+.why-choose-us__card-title {
+  margin: 10px 0 10px 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  transition: color 200ms ease;
+}
+
+/* Card title color on hover */
+.why-choose-us__card:hover .why-choose-us__card-title {
+  color: #ffffff;
+}
+
+/* Card text style */
+.why-choose-us__card-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(200, 212, 228, 0.9);
+  line-height: 1.75;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  transition: color 200ms ease;
+}
+
+/* Card text color on hover */
+.why-choose-us__card:hover .why-choose-us__card-text {
+  color: rgba(220, 232, 246, 1);
+}
+
+/* Card icon image style */
+.why-choose-us__card .why-choose-us__icon {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  align-self: center;
+}
+
+/* ============================================================
+   OPTIONAL TEXT BLOCKS (.why-choose-us__subheading, .why-choose-us__text)
+   (Extra text blocks for subheadings and descriptions)
+============================================================ */
+
+/* Subheading */
+.why-choose-us__subheading {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: rgba(0, 212, 255, 1);
+  transition: color 200ms ease;
+}
+
+/* Description text */
+.why-choose-us__text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(200, 212, 228, 0.88);
+  line-height: 1.7;
+}

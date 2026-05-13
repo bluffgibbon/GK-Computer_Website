@@ -1,0 +1,16 @@
+/* ============================================================
+   REDUCED MOTION SUPPORT
+============================================================ */
+/* This section defines the accessibility support for reduced motion preferences.
+ When a user has enabled reduced motion in their system settings, all animations
+ in the footer section are disabled to provide a more comfortable experience. */
+
+/* === ACCESSIBILITY: REDUCED MOTION === */
+/* @media (prefers-reduced-motion: reduce) (Disable footer animations for accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  #site-footer,
+  #Animatedbackground-footer,
+  .footer__tagline {
+    animation: none;
+  }
+}

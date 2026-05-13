@@ -1,0 +1,19 @@
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+/* This section defines styles to support users who prefer reduced motion for accessibility reasons. 
+ It disables animations for the services section and its elements, ensuring that users who have
+  indicated a preference for reduced motion will not experience potentially distracting or 
+  uncomfortable animations while browsing the website. 
+ By using the @media (prefers-reduced-motion: reduce) media query, we can target users with this
+  preference and provide a more comfortable browsing experience without compromising the overall
+  design and functionality of the site. */
+@media (prefers-reduced-motion: reduce) {
+  #section-services,
+  .services_background_Animated,
+  .services__heading,
+  .service-card,
+  .service-card__text-dot {
+    animation: none;
+  }
+}

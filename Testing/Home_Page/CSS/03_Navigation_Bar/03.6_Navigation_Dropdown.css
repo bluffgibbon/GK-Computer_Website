@@ -1,0 +1,31 @@
+/* ============================================================
+   DROPDOWN ARROW
+============================================================ */
+/* The dropdown arrow is a small visual indicator that appears next to navigation 
+items that have dropdown menus. It is styled with a subtle color and a small font 
+size to differentiate it from the main navigation links. The arrow changes color 
+and slightly moves down when the user hovers over the parent navigation item, 
+providing a clear visual cue that the item has an interactive dropdown menu. 
+This enhances the user experience by making it easier to identify which 
+navigation items have additional options available. */
+.main-navigation__dropdown-arrow {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0 6px 0 2px;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+
+  /* ADDED: missing cursor from master */
+  cursor: pointer;
+
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+/* Hover */
+/* FIXED: added fallback value to match master */
+.main-navigation__item:hover .main-navigation__dropdown-arrow {
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(2px);
+}

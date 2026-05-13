@@ -1,0 +1,26 @@
+/* ============================================================
+   GK COMPUTER BUSINESS - TOP BANNER
+   File: 01.1_Top_Banner_Layout.css
+   Purpose: Security status banner fixed at the top of the page
+============================================================ */
+
+/* ============================================================
+   TOP BANNER WRAPPER (#top-banner)
+   (Fixed banner bar at the very top of the page)
+============================================================ */
+/* TOP BANNER WRAPPER (#top-banner) (Fixed banner bar at the very top of the page) */
+#top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+
+  width: 100%;
+  height: 32px;
+  padding: 8px 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

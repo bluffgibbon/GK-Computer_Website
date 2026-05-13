@@ -1,0 +1,78 @@
+/* ============================================================
+   LIGHT THEME — 05 MAIN CONTENT
+============================================================ */
+
+/* ---- Page background ---- */
+body.light #main-content {
+  background: linear-gradient(
+    135deg,
+    rgba(98, 168, 255, 0.6) 15%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgb(255, 255, 255) 75%
+  );
+}
+
+/* ---- Title breadcrumb button → blue ---- */
+body.light #TitleHomePage {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 40, 110) 100%);
+  border-color: rgba(255, 255, 255, 0.50);
+  box-shadow: 0 0 20px rgba(0, 90, 200, 0.20);
+}
+
+body.light #TitleHomePage:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 50, 80) 100%);
+  border-color: rgba(255, 255, 255, 0.70);
+  box-shadow:
+    0 0 12px rgba(0, 100, 160, 0.35),
+    0 0 30px rgba(0, 100, 160, 0.15),
+    0 0 20px rgba(0, 110, 141, 0.25);
+}
+
+/* ---- Title lines ---- */
+body.light .title-line {
+  background: linear-gradient(90deg, rgba(0, 90, 200, 0.60) 0%, rgba(0, 140, 220, 0.30) 100%);
+}
+
+/* ---- Table of Contents ---- */
+body.light .toc ::before{
+  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgb(0, 128, 255), transparent 100%);
+  border-top: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+body.light .toc {
+  background: linear-gradient(160deg, #e8edf3 0%, #dce4ee 30%, #e4eaf2 50%, #dce4ee 70%, #e8edf3 100%);
+  border-top: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+body.light .toc__label {
+  color: var(--text-0);
+}
+
+body.light .toc__link {
+  color: var(--text-1);
+  background: rgba(0, 80, 160, 0.05);
+  border-color: rgba(0, 80, 160, 0.35);
+}
+
+body.light .toc__link:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 40, 100) 100%);
+  border-color: rgba(0, 140, 220, 0.80);
+  box-shadow: 0 0 12px rgba(0, 90, 200, 0.30);
+}
+
+body.light .toc__icon {
+  color: var(--blue);
+}
+
+body.light .toc__link:hover .toc__icon {
+  color: rgba(160, 210, 255, 1);
+}
+
+body.light .toc__separator {
+  color: rgba(0, 80, 160, 0.25);
+}

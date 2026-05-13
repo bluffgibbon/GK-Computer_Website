@@ -1,0 +1,36 @@
+/* ============================================================
+   IMAGE
+============================================================ */
+/* This section defines the styles for the welcome image in the welcome section of the home page. 
+ The image is styled to be visually appealing and interactive, with a focus on creating a dynamic
+ and engaging user experience. */
+.welcome__image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+
+  grid-column: 2;
+  justify-self: end;
+  flex-shrink: 0;
+
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(8, 8, 8, 0.8);
+
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.15),
+    0 12px 35px rgba(0, 0, 0, 0.4);
+
+  animation: fadeInRight 0.7s ease-out 0.3s both;
+  transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+/* Hover */
+.welcome__image:hover {
+  transform: scale(1.03) rotate(0.5deg);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 35px rgba(255, 255, 255, 0.25),
+    0 18px 50px rgba(0, 0, 0, 0.5);
+}

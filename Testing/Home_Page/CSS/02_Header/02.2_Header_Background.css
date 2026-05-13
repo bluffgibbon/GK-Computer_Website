@@ -1,0 +1,103 @@
+/* ============================================================
+   HEADER BACKGROUND (#header-logo-section)
+   (Diagonal flow animation, border pulse, and hover effect)
+============================================================ */
+/* HEADER BACKGROUND (#header-logo-section) (Diagonal flow animation, border pulse, and hover effect) */
+#header-logo-section {
+  background: linear-gradient(
+    160deg,
+    #080808 0%,
+    #0a0a0a 30%,
+    #060606 50%,
+    #0a0a0a 70%,
+    #080808 100%
+  );
+  background-size: 300% 300%;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  animation:
+    diagonalFlow var(--anim-diagonal, 15s) var(--anim-ease, ease) infinite,
+    borderPulse 4s var(--anim-ease, ease) infinite;
+  transition: border-color 200ms ease;
+}
+
+/* Optional hover effect for header border */
+#header-logo-section:hover {
+  border-color: rgb(255, 255, 255);
+}
+
+/* ============================================================
+   HEADER OVERLAY (#header-logo-section::before)
+   (Cyber grid, scan lines, and glow overlay above header background)
+============================================================ */
+/* HEADER OVERLAY (#header-logo-section::before) (Cyber grid, scan lines, and glow overlay above header background) */
+#header-logo-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(
+      ellipse 80% 100% at 50% 0%,
+      rgb(107, 0, 0),
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.012) 3px,
+      rgba(255, 255, 255, 0.012) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(255, 255, 255, 0.008) 60px,
+      rgba(255, 255, 255, 0.008) 61px
+    ),
+    radial-gradient(
+      ellipse 80% 100% at 50% 100%,
+      rgba(255, 255, 255, 0.28),
+      transparent 70%
+    );
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  animation: diagonalFlow var(--anim-diagonal, 15s) var(--anim-ease, ease) infinite;
+  opacity: 1;
+}
+
+/* ============================================================
+   HEADER WATERMARK (#header-logo-section::after)
+   (Decorative faded logo watermark in the header background)
+============================================================ */
+/* HEADER WATERMARK (#header-logo-section::after) (Decorative faded logo watermark in the header background) */
+#header-logo-section::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 520px;
+  height: 520px;
+  background-image: url("../Images/Hero_Section_Images_Logo_Gray.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.08;
+  filter: grayscale(1);
+  transform: rotate(8deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   REDUCED MOTION SUPPORT (@media prefers-reduced-motion: reduce)
+   (Turns off header animations for accessibility)
+============================================================ */
+/* REDUCED MOTION SUPPORT (@media prefers-reduced-motion: reduce) (Turns off header animations for accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  #header-logo-section,
+  #header-logo-section::before,
+  .site-header__status-dot {
+    animation: none;
+  }
+}

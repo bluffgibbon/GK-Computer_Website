@@ -1,0 +1,102 @@
+/* ============================================================
+   TITLE CONTAINER
+============================================================ */
+/* The title container is a flexbox layout that centers the main title and its
+ decorative lines.
+ It is designed to be responsive, allowing the title and lines to wrap on smaller
+ screens while maintaining proper spacing and alignment.
+ The container uses a gap property to ensure consistent spacing between the title
+ and the lines, creating a balanced and visually appealing header section for the
+ main content. */
+#TitleHomePageContainer {
+  display: flex;
+  align-items: center;
+
+  margin: 6px 0 0 0;
+  padding: 0;
+
+  background: none;
+}
+
+/* ============================================================
+   TITLE TEXT
+============================================================ */
+#TitleHomePage {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 3px 10px;
+
+  box-shadow: 0 0 20px rgba(200, 0, 30, 0.4);
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Shine sweep layer */
+#TitleHomePage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 400ms ease;
+  pointer-events: none;
+}
+
+/* Sweep through on hover, sweep back on mouse-off */
+#TitleHomePage:hover::before {
+  transform: translateX(100%);
+}
+
+#TitleHomePage:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg,rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.25),
+    0 0 20px rgba(0, 110, 141, 0.4);
+  text-decoration: none;
+}
+
+/* ============================================================
+   TITLE LINES
+============================================================ */
+.title-line {
+  display: inline-block;
+
+  height: 3px;
+  width: 60px;
+
+  background: linear-gradient(90deg, #b6d0f7 0%, #e0e7ef 100%);
+
+  border-radius: 2px;
+
+  opacity: 0.7;
+
+  position: relative;
+  z-index: 1;
+}

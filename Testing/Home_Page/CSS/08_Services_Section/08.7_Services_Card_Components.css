@@ -1,0 +1,181 @@
+/* ============================================================
+   ICON
+============================================================ */
+/* This section defines the styles for the service card icons in the "Services" section of the home page. 
+ The icons are positioned in the top-right corner of each service card, with a size that adjusts
+  responsively using the clamp function. 
+ The use of absolute positioning allows the icons to be placed precisely within the card, while
+  the display property ensures that they are centered within their container. 
+ These styles work together to create visually appealing and easily recognizable icons that enhance
+  the overall design and user experience of the "Services" section. */
+.service-card__icon {
+  position: absolute;
+  /* FIXED: Changed hardcoded values to CSS custom properties */
+  top: var(--svcPad);
+  right: var(--svcPad);
+
+  /* FIXED: Changed hardcoded clamp to CSS custom property */
+  width: var(--svcIconSize);
+  height: var(--svcIconSize);
+
+  display: grid;
+  place-items: center;
+
+  /* FIXED: Added missing background, border, border-radius, backdrop-filter, box-shadow */
+  background: rgba(8, 8, 8, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+/* FIXED: Added missing icon SVG sizing */
+.service-card__icon svg {
+  width: 70%;
+  height: 70%;
+}
+
+/* FIXED: Added missing icon SVG path styling */
+.service-card__icon svg * {
+  stroke: rgba(255, 255, 255, 0.88);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   TAG
+============================================================ */
+/* This section defines the styles for the service card tags in the "Services" section of the home page. 
+ The tags are designed to be visually distinct and attention-grabbing, with a bold font, vibrant color,
+  and rounded shape. 
+ They are positioned within the card content area, providing additional information or categorization
+  for each service. 
+ The use of a background color with transparency allows the tags to stand out while still maintaining
+  readability and visual harmony with the overall card design. 
+ These styles work together to create effective and attractive tags that enhance the presentation of
+  each service offered in the "Services" section. */
+.service-card__tag {
+  /* FIXED: Added missing display, align-items, justify-content */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  /* FIXED: Added missing margin-bottom */
+  margin-bottom: 14px;
+
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  /* FIXED: Added missing letter-spacing and text-transform */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  /* FIXED: Added fallback value */
+  color: #ffffff;
+
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow:
+    0 4px 15px rgba(0, 110, 141, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.1);
+
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+/* FIXED: Added entire missing tag hover state */
+.service-card:hover .service-card__tag {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  box-shadow:
+    0 4px 15px rgba(200, 0, 30, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   TITLE
+============================================================ */
+/* This section defines the styles for the service card titles in the "Services" section of the home page. 
+ The titles are designed to be prominent and easily readable, with a bold font and a color that contrasts
+  well with the card background. 
+ The font size is set to ensure that the titles are visually impactful without overwhelming the card content. 
+ These styles work together to create clear and attractive titles that effectively communicate the name or
+  key feature of each service offered in the "Services" section. */
+.service-card__title {
+  /* FIXED: Added missing margin */
+  margin: 0 0 10px 0;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  color: #ffffff;
+
+  /* FIXED: Added missing transition */
+  transition: color 200ms ease;
+}
+
+/* FIXED: Added entire missing title hover state with underline */
+.service-card:hover .service-card__title,
+.service-card:focus-within .service-card__title {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* ============================================================
+   TEXT
+============================================================ */
+/* This section defines the styles for the service card text in the "Services" section of the home page. 
+ The text is designed to be clear and easy to read, with a font size that ensures readability while
+  fitting well within the card layout. 
+ The color is set to a lighter shade to create contrast with the card background, enhancing legibility. 
+ The use of flexbox allows for a structured layout of the text content, with a gap between elements for
+  improved readability and visual appeal. 
+ These styles work together to create informative and attractive text that effectively communicates the
+  details of each service offered in the "Services" section. */
+.service-card__text {
+  /* FIXED: Added missing margin */
+  margin: 0;
+
+  font-size: 0.95rem;
+  /* FIXED: Added missing line-height and color */
+  line-height: 1.75;
+  color: #ffffff;
+
+  display: flex;
+  /* FIXED: Added missing align-items */
+  align-items: flex-start;
+  gap: 10px;
+
+  /* FIXED: Added missing transition */
+  transition: all 200ms ease;
+}
+
+/* Dot */
+.service-card__text-dot {
+  width: 8px;
+  height: 8px;
+  /* FIXED: Added missing min-width and margin-top */
+  min-width: 8px;
+  margin-top: 8px;
+
+  border-radius: 50%;
+
+  /* FIXED: Added fallback value */
+  background: rgba(0, 212, 255, 1);
+
+  animation: statusPulse 2s ease infinite;
+}
+
+/* FIXED: Added entire missing text hover state */
+.service-card:hover .service-card__text {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.5);
+}

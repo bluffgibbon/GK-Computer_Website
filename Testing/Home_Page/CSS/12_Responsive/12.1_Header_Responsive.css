@@ -1,0 +1,108 @@
+/* ============================================================
+   HEADER RESPONSIVE
+============================================================ */
+
+/* 900px */
+@media (max-width: 900px) {
+  #header-logo-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: unset;
+    padding: 18px 2vw 10px;
+    border-bottom-width: 1px;
+    z-index: 1000;
+    background: linear-gradient(180deg, #050a15 0%, #0a1628 100%);
+  }
+
+  body {
+    padding-top: 180px !important;
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .site-header__right {
+    width: 100%;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .site-header__actions {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .site-header__brand-link {
+    gap: 10px;
+  }
+
+  .site-header__logo {
+    width: 54px;
+  }
+}
+
+/* 820px */
+@media (max-width: 820px) {
+  #header-logo-section {
+    padding: 26px 5% 18px;
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-header__right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .site-header__actions {
+    justify-content: flex-start;
+  }
+
+  .site-header__brand-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-header__name,
+  .site-header__tagline {
+    white-space: normal;
+  }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+  #header-logo-section {
+    padding: 8px 2vw 6px;
+  }
+
+  .site-header__logo {
+    width: 40px;
+  }
+
+  .site-header__brand-text {
+    gap: 2px;
+  }
+
+  .site-header__name {
+    font-size: 1.1rem;
+  }
+
+  .site-header__tagline {
+    font-size: 0.8rem;
+  }
+
+  .site-header__actions {
+    gap: 4px;
+  }
+}

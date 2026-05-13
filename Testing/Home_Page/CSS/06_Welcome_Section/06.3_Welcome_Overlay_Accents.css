@@ -1,0 +1,57 @@
+/* ============================================================
+   CYBER OVERLAY EFFECT
+============================================================ */
+/* This CSS file defines the cyber overlay and corner accent brackets for the welcome section.
+ The overlay adds a subtle grid pattern effect, while the corner accents provide interactive
+ bracket decorations that expand on hover, enhancing the cybersecurity aesthetic. */
+
+/* Cyber overlay */
+#section-welcome > .welcome-cyber-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 10px;
+
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* ============================================================
+   CORNER ACCENT BRACKETS
+============================================================ */
+
+/* Top red aura */
+#section-welcome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 0%,
+    rgb(107, 0, 0),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Bottom white aura */
+#section-welcome::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.28),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}

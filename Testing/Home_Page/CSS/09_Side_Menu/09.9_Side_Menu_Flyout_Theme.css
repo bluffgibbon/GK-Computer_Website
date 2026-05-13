@@ -1,0 +1,111 @@
+/* ============================================================
+   SIDE MENU — FLYOUT ALTERNATING COLOR THEME
+   Controls the red/teal alternating colors for flyout panels.
+   Classes (flyout--red / flyout--teal) stamped by JS in initSideMenuFlyouts().
+   Rule: panel background matches item color, heading/accents use the OPPOSITE color.
+============================================================ */
+
+/* ---------- PANEL BACKGROUNDS ---------- */
+.side-menu__flyout.flyout--red {
+  background: linear-gradient(rgb(121, 0, 0), rgb(0, 0, 0)) !important;
+  border-left-color: rgb(255, 0, 0);
+}
+
+.side-menu__flyout.flyout--teal {
+  background: linear-gradient(135deg, rgb(0, 88, 112) 0%, rgb(0, 0, 0) 100%) !important;
+  border-left-color: rgb(0, 110, 141);
+}
+
+/* ---------- MAIN HEADING (scoped to side menu flyout only) ---------- */
+.side-menu__flyout .flyout__heading {
+  font-size: 1.35rem;
+  letter-spacing: 1.5px;
+  color: rgb(220, 0, 30);
+  text-shadow: 0 0 24px rgba(200, 0, 30, 0.55), 0 2px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(200, 0, 30, 0.35);
+  position: relative;
+}
+
+.side-menu__flyout .flyout__heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: rgb(200, 0, 30);
+  box-shadow: 0 0 10px rgba(200, 0, 30, 0.7);
+}
+
+/* flyout--red panel → heading uses teal (opposite) */
+.side-menu__flyout.flyout--red .flyout__heading {
+  color: rgb(0, 200, 255);
+  text-shadow: 0 0 22px rgb(0, 200, 255), 0 0 6px rgba(0, 180, 220, 0.35);
+  border-bottom-color: rgba(0, 110, 141, 0.4);
+}
+
+.side-menu__flyout.flyout--red .flyout__heading::after {
+  background: rgb(0, 110, 141);
+  box-shadow: 0 0 10px rgba(0, 110, 141, 0.8);
+}
+
+/* flyout--teal panel → heading uses red (opposite) */
+.side-menu__flyout.flyout--teal .flyout__heading {
+  color: rgb(255, 1, 35);
+  text-shadow: 0 0 22px rgba(200, 0, 30, 0.7), 0 0 6px rgba(255, 80, 80, 0.35);
+  border-bottom-color: rgba(200, 0, 30, 0.4);
+}
+
+.side-menu__flyout.flyout--teal .flyout__heading::after {
+  background: rgb(200, 0, 30);
+  box-shadow: 0 0 10px rgba(200, 0, 30, 0.8);
+}
+
+/* ---------- SECTION TITLES ---------- */
+/* flyout--red panel → section titles use teal */
+.side-menu__flyout.flyout--red .flyout__section-title {
+  color: rgb(0, 238, 255);
+  border-bottom-color: rgb(248, 248, 248);
+  border-left-color: rgb(0, 110, 141);
+  text-shadow: 0 0 14px rgb(0, 200, 255);
+}
+
+/* flyout--teal panel → section titles use red */
+.side-menu__flyout.flyout--teal .flyout__section-title {
+  color: rgb(255, 0, 0);
+  border-bottom-color: rgb(255, 255, 255);
+  border-left-color: rgb(255, 0, 0);
+  text-shadow: 0 0 14px rgb(255, 0, 38);
+}
+
+/* ---------- LEVEL CARDS ---------- */
+/* flyout--red panel → level cards use teal */
+.side-menu__flyout.flyout--red .flyout__level {
+  border-left-color: rgb(0, 110, 141);
+  background: linear-gradient(135deg, rgb(0, 75, 96) 0%, rgb(0, 0, 0) 100%);
+  box-shadow: inset 0 0 20px rgb(0, 200, 255), 0 2px 8px rgb(252, 252, 252);
+}
+
+.side-menu__flyout.flyout--red .flyout__level-title {
+  text-shadow: 0 0 12px rgba(0, 110, 141, 0.3);
+}
+
+/* flyout--teal panel → level cards use red */
+.side-menu__flyout.flyout--teal .flyout__level {
+  border-left-color: rgb(200, 0, 30);
+  background: linear-gradient(135deg, rgb(110, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  box-shadow: inset 0 0 20px rgb(255, 0, 0), 0 2px 8px rgb(255, 255, 255);
+}
+
+.side-menu__flyout.flyout--teal .flyout__level:hover {
+  border-left-color: rgb(200, 0, 30);
+  background: linear-gradient(135deg, rgb(110, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  box-shadow: inset 0 0 20px rgb(255, 0, 0), 0 2px 8px rgb(255, 255, 255);
+}
+
+.side-menu__flyout.flyout--teal .flyout__level-title {
+  text-shadow: 0 0 12px rgba(200, 0, 30, 0.3);
+}

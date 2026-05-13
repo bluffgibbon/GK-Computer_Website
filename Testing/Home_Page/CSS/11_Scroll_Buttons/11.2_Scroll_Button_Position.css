@@ -1,0 +1,30 @@
+/* ============================================================
+   POSITIONING
+============================================================ */
+/* This section defines the styles for the positioning of the scroll buttons on the home page. 
+ The scroll buttons are designed to be fixed in position, allowing users to easily access them 
+ regardless of their scroll position on the page. 
+ The buttons are positioned at the bottom of the viewport, with a specific distance from the
+  bottom edge to ensure they are easily reachable. 
+ The left and right properties are used to position the buttons on either side of the screen,
+  creating a balanced and visually appealing layout. 
+ These styles work together to create effectively positioned scroll buttons that enhance the
+  user experience on the home page. */
+/* Scroll-to-top: bottom-left, flush against page bottom */
+.scroll-button--top {
+  left: 0;
+  bottom: 0;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0 6px 0 0;
+}
+
+/* Scroll-to-bottom: top-right, flush under nav bar */
+.scroll-button--bottom {
+  right: 0;
+  bottom: auto;
+  top: var(--scroll-btn-bottom-top, 150px);
+  border-top: none;
+  border-right: none;
+  border-radius: 0 0 0 6px;
+}

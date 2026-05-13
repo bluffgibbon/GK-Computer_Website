@@ -1,0 +1,39 @@
+/* ============================================================
+   PAGE CONTAINER
+============================================================ */
+/* This CSS file defines the styles for the main content area of the home page, including 
+the page container and the title bar. 
+ The page container is a flexible layout that holds all the main content sections, with 
+ padding and spacing to ensure a clean and organized presentation. 
+ The title bar is styled to be visually striking, with a diagonal sheen animation that 
+ adds a dynamic and engaging effect to the main title. 
+ The styles also include responsive design considerations to ensure that the content
+  looks great on all screen sizes. */
+.page-container {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding: 48px 5%;
+
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 1;
+  top: 175px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Sections */
+.page-container > section {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Last section spacing */
+.page-container > section:last-child {
+  margin-bottom: 60px;
+}

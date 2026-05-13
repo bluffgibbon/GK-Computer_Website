@@ -1,0 +1,62 @@
+/* ============================================================
+   HOVER ZONE
+============================================================ */
+/* This section defines the styles for the hover zone in the side menu of the home page. 
+ The hover zone is a fixed element that spans the full height of the viewport and is positioned
+  on the left edge of the screen. 
+ It serves as an invisible trigger area for activating the side menu when users hover over it. 
+ The width of the hover zone is set to 18px, providing a sufficient area for users to interact 
+ with while remaining unobtrusive. 
+ The transparent background ensures that the hover zone does not interfere with the visual design
+ of the page, while its high z-index value ensures that it remains above other elements, allowing
+  it to function effectively as an interactive trigger for the side menu. */
+#hoverZone {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 18px;
+  height: 100vh;
+
+  background: transparent;
+
+  z-index: 2147483646;
+}
+
+/* ============================================================
+   SIDE MENU PANEL (LAYOUT)
+============================================================ */
+/* This section defines the layout and positioning of the side menu panel on the home page. 
+ The side menu is fixed in position, allowing it to stay in place as the user scrolls the page. 
+ It is initially hidden off-screen to the left, creating a smooth transition effect when it 
+ becomes visible. 
+ The layout includes padding for spacing and overflow properties to ensure that the content
+  within the side menu is displayed properly and is easily accessible to users. 
+ The box-sizing property ensures that padding is included in the total width of the side menu,
+  while will-change optimizes performance for the transform property used in the transition. */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 320px;
+  height: 100vh;
+
+  padding: 84px 16px 20px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 2147483647;
+
+  transform: translateX(-105%);
+  transition: transform 240ms ease;
+
+  box-sizing: border-box;
+  will-change: transform;
+}
+
+/* ACTIVE */
+#sideMenu.active {
+  transform: translateX(0);
+}

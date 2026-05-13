@@ -1,0 +1,77 @@
+/* ============================================================
+   DROPDOWN FLYOUT — GENERIC FORM
+   Reusable form elements used within flyout panels
+   (e.g. Pay an Invoice).
+============================================================ */
+
+/* ---------- FORM CONTAINER ---------- */
+.flyout__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- LABEL ---------- */
+.flyout__form-label {
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- INPUT ---------- */
+.flyout__form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.flyout__form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.flyout__form-input:focus {
+  border-color: rgb(0, 110, 141);
+  box-shadow: 0 0 8px rgba(0, 110, 141, 0.4);
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.flyout__form-button {
+  margin-top: 6px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 70, 100) 100%);
+  color: #ffffff;
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease, transform 180ms ease;
+}
+
+.flyout__form-button:hover {
+  background: linear-gradient(135deg, rgb(0, 130, 165) 0%, rgb(0, 90, 125) 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.flyout__form-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}

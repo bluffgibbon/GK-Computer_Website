@@ -1,0 +1,33 @@
+/* ============================================================
+   SCROLL CONTAINER
+============================================================ */
+/* This section defines the styles for the scroll container that wraps the navigation items.
+It enables horizontal scrolling for smaller screens while hiding the scrollbar for a cleaner
+ look. The container uses flexbox to align the navigation items and ensures smooth scrolling 
+ on touch devices. */
+.nav-scroll {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* ADDED: missing reset properties from master */
+  padding-left: 0;
+  margin-left: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+/* Hide scrollbar */
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,17 @@
+/* ============================================================
+   STATUS INDICATOR DOT (.top-banner__status-indicator)
+   (Green animated status dot showing secure / online state)
+============================================================ */
+/* STATUS INDICATOR DOT (.top-banner__status-indicator) (Green animated status dot showing secure / online state) */
+.top-banner__status-indicator {
+  width: 8px;
+  height: 8px;
+
+  background: var(--green, #00ff88);
+  border-radius: 50%;
+
+  box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.10);
+  opacity: 0.95;
+
+  animation: top-banner-pulse 2.8s ease-in-out infinite;
+}

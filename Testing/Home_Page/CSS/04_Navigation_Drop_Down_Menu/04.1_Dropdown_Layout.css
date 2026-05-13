@@ -1,0 +1,38 @@
+/* ============================================================
+   DROPDOWN PANEL (LAYOUT)
+============================================================ */
+/* This section defines the layout and positioning of the dropdown panel that appears when a 
+user interacts with a navigation item that has a dropdown menu. 
+ The panel is fixed in position, allowing it to stay in place as the user scrolls the page. 
+ It is initially hidden and positioned slightly above its final location, creating a smooth 
+ transition effect when it becomes visible. 
+ The layout also includes padding and a minimum width to ensure that the content within the
+  dropdown is displayed properly and is easily accessible to users. */
+.main-navigation__dropdown {
+  position: fixed;
+  top: 160px;
+  left: 0;
+  z-index: 2970;
+
+  min-width: 280px;
+  height: auto;
+
+  margin: 0;
+  padding: 12px;
+
+  list-style: none;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-10px);
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease;
+
+  overflow: hidden;
+  border: 2px solid rgb(255, 255, 255);
+}

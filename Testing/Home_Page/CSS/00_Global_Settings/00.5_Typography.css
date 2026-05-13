@@ -1,0 +1,74 @@
+/* ============================================================
+   MEDIA
+============================================================ */
+/* Ensure media elements are responsive and maintain their aspect ratio for optimal display across devices */
+img, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   HEADINGS
+============================================================ */
+/* Style all heading levels with consistent margin, color, and font weight for a cohesive typographic hierarchy across the site */
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  color: var(--text-0);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: 0.35px;
+}
+
+/* ============================================================
+   PARAGRAPHS
+============================================================ */
+/* Style paragraphs with consistent margin and text color for readability */
+p {
+  margin: 0;
+  color: var(--text-1);
+}
+
+/* ============================================================
+   LINKS
+============================================================ */
+/* Style links with inherited color and smooth opacity transition for better user experience */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--ease);
+}
+
+/* Optional active state for links */
+a:active {
+  opacity: 0.92;
+}
+
+/* ============================================================
+   FORM ELEMENTS
+============================================================ */
+/* Ensure form elements inherit font styles and colors for consistency across the site */
+button,input,textarea,select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ============================================================
+   FOCUS
+============================================================ */
+/* Remove default focus outline and replace with a custom visible focus style for better accessibility */
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 2px solid rgba(0, 212, 255, 0.55);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   SELECTION
+============================================================ */
+/* Customize text selection appearance with a semi-transparent cyan background and contrasting text color for improved readability when users highlight content on the site */
+::selection {
+  background: rgba(0, 212, 255, 0.18);
+  color: var(--text-0);
+}

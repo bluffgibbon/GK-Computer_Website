@@ -1,0 +1,66 @@
+/* ============================================================
+   SIDE MENU — FLYOUT ITEM TRIGGER
+   Styles for the <li> items that have flyout panels,
+   the clickable label, and the directional arrow.
+============================================================ */
+
+/* ---------- FLYOUT-ENABLED ITEM ---------- */
+.side-menu__item--has-flyout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 16px !important;
+}
+
+/* Hide the default ::before hover arrow on flyout items */
+.side-menu__item--has-flyout::before {
+  display: none !important;
+}
+
+/* Hide ::after underline at idle for flyout items */
+#sideMenu li.side-menu__item--has-flyout::after {
+  display: none;
+}
+
+/* Restore underline on hover — even items red, odd items teal */
+#sideMenu li.side-menu__item--has-flyout:nth-child(even):hover::after {
+  display: block;
+  opacity: 1;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, rgb(200, 0, 30), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 6px rgba(200, 0, 30, 0.6);
+}
+
+#sideMenu li.side-menu__item--has-flyout:nth-child(odd):hover::after {
+  display: block;
+  opacity: 1;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, rgb(0, 110, 141), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 6px rgba(0, 110, 141, 0.6);
+}
+
+/* ---------- FLYOUT LABEL ---------- */
+.side-menu__flyout-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ---------- FLYOUT ARROW ---------- */
+.side-menu__flyout-arrow {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 1.49rem;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.side-menu__item--has-flyout:hover .side-menu__flyout-arrow {
+  color: rgba(255, 255, 255, 1);
+  transform: translateX(3px);
+}

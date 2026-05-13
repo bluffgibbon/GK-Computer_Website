@@ -1,0 +1,38 @@
+/* ============================================================
+   SECTION BACKGROUND
+============================================================ */
+/* This CSS file defines the background styles for the welcome section of the home page.
+ The welcome section features a dynamic background with a diagonal flow animation
+ and a pulsing border effect, creating an engaging visual experience for visitors. */
+#section-welcome {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    160deg,
+    #080808 0%,
+    #0a0a0a 30%,
+    #282828 50%,
+    #0a0a0a 70%,
+    #080808 100%
+  );
+
+  background-size: 300% 300%;
+
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+
+  animation:
+    diagonalFlow 18s linear infinite,
+    borderPulse 7s ease infinite;
+
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Hover */
+#section-welcome:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,101 @@
+/* ============================================================
+   CORNER BRACKETS
+============================================================ */
+/* This section defines the styles for the corner brackets in the footer of the home page. 
+ The corner brackets are designed to be visually appealing and attention-grabbing, with a dynamic
+  animation that expands the brackets on hover. 
+ The brackets are positioned in the top-left and bottom-right corners of the footer, creating a unique
+  and engaging visual effect. 
+ The transition property allows for a smooth animation when hovering over the footer, enhancing interactivity
+  and encouraging visitors to explore further. 
+ These styles work together to create visually appealing and effective corner brackets that add a distinctive
+  touch to the design of the footer section. */
+
+/* === TOP-LEFT CORNER === */
+/* #site-footer::before (Top-left decorative corner bracket) */
+#site-footer::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  width: 40px;
+  height: 40px;
+
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-left: 2px solid rgba(255, 255, 255, 0.9);
+
+  pointer-events: none;
+
+  transition: width 200ms ease, height 200ms ease;
+}
+
+/* === BOTTOM-RIGHT CORNER === */
+/* #site-footer::after (Bottom-right decorative corner bracket) */
+#site-footer::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+
+  width: 40px;
+  height: 40px;
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+  border-right: 2px solid rgba(255, 255, 255, 0.9);
+
+  pointer-events: none;
+
+  transition: width 200ms ease, height 200ms ease;
+}
+
+/* === CORNER HOVER EXPANSION === */
+/* #site-footer:hover::before, #site-footer:hover::after (Corner bracket hover expansion) */
+#site-footer:hover::before,
+#site-footer:hover::after {
+  width: 55px;
+  height: 55px;
+}
+
+/* ============================================================
+   ANIMATED BACKGROUND
+============================================================ */
+/* This section defines the styles for the animated background in the footer of the home page. 
+ The animated background is designed to be visually appealing and attention-grabbing, with a dynamic
+  animation that creates a flowing effect. 
+ The background is positioned absolutely within the footer, allowing it to cover the entire area while
+  remaining behind the content. 
+ The opacity property is set to create a subtle effect that enhances the overall design without overpowering
+  the content. 
+ A hover effect is included to increase the opacity, making the animation more prominent and engaging for visitors. 
+ These styles work together to create a visually appealing and effective animated background that adds depth
+  and interest to the footer section. */
+
+/* === ANIMATED BACKGROUND === */
+/* #Animatedbackground-footer (Footer animated background layer) */
+#Animatedbackground-footer {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 12px;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(520px 260px at 12% 22%, rgba(255, 255, 255, 0.1), transparent 55%),
+    radial-gradient(520px 260px at 88% 78%, rgba(0, 110, 141, 0.08), transparent 55%);
+  background-size: 180% 180%;
+
+  animation: diagonalFlow 34s linear infinite;
+
+  opacity: 0.22;
+
+  transition: opacity 300ms ease;
+}
+
+/* === ANIMATED BACKGROUND HOVER === */
+/* #site-footer:hover #Animatedbackground-footer (Animated background hover response) */
+#site-footer:hover #Animatedbackground-footer {
+  opacity: 0.38;
+}

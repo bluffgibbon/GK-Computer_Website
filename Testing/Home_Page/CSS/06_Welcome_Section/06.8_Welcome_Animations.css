@@ -1,0 +1,72 @@
+/* ============================================================
+   TRANSITION TARGETS
+============================================================ */
+/* This section defines the CSS transitions for various elements within the welcome section. 
+ The transitions are applied to properties such as transform, filter, color, box-shadow, 
+ and background, allowing for smooth and visually appealing animations when these properties change. */
+#section-welcome .content-section__label01,
+#section-welcome .welcome__heading {
+  transition:
+    transform 200ms ease,
+    filter 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease,
+    background 200ms ease;
+}
+
+/* ============================================================
+   DESCRIPTION
+============================================================ */
+/* The welcome description is styled to be visually appealing and easy to read, with a focus
+ on readability and user engagement. */
+.welcome__description {
+  margin: 0;
+  max-width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ffffff;
+
+  transition: all 200ms ease;
+}
+
+/* Description hover */
+.welcome__description:hover {
+  color: #ffffff;
+  text-shadow:
+    0 0 20px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Description status dot */
+.welcome__description-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  margin-top: 8px;
+
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 1);
+
+  animation: statusPulse 2s ease infinite;
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+/* This media query targets users who have expressed a preference for reduced motion
+ in their system settings. */
+@media (prefers-reduced-motion: reduce) {
+  #section-welcome,
+  .content-section--welcome .content-section__label01,
+  .welcome__heading,
+  .welcome__content,
+  .welcome__image,
+  .welcome__description-dot {
+    animation: none;
+  }
+}

@@ -1,0 +1,211 @@
+/* ============================================================
+   LIGHT THEME — 09 SIDE MENU
+============================================================ */
+
+/* ---- Main side menu panel background ---- */
+body.light #sideMenu {
+  background: linear-gradient(180deg, #dce4ee 0%, #e4eaf2 25%, #eef2f8 60%, #e8edf3 100%);
+  border-right-color: rgba(0, 80, 160, 0.40);
+  box-shadow:
+    inset -1px 0 0 rgba(0, 80, 160, 0.15),
+    inset 0 0 60px rgba(0, 80, 160, 0.03),
+    inset 0 0 120px rgba(220, 230, 242, 0.30);
+}
+
+body.light #sideMenu::before {
+  background: linear-gradient(90deg, transparent, rgb(0, 90, 200) 40%, rgb(0, 140, 220) 50%, rgb(0, 90, 200) 60%, transparent);
+}
+
+body.light #sideMenu::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 110, 141, 0.50) 50%, transparent);
+}
+
+body.light #sideMenu.active {
+  border-right-color: rgba(0, 90, 200, 0.70);
+  box-shadow:
+    12px 0 60px rgba(0, 0, 0, 0.12),
+    4px 0 30px rgba(0, 90, 200, 0.15),
+    inset -1px 0 0 rgba(0, 90, 200, 0.25),
+    inset 0 0 80px rgba(0, 90, 200, 0.03);
+}
+
+body.light #sideMenu::-webkit-scrollbar-thumb {
+  background: rgba(0, 80, 160, 0.30);
+}
+
+/* ---- Side menu flyout themed variants (must use !important to beat 09.9) ---- */
+body.light .side-menu__flyout.flyout--red {
+  background: linear-gradient(160deg, #e0e8f4 0%, #eef2f8 100%) !important;
+  border-left-color: rgba(0, 90, 200, 0.45);
+}
+
+body.light .side-menu__flyout.flyout--teal {
+  background: linear-gradient(135deg, #dce8f4 0%, #eef2f8 100%) !important;
+  border-left-color: rgba(0, 110, 141, 0.45);
+}
+
+/* Flyout heading — all variants get dark text */
+body.light .side-menu__flyout .flyout__heading {
+  color: var(--text-0);
+  text-shadow: none;
+  border-bottom-color: rgba(0, 80, 160, 0.25);
+}
+
+body.light .side-menu__flyout .flyout__heading::after {
+  background: var(--blue);
+  box-shadow: 0 0 10px rgba(0, 80, 160, 0.30);
+}
+
+/* Override all variant-specific heading colors */
+body.light .side-menu__flyout.flyout--red .flyout__heading,
+body.light .side-menu__flyout.flyout--teal .flyout__heading {
+  color: var(--text-0);
+  text-shadow: none;
+  border-bottom-color: rgba(0, 80, 160, 0.25);
+}
+
+body.light .side-menu__flyout.flyout--red .flyout__heading::after,
+body.light .side-menu__flyout.flyout--teal .flyout__heading::after {
+  background: var(--blue);
+  box-shadow: 0 0 10px rgba(0, 80, 160, 0.30);
+}
+
+/* Section titles — all variants */
+body.light .side-menu__flyout.flyout--red .flyout__section-title,
+body.light .side-menu__flyout.flyout--teal .flyout__section-title {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
+  border-left-color: var(--cyan);
+  text-shadow: none;
+}
+
+/* Level cards — both variants → light blue */
+body.light .side-menu__flyout.flyout--red .flyout__level,
+body.light .side-menu__flyout.flyout--teal .flyout__level {
+  background: rgba(0, 80, 160, 0.06);
+  border-left-color: rgba(0, 90, 200, 0.50);
+  box-shadow: inset 0 0 20px rgba(0, 80, 160, 0.03), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light .side-menu__flyout.flyout--red .flyout__level-title,
+body.light .side-menu__flyout.flyout--teal .flyout__level-title {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+/* ---- List item base arrow → dark (source is white, invisible on light bg) ---- */
+body.light #sideMenu li::before {
+  color: rgba(20, 40, 80, 0.40);
+}
+
+/* ---- List items ---- */
+body.light #sideMenu li {
+  background: rgba(220, 230, 242, 0.60);
+  border-color: rgba(0, 80, 160, 0.14);
+  color: var(--text-1);
+  box-shadow: 0 2px 8px rgba(0, 80, 160, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.50);
+}
+
+body.light #sideMenu li + li {
+  border-top-color: rgba(0, 80, 160, 0.08);
+}
+
+/* Even hover → blue */
+body.light #sideMenu li:nth-child(even):hover {
+  background: linear-gradient(120deg, rgba(0, 80, 200, 0.85) 0%, rgba(0, 30, 90, 0.90) 100%);
+  border-color: rgba(0, 100, 220, 0.55);
+  box-shadow: 0 4px 20px rgba(0, 90, 200, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+}
+
+/* Odd hover → teal (keep) */
+body.light #sideMenu li:nth-child(odd):not(:first-child):hover {
+  background: linear-gradient(120deg, rgba(0, 90, 115, 0.80) 0%, rgba(0, 30, 50, 0.90) 100%);
+  border-color: rgba(0, 110, 141, 0.55);
+  box-shadow: 0 4px 20px rgba(0, 150, 200, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+}
+
+/* Even arrow → blue */
+body.light #sideMenu li:nth-child(even):hover::before {
+  color: rgba(100, 180, 255, 0.90);
+}
+
+/* Even underline → blue */
+body.light #sideMenu li:nth-child(even):hover::after {
+  background: linear-gradient(90deg, rgb(0, 90, 200), rgba(0, 160, 240, 0.60));
+  box-shadow: 0 0 6px rgba(0, 90, 200, 0.40);
+}
+
+/* ---- Header pill → blue ---- */
+body.light #sideMenu li h1 {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 50, 130) 60%, rgb(0, 20, 70) 100%);
+  border-color: rgba(0, 120, 220, 0.70);
+  box-shadow:
+    0 4px 20px rgba(0, 90, 200, 0.25),
+    0 0 40px rgba(0, 90, 200, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+body.light #sideMenu li h1:hover {
+  background: linear-gradient(135deg, rgb(0, 143, 175) 0%, rgb(0, 62, 85) 60%, rgb(0, 20, 40) 100%);
+  border-color: rgba(0, 122, 209, 0.80);
+  box-shadow:
+    0 6px 30px rgba(0, 191, 255, 0.50),
+    0 0 60px rgba(0, 137, 200, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+/* ---- Flyout panel ---- */
+body.light .side-menu__flyout {
+  background: linear-gradient(160deg, #eef2f8 0%, #e8edf3 100%);
+  border-left-color: rgba(0, 80, 160, 0.30);
+  box-shadow: 8px 0 40px rgba(0, 0, 0, 0.10), 0 0 20px rgba(0, 80, 160, 0.06);
+}
+
+body.light .side-menu__flyout::-webkit-scrollbar-thumb {
+  background: rgba(0, 80, 160, 0.28);
+}
+
+/* ---- Flyout content elements ---- */
+body.light .flyout__section-title {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
+  border-left-color: var(--cyan);
+  text-shadow: none;
+}
+
+body.light .flyout__note {
+  color: var(--text-2);
+}
+
+body.light .flyout__level {
+  background: rgba(0, 80, 160, 0.06);
+  border-left-color: rgba(0, 90, 200, 0.55);
+  box-shadow: inset 0 0 20px rgba(0, 80, 160, 0.03), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light .flyout__level-title {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+body.light .flyout__level-text {
+  color: var(--text-2);
+}
+
+/* ---- Close arrow ---- */
+body.light .side-menu__close-arrow {
+  color: var(--text-3);
+}
+
+body.light .side-menu__close-arrow:hover {
+  color: var(--blue);
+}
+
+/* ---- Backdrop ---- */
+body.light .side-menu-flyout-backdrop {
+  background: rgba(150, 170, 200, 0.55);
+}

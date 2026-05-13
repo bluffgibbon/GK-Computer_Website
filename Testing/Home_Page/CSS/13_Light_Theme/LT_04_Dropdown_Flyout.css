@@ -1,0 +1,248 @@
+/* ============================================================
+   LIGHT THEME — 04 NAVIGATION DROPDOWN + FLYOUT
+============================================================ */
+
+/* ---- Dropdown panel ---- */
+body.light .main-navigation__dropdown {
+  background: linear-gradient(180deg, #e8edf3 0%, #dce4ee 100%);
+  border-color: rgba(0, 80, 160, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 0 40px rgba(0, 80, 160, 0.08);
+}
+
+body.light .main-navigation__dropdown::before {
+  background:
+    linear-gradient(180deg, #e8edf3 0%, #dce4ee 100%),
+    repeating-linear-gradient(135deg, rgba(0, 80, 160, 0.04) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(45deg, rgba(0, 100, 180, 0.04) 0 2px, transparent 2px 40px);
+}
+
+body.light .main-navigation__dropdown li a {
+  color: var(--text-0);
+}
+
+/* Both dropdown hover variants → blue in light mode */
+body.light .dropdown--teal li a:hover,
+body.light .dropdown--blue li a:hover {
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 40, 100) 100%);
+  border-color: rgba(0, 140, 220, 0.60);
+  box-shadow: 0 0 12px rgba(0, 90, 200, 0.25);
+  color: #ffffff;
+  text-shadow: none;
+}
+
+/* ---- Flyout label (trigger inside dropdown) ---- */
+body.light .main-navigation__flyout-label {
+  color: var(--text-0);
+}
+
+body.light .dropdown--teal .main-navigation__flyout-label:hover,
+body.light .dropdown--blue .main-navigation__flyout-label:hover {
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 40, 100) 100%);
+  border-color: rgba(0, 140, 220, 0.60);
+  box-shadow: 0 0 12px rgba(0, 90, 200, 0.25);
+  color: #ffffff;
+}
+
+body.light .main-navigation__flyout-arrow {
+  color: var(--text-3);
+}
+
+body.light .main-navigation__dropdown-item--has-flyout:hover .main-navigation__flyout-arrow {
+  color: var(--text-1);
+}
+
+/* ---- Flyout side panel ---- */
+body.light .main-navigation__flyout {
+  background: #eef2f8;
+  border-left-color: rgba(0, 80, 160, 0.35);
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Must use !important to beat the dark backgrounds in 04.6b_Flyout_Content.css */
+body.light .main-navigation__flyout.flyout--teal {
+  background: linear-gradient(135deg, #dce8f4 0%, #eef2f8 100%) !important;
+  border-left-color: rgba(0, 110, 141, 0.45);
+}
+
+body.light .main-navigation__flyout.flyout--blue {
+  background: linear-gradient(160deg, #e0e8f4 0%, #eef2f8 100%) !important;
+  border-left-color: rgba(0, 90, 200, 0.45);
+}
+
+body.light .main-navigation__flyout::-webkit-scrollbar-thumb {
+  background: rgba(0, 80, 160, 0.30);
+}
+
+/* ---- Flyout content text ---- */
+body.light .flyout__heading {
+  color: var(--text-0);
+  border-bottom-color: rgba(0, 80, 160, 0.25);
+  text-shadow: none;
+}
+
+body.light .flyout__heading::after {
+  background: var(--blue);
+  box-shadow: 0 0 8px rgba(0, 80, 160, 0.30);
+}
+
+/* Override variant-specific heading colors */
+body.light .main-navigation__flyout.flyout--teal .flyout__heading,
+body.light .main-navigation__flyout.flyout--blue .flyout__heading {
+  color: var(--text-0);
+  text-shadow: none;
+}
+
+body.light .main-navigation__flyout.flyout--teal .flyout__heading::after,
+body.light .main-navigation__flyout.flyout--blue .flyout__heading::after {
+  background: var(--blue);
+  box-shadow: 0 0 8px rgba(0, 80, 160, 0.30);
+}
+
+body.light .flyout__text {
+  color: var(--text-1);
+}
+
+body.light .flyout__list {
+  border-top-color: rgba(0, 80, 160, 0.20);
+}
+
+body.light .flyout__list-item {
+  color: var(--text-1);
+  border-bottom-color: rgba(0, 80, 160, 0.12);
+}
+
+/* Bullet dot → blue */
+body.light .flyout__list-item::before {
+  background: var(--blue);
+}
+
+body.light .flyout__headshot {
+  border-color: rgba(0, 80, 160, 0.20);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Flyout backdrop ---- */
+body.light .flyout-backdrop {
+  background: rgba(150, 170, 200, 0.50);
+}
+
+/* ---- Flyout form ---- */
+body.light .flyout__form {
+  border-color: rgba(0, 80, 160, 0.20);
+  background: rgba(220, 230, 242, 0.40);
+}
+
+body.light .flyout__form-label {
+  color: var(--text-1);
+}
+
+body.light .flyout__form-input {
+  background: rgba(240, 245, 252, 0.90);
+  border-color: rgba(0, 80, 160, 0.25);
+  color: var(--text-0);
+}
+
+body.light .flyout__form-input::placeholder {
+  color: var(--text-3);
+}
+
+body.light .flyout__form-input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 153, 187, 0.25);
+}
+
+/* ---- Appointment flyout ---- */
+body.light .flyout-appointment__calendar {
+  background: rgba(220, 230, 242, 0.60);
+  border-color: rgba(0, 100, 180, 0.25);
+}
+
+body.light .flyout-appointment__legend {
+  color: var(--cyan);
+}
+
+body.light .flyout-appointment__form-group label {
+  color: var(--text-2);
+}
+
+body.light .flyout-appointment__form-group input,
+body.light .flyout-appointment__form-group select,
+body.light .flyout-appointment__form-group textarea {
+  background: rgba(240, 245, 252, 0.95);
+  border-color: rgba(0, 80, 160, 0.25);
+  color: var(--text-0);
+}
+
+body.light .flyout-appointment__form-group input::placeholder,
+body.light .flyout-appointment__form-group textarea::placeholder {
+  color: var(--text-3);
+}
+
+/* Replace green focus → teal */
+body.light .flyout-appointment__form-group input:focus,
+body.light .flyout-appointment__form-group select:focus,
+body.light .flyout-appointment__form-group textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 153, 187, 0.25);
+}
+
+body.light .flyout-appointment__helper {
+  color: var(--text-3);
+}
+
+body.light .flyout-appointment__divider {
+  border-top-color: rgba(0, 80, 160, 0.15);
+}
+
+/* Submit button: replace green half with teal */
+body.light .flyout-appointment__submit-btn {
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  color: #ffffff;
+}
+
+/* ---- Calendar ---- */
+body.light .flyout-calendar__header span {
+  color: var(--cyan);
+}
+
+body.light .flyout-calendar__header button {
+  background: rgba(220, 230, 242, 0.80);
+  border-color: rgba(0, 100, 180, 0.30);
+  color: var(--text-2);
+}
+
+/* Replace green hover → teal */
+body.light .flyout-calendar__header button:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+body.light .flyout-calendar__weekdays span {
+  color: var(--text-3);
+}
+
+body.light .flyout-calendar__day {
+  background: rgba(220, 230, 242, 0.70);
+  border-color: rgba(0, 100, 180, 0.20);
+  color: var(--text-2);
+}
+
+/* Replace green available → teal */
+body.light .flyout-calendar__day--available {
+  border-color: rgba(0, 153, 187, 0.50);
+  color: var(--cyan);
+}
+
+body.light .flyout-calendar__day--available:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 153, 187, 0.25);
+}
+
+/* Replace green dot → teal */
+body.light .flyout-calendar__dot--available {
+  background: var(--cyan);
+}
+
+body.light .flyout-calendar__legend {
+  color: var(--text-3);
+}

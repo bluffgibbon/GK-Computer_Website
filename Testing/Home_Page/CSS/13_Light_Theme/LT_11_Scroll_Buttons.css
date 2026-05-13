@@ -1,0 +1,21 @@
+/* ============================================================
+   LIGHT THEME — 11 SCROLL BUTTONS
+============================================================ */
+
+body.light .scroll-button {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 40, 110) 100%);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 4px 15px rgba(0, 90, 200, 0.20),
+    0 0 20px rgba(0, 90, 200, 0.10);
+}
+
+body.light .scroll-button:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.75) !important;
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 50, 80) 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(0, 100, 160, 0.30),
+    0 0 30px rgba(0, 100, 160, 0.15) !important;
+}

@@ -1,0 +1,183 @@
+/* ============================================================
+   DROPDOWN FLYOUT — PANEL STRUCTURE
+   Panel base, label trigger, arrow, show/hide, two-col layout,
+   scrollbar, backdrop overlay, reduced motion.
+============================================================ */
+
+/* ---------- FLYOUT-ENABLED ITEM ---------- */
+.main-navigation__dropdown:has(.main-navigation__dropdown-item--has-flyout) {
+  overflow: visible;
+}
+
+/* ---------- FLYOUT LABEL (trigger inside dropdown) ---------- */
+.main-navigation__flyout-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background: transparent;
+
+  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Hover — teal dropdown */
+.dropdown--teal .main-navigation__flyout-label:hover {
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* Hover — red/blue dropdown */
+.dropdown--blue .main-navigation__flyout-label:hover {
+  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* ---------- FLYOUT ARROW ---------- */
+.main-navigation__flyout-arrow {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.main-navigation__dropdown-item--has-flyout:hover .main-navigation__flyout-arrow {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateX(4px);
+}
+
+/* ---------- FLYOUT PANEL ---------- */
+/* Full-height side panel fixed to the right edge of the viewport.
+   top/left/right set dynamically by JS. */
+.main-navigation__flyout {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+
+  min-width: 320px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: rgb(9, 9, 9);
+
+  border-left: 2px solid rgb(200, 0, 30);
+
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.85);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(32px);
+
+  transition:
+    opacity 500ms ease-in-out,
+    transform 500ms ease-in-out,
+    visibility 500ms ease-in-out;
+
+  z-index: 100000;
+}
+
+/* ---------- TWO-COLUMN DROPDOWN LAYOUT ---------- */
+/* Used for Privacy Policy — splits items into two even columns */
+.main-navigation__dropdown--two-col {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 12px;
+  min-width: 560px;
+}
+
+/* ---------- SHOW STATE ---------- */
+.main-navigation__flyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* ---------- SCROLLBAR ---------- */
+.main-navigation__flyout::-webkit-scrollbar {
+  width: 3px;
+}
+.main-navigation__flyout::-webkit-scrollbar-track {
+  background: transparent;
+}
+.main-navigation__flyout::-webkit-scrollbar-thumb {
+  background: rgba(200, 0, 30, 0.35);
+  border-radius: 2px;
+}
+
+/* ---------- BACKDROP OVERLAY ---------- */
+/* Dims the rest of the page when a flyout is open.
+   Starts below the nav bar so nav + dropdown remain interactive. */
+.flyout-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 500ms ease-in-out,
+    visibility 500ms ease-in-out;
+}
+
+.flyout-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Hide scroll buttons when flyout is open */
+.flyout-backdrop.is-active ~ .scroll-button,
+body.flyout-open .scroll-button {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .main-navigation__flyout {
+    transition: opacity 80ms ease, visibility 80ms ease;
+    transform: none;
+  }
+  .flyout-backdrop {
+    transition: none;
+  }
+}

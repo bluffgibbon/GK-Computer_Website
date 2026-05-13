@@ -1,0 +1,57 @@
+/* ============================================================
+   LIGHT THEME — 03 NAVIGATION BAR
+============================================================ */
+body.light #main-navigation::before {
+  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgb(0, 128, 255), transparent 100%);
+}
+
+body.light #main-navigation {
+  background: linear-gradient(180deg, #dce4ee 0%, #d4dce8 100%);
+  border-top: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+/* Stop navCyberGrid — it has no place on a light background */
+body.light .main-navigation__Background_animated {
+  background:
+    linear-gradient(180deg, #dce4ee 0%, #d4dce8 100%),
+    repeating-linear-gradient(135deg, rgba(0, 80, 160, 0.04) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(45deg, rgba(0, 100, 180, 0.04) 0 2px, transparent 2px 40px);
+  animation: none;
+}
+/* ---- Nav background hover: subtle blue glow + brightness boost ---- */
+body.light #main-navigation:hover .main-navigation__Background_animated {
+  box-shadow: 0 0 32px rgba(0, 80, 160, 0.10), 0 0 64px rgba(0, 80, 160, 0.05);
+  filter: brightness(1.04);
+}
+
+body.light .main-navigation__link {
+  color: var(--text-0);
+}
+
+body.light .main-navigation__item:hover .main-navigation__link,
+body.light .main-navigation__item.active .main-navigation__link {
+  color: var(--text-0);
+}
+
+/* ---- Nav item hover/active: odd → blue (replaces red), even → teal ---- */
+body.light .main-navigation__item:nth-child(odd):hover,
+body.light .main-navigation__item.active:nth-child(odd) {
+  background: linear-gradient(135deg, rgb(0, 153, 255) 0%, rgb(255, 255, 255) 100%);
+  border-color: rgb(0, 0, 0);
+}
+/* ---- Even items: teal hover/active (replaces red) ---- */
+body.light .main-navigation__item:nth-child(even):hover,
+body.light .main-navigation__item.active:nth-child(even) {
+  background: linear-gradient(135deg, rgb(79, 158, 255) 0%, rgb(242, 242, 242) 100%);
+  border-color: rgb(0, 0, 0);
+}
+
+/* ---- Dropdown arrow → dark text ---- */
+body.light .main-navigation__dropdown-arrow {
+  color: rgb(0, 0, 0);
+}
+
+body.light .main-navigation__item:hover .main-navigation__dropdown-arrow {
+  color: rgb(0, 0, 0);
+}

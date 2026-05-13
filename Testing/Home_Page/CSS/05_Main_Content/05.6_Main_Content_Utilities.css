@@ -1,0 +1,12 @@
+/* ============================================================
+   HEADER OFFSET HELPER
+============================================================ */
+/* This helper class is used to create space below the header, ensuring that the
+ main content does not overlap with the header. 
+ It adds a margin-top of 180px, which can be adjusted as needed based on the
+  height of the header and the desired spacing. 
+ This class can be applied to any element that needs to be positioned below 
+ the header, providing a consistent layout across the page. */
+.main-content-below-header {
+  margin-top: 180px;
+}

@@ -1,0 +1,175 @@
+/* ============================================================
+   MODAL (.card-modal and children)
+   (Pop-out modal for expanded card content, overlays section)
+============================================================ */
+
+/* Modal container */
+.card-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 2147483646;
+
+  display: none;
+  border: 1px solid rgb(255, 255, 255);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+/* Modal overlay */
+.card-modal__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(6, 10, 18, 0.78);
+  backdrop-filter: blur(6px);
+
+  pointer-events: auto;
+  z-index: 0;
+
+  max-width: none;
+  max-height: none;
+}
+
+/* Modal content */
+.card-modal__content {
+  position: relative;
+  z-index: 1;
+
+  width: min(1100px, calc(100vw - 48px));
+  max-width: 1100px;
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 28px;
+
+  border-radius: 18px;
+  border: 1px solid rgb(255, 0, 0);
+
+  background: linear-gradient(135deg, #080808 0%, #0a0a0a 45%, #0c0c0c 100%);
+
+  box-shadow: 0 18px 60px rgba(255, 0, 0, 0.55);
+}
+
+/* Modal close button */
+.card-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+
+  background: rgba(8, 8, 8, 0.9);
+
+  color: #ffffff;
+  font-size: 1.6rem;
+  line-height: 1;
+
+  cursor: pointer;
+  z-index: 3;
+
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+/* Close button hover effect */
+.card-modal__close:hover {
+  background: rgba(200, 0, 30, 0.9);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Modal body */
+.card-modal__body {
+  width: 100%;
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+}
+
+/* ============================================================
+   MODAL CARD CLONE (.card-modal__body .why-choose-us__card)
+   (Card layout inside modal pop-out)
+============================================================ */
+.card-modal__body .why-choose-us__card {
+  width: 100%;
+  max-width: 100%;
+  max-height: 50%;
+  min-height: 0;
+
+  overflow: visible;
+
+  padding: 28px;
+  padding-right: 28px;
+
+  border-radius: 14px;
+  border: 1px solid rgb(255, 255, 255);
+
+  background: linear-gradient(135deg, rgba(200, 0, 30, 0.10) 0%, #080808 100%);
+
+  box-shadow: 0 10px 30px rgb(255, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Modal card title */
+.card-modal__body .why-choose-us__card-title {
+  margin: 0 0 14px 0;
+  font-size: 1.45rem;
+}
+
+/* Modal card icon */
+.card-modal__body .why-choose-us__card-icon {
+  margin-bottom: 14px;
+  font-size: 2.2rem;
+}
+
+/* Modal card text */
+.card-modal__body .why-choose-us__card-text {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: center;
+  display: block;
+}
+
+/* Modal card image/icon */
+.card-modal__body .why-choose-us__card .why-choose-us__icon,
+.modal-image-large,
+.modal-image-popout {
+  position: static;
+  display: block;
+  width: auto;
+  max-width: min(75%, 700px);
+  max-height: 70vh;
+  height: auto;
+  margin: 18px auto 0 auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgb(255, 255, 255);
+  border: #ffffff solid 1px;
+}
+
+/* Modal image caption */
+.modal-image-caption {
+  margin: 18px 0 0 0;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #d4deea;
+}

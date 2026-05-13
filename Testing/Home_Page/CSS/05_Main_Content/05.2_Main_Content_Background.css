@@ -1,0 +1,16 @@
+/* ============================================================
+   MAIN CONTENT BACKGROUND
+============================================================ */
+/* Diagonal flow animation for the main content background */
+#main-content {
+  background: linear-gradient(
+    135deg,
+    #ffffff4b 25%,
+    rgb(60, 95, 102) 50%,
+    rgba(101, 102, 101, 0.994) 75%
+  );
+
+  background-size: 400% 400%;
+
+  animation: diagonalFlow var(--anim-diagonal, 15s) var(--anim-ease, ease) infinite;
+}

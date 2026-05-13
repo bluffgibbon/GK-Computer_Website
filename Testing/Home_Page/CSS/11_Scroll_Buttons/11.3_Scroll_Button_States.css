@@ -1,0 +1,33 @@
+/* ============================================================
+   HOVER
+============================================================ */
+/* This section defines the styles for the hover state of the scroll buttons on the home page. 
+ The scroll buttons are designed to be visually appealing and attention-grabbing, with a dynamic
+  hover effect that enhances interactivity. 
+ When users hover over the scroll buttons, the color changes to white, the border color becomes
+  more vibrant, and the background becomes darker with increased opacity. 
+ Additionally, a slight upward translation and a shadow effect create a sense of depth and
+  engagement, encouraging users to interact with the buttons. 
+ These styles work together to create visually appealing and effective scroll buttons that
+  enhance the user experience on the home page. */
+.scroll-button:hover {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%) !important;
+  box-shadow:
+    0 6px 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================================
+   ACTIVE
+============================================================ */
+/* This section defines the styles for the active state of the scroll buttons on the home page. 
+ When users click on the scroll buttons, the active state is triggered, which resets the translation
+  to its original position. 
+ This provides a visual feedback to users, indicating that their interaction has been registered. 
+ The active state works in conjunction with the hover state to create a responsive and engaging user experience, 
+ encouraging users to interact with the scroll buttons and explore the content on the home page. */
+.scroll-button:active {
+  transform: translateY(0px);
+}

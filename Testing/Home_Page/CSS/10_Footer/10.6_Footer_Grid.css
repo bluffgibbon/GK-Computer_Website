@@ -1,0 +1,42 @@
+/* ============================================================
+   GRID
+============================================================ */
+/* This section defines the styles for the grid layout in the footer of the home page. 
+ The grid is designed to be responsive and visually appealing, with a flexible column structure that 
+ adapts to different screen sizes. 
+ The gap between grid items is set to create a balanced and organized appearance, while the padding 
+ ensures that the content is well-spaced and easy to read. 
+ The overflow-x property allows for horizontal scrolling on smaller screens, ensuring that all content 
+ remains accessible without compromising the layout. 
+ These styles work together to create a visually appealing and functional grid layout that enhances the 
+ overall design of the footer section. */
+
+/* === GRID CONTAINER === */
+/* .footer__content-grid (Footer 4-column grid layout) */
+.footer__content-grid {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 5%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  align-items: start;
+  justify-items: stretch;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+/* === HIDE SCROLLBAR === */
+/* .footer__content-grid::-webkit-scrollbar (Hidden scrollbar for grid) */
+.footer__content-grid::-webkit-scrollbar {
+  display: none;
+}
