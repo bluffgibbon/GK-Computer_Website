@@ -30,22 +30,26 @@ function positionSideMenuFlyout(flyout) {
     var rect = sideMenu.getBoundingClientRect();
 
     // If the side menu fills the viewport (mobile full-screen mode),
-    // show the flyout as a full-screen overlay instead of flying it right
+    // show the flyout as a full-screen overlay on top of everything
     if (rect.right >= window.innerWidth - 10) {
         flyout.style.left = '0';
         flyout.style.top = '0';
         flyout.style.width = '100vw';
         flyout.style.minWidth = '0';
         flyout.style.height = '100vh';
+        // Side menu z-index is 2147483647 (max). Match it here — flyout comes
+        // later in the DOM so same z-index makes flyout paint on top.
+        flyout.style.zIndex = '2147483647';
         return;
     }
 
-    // Desktop: position flyout to the right of the side menu
+    // Desktop: position flyout to the right of the side menu, restore z-index
     flyout.style.left = rect.right + "px";
     flyout.style.top = rect.top + "px";
     flyout.style.width = '';
     flyout.style.minWidth = '';
     flyout.style.height = (window.innerHeight - rect.top) + "px";
+    flyout.style.zIndex = '';
 }
 
 function openSideMenuFlyoutByKey(serviceKey) {
