@@ -168,6 +168,6 @@
   /* Stop status indicator pulse (correct class name) */
   .top-banner__status-indicator { animation: none; }
 
-  /* Body padding: banner(32) + header(~168) + nav(~44) */
-  body { padding-top: 248px !important; }
+  /* Body padding: banner(32) + header(~168) + nav(~88 two-row) */
+  body { padding-top: 292px !important; }
 }

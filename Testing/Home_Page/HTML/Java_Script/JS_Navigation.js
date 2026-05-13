@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    NAVIGATION
    - Nav bar positioning (fixed below header)
    - Nav scroll reset
@@ -52,6 +52,9 @@ function initNavigation() {
         activeDropdown.style.visibility = "hidden";
         activeDropdown.style.pointerEvents = "none";
         activeDropdown.style.transform = "translateY(-10px)";
+        activeDropdown.style.height = "";
+        activeDropdown.style.overflowY = "";
+        activeDropdown.style.overflowX = "";
         if (activeItem) activeItem.classList.remove("active");
         if (activeArrow) activeArrow.textContent = "▾";
         activeDropdown = null;
@@ -77,27 +80,42 @@ function initNavigation() {
         item.classList.add("active");
         arrow.textContent = "▴";
 
-        var rect = item.getBoundingClientRect();
-        dropdown.style.position = "fixed";
-        dropdown.style.top = (rect.bottom + 8) + "px";
-
-        // Center two-column dropdowns under the tab
-        if (dropdown.classList.contains("main-navigation__dropdown--two-col")) {
-            var tabCenter = rect.left + rect.width / 2;
-            var dropWidth = dropdown.offsetWidth || 560;
-            var centeredLeft = tabCenter - dropWidth / 2;
-            if (centeredLeft < 8) centeredLeft = 8;
-            if (centeredLeft + dropWidth > window.innerWidth - 8) centeredLeft = window.innerWidth - 8 - dropWidth;
-            dropdown.style.left = centeredLeft + "px";
-        } else {
-            dropdown.style.left = rect.left + "px";
-        }
-
         dropdown.style.opacity = "1";
         dropdown.style.visibility = "visible";
         dropdown.style.pointerEvents = "auto";
         dropdown.style.transform = "translateY(0)";
         dropdown.style.zIndex = "99999";
+
+        if (window.innerWidth <= 480) {
+            // Mobile: full-screen overlay (same UX as side menu)
+            dropdown.style.position = "fixed";
+            dropdown.style.top = "0";
+            dropdown.style.left = "0";
+            dropdown.style.width = "100vw";
+            dropdown.style.height = "100vh";
+            dropdown.style.overflowY = "auto";
+            dropdown.style.overflowX = "hidden";
+        } else {
+            // Desktop: position below the nav item
+            dropdown.style.height = "";
+            dropdown.style.overflowY = "";
+            dropdown.style.overflowX = "";
+            var rect = item.getBoundingClientRect();
+            dropdown.style.position = "fixed";
+            dropdown.style.top = (rect.bottom + 8) + "px";
+
+            // Center two-column dropdowns under the tab
+            if (dropdown.classList.contains("main-navigation__dropdown--two-col")) {
+                var tabCenter = rect.left + rect.width / 2;
+                var dropWidth = dropdown.offsetWidth || 560;
+                var centeredLeft = tabCenter - dropWidth / 2;
+                if (centeredLeft < 8) centeredLeft = 8;
+                if (centeredLeft + dropWidth > window.innerWidth - 8) centeredLeft = window.innerWidth - 8 - dropWidth;
+                dropdown.style.left = centeredLeft + "px";
+            } else {
+                dropdown.style.left = rect.left + "px";
+            }
+        }
     }
 
     navItems.forEach(function (item, index) {
@@ -107,6 +125,17 @@ function initNavigation() {
 
         dropdown.classList.add(index % 2 === 0 ? "dropdown--teal" : "dropdown--blue");
         document.body.appendChild(dropdown);
+
+        // Mobile close button (CSS hides it on desktop)
+        var mobileClose = document.createElement("button");
+        mobileClose.className = "nav-dropdown__mobile-close";
+        mobileClose.setAttribute("aria-label", "Close menu");
+        mobileClose.innerHTML = "✕ Close";
+        mobileClose.addEventListener("click", function (e) {
+            e.stopPropagation();
+            hideDropdown();
+        });
+        dropdown.insertBefore(mobileClose, dropdown.firstChild);
 
         item.addEventListener("click", function (e) {
             if (dropdown.contains(e.target)) return;
@@ -137,6 +166,13 @@ function initNavigation() {
 
     function repositionDropdown() {
         if (!activeDropdown || !activeItem) return;
+        if (window.innerWidth <= 480) {
+            activeDropdown.style.top = "0";
+            activeDropdown.style.left = "0";
+            activeDropdown.style.width = "100vw";
+            activeDropdown.style.height = "100vh";
+            return;
+        }
         var rect = activeItem.getBoundingClientRect();
         activeDropdown.style.top = (rect.bottom + 8) + "px";
         if (activeDropdown.classList.contains("main-navigation__dropdown--two-col")) {
@@ -174,7 +210,7 @@ function initNavigation() {
             });
             flyoutItems.forEach(function (item) {
                 var a = item.querySelector(".main-navigation__flyout-arrow");
-                if (a) a.textContent = "\u25b8";
+                if (a) a.textContent = "▸";
             });
             backdrop.classList.remove("is-active");
             document.body.classList.remove("flyout-open");
@@ -196,6 +232,17 @@ function initNavigation() {
             // Move flyout to body so position:fixed is relative to viewport
             document.body.appendChild(flyout);
 
+            // Mobile back button (CSS hides it on desktop)
+            var mobileBack = document.createElement("button");
+            mobileBack.className = "nav-flyout__mobile-close";
+            mobileBack.setAttribute("aria-label", "Back to menu");
+            mobileBack.innerHTML = "◄ Back to Menu";
+            mobileBack.addEventListener("click", function (e) {
+                e.stopPropagation();
+                closeFlyout();
+            });
+            flyout.insertBefore(mobileBack, flyout.firstChild);
+
             var forceRight = item.classList.contains("main-navigation__dropdown-item--flyout-right");
             var isTwoCol = parentDropdown && parentDropdown.classList.contains("main-navigation__dropdown--two-col");
             var forceLeft = isTwoCol && !forceRight;
@@ -212,9 +259,28 @@ function initNavigation() {
                 return spaceLeft > spaceRight ? "left" : "right";
             }
 
-            item._defaultArrow = "\u25b8";
+            item._defaultArrow = "▸";
 
             function positionFlyout() {
+                if (window.innerWidth <= 480) {
+                    // Mobile: full-screen overlay on top of dropdown
+                    flyout.style.position = "fixed";
+                    flyout.style.top = "0";
+                    flyout.style.left = "0";
+                    flyout.style.right = "0";
+                    flyout.style.width = "100vw";
+                    flyout.style.height = "100vh";
+                    flyout.style.zIndex = "100001";
+                    flyout.style.borderLeft = "none";
+                    flyout.style.borderRight = "none";
+                    flyout.style.borderTop = "2px solid rgb(200, 0, 30)";
+                    flyout.style.boxShadow = "none";
+                    return "right";
+                }
+
+                // Desktop: position to the left or right of dropdown
+                flyout.style.zIndex = "";
+                flyout.style.borderTop = "";
                 var dropdown = item.parentElement;
                 if (dropdown && dropdown.style.top) {
                     var dropLeft = parseFloat(dropdown.style.left) || 0;
@@ -245,7 +311,7 @@ function initNavigation() {
                 flyoutItems.forEach(function (other) {
                     var otherArrow = other.querySelector(".main-navigation__flyout-arrow");
                     if (otherArrow && other !== item) {
-                        otherArrow.textContent = other._defaultArrow || "\u25b8";
+                        otherArrow.textContent = other._defaultArrow || "▸";
                     }
                 });
                 document.querySelectorAll(".main-navigation__flyout.is-open").forEach(function (f) {
@@ -253,8 +319,8 @@ function initNavigation() {
                 });
                 var side = positionFlyout();
                 flyout.classList.add("is-open");
-                arrow.textContent = "\u25c2";
-                item._defaultArrow = "\u25b8";
+                arrow.textContent = "◂";
+                item._defaultArrow = "▸";
                 item._defaultSide = side;
                 backdrop.classList.add("is-active");
                 document.body.classList.add("flyout-open");
@@ -262,7 +328,7 @@ function initNavigation() {
 
             function closeFlyout() {
                 flyout.classList.remove("is-open");
-                arrow.textContent = "\u25b8";
+                arrow.textContent = "▸";
                 if (!document.querySelector(".main-navigation__flyout.is-open")) {
                     backdrop.classList.remove("is-active");
                     document.body.classList.remove("flyout-open");
