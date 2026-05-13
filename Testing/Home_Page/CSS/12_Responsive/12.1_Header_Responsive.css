@@ -107,52 +107,45 @@
   }
 }
 
-/* 480px - phone: single compact row header */
+/* 480px - phone: stacked column, hide email/headshot/HOME, fix flicker */
 @media (max-width: 480px) {
 
-  /* Banner: hide copyright so everything fits on one line */
+  /* Banner: hide copyright so it stays one line */
   .top-banner__copyright { display: none; }
 
-  /* Header sits below the 32px banner */
+  /* Header sits below the 32px banner, stays stacked column */
   #header-logo-section {
     top: 32px;
-    padding: 6px 12px;
+    padding: 6px 10px 8px;
+    /* Force own GPU layer to stop flicker from animated section backgrounds */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
-  /* Single horizontal row: hamburger | logo + name | phone */
-  .site-header__inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+  /* Fix nav flicker too */
+  #main-navigation {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   .site-header__logo { width: 36px; }
-
-  /* Hide tagline - name only to save space */
-  .site-header__tagline { display: none; }
   .site-header__name { font-size: 1rem; }
+  .site-header__tagline { font-size: 0.75rem; }
+  .site-header__inner { gap: 6px; }
 
-  /* Hide non-essential right-side elements */
-  .site-header__trust { display: none; }
+  /* Hide email, headshot, HOME — keep trust + quote + phone */
   .site-header__owner-photo { display: none; }
   .site-header__actions a[href^="mailto"] { display: none; }
-  .header-cta--primary { display: none; }
   #TitleHomePageContainer { display: none; }
 
-  /* Right side collapses to phone number only */
-  .site-header__right {
-    margin-left: auto;
-    align-items: flex-end;
-    gap: 0;
-  }
+  /* Actions: quote + phone side by side */
   .site-header__actions {
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 0;
+    gap: 6px;
     width: auto;
   }
 
-  /* Body padding: banner(32) + header(~52) + nav(~44) */
-  body { padding-top: 135px !important; }
+  /* Body padding: banner(32) + header(~130) + nav(~44) */
+  body { padding-top: 215px !important; }
 }
