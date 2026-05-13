@@ -27,17 +27,24 @@ function positionSideMenuFlyout(flyout) {
     var sideMenu = document.getElementById("sideMenu");
     if (!sideMenu || !flyout) return;
 
-    // On mobile, flyout is a full-screen overlay — no repositioning needed
-    if (window.innerWidth <= 480) {
+    var rect = sideMenu.getBoundingClientRect();
+
+    // If the side menu fills the viewport (mobile full-screen mode),
+    // show the flyout as a full-screen overlay instead of flying it right
+    if (rect.right >= window.innerWidth - 10) {
         flyout.style.left = '0';
         flyout.style.top = '0';
+        flyout.style.width = '100vw';
+        flyout.style.minWidth = '0';
         flyout.style.height = '100vh';
         return;
     }
 
-    var rect = sideMenu.getBoundingClientRect();
+    // Desktop: position flyout to the right of the side menu
     flyout.style.left = rect.right + "px";
     flyout.style.top = rect.top + "px";
+    flyout.style.width = '';
+    flyout.style.minWidth = '';
     flyout.style.height = (window.innerHeight - rect.top) + "px";
 }
 
