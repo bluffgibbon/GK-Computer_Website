@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    RESPONSIVE ADJUSTMENTS
 ============================================================ */
 /* This section defines the responsive adjustments for the scroll buttons on the home page.
@@ -14,5 +14,12 @@
   }
   .scroll-button__arrow {
     font-size: 0.95rem;
+  }
+}
+
+/* 480px - drop below side menu z-index so buttons hide behind full-screen side menu when open */
+@media (max-width: 480px) {
+  .scroll-button {
+    z-index: 999;
   }
 }
