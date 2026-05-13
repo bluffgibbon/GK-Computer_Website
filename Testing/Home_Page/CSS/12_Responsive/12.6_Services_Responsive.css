@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    SERVICES RESPONSIVE
 ============================================================ */
 
@@ -22,5 +22,12 @@
   .content-section--services .content-section__label03 {
     padding: 6px 16px;
     font-size: 0.72rem;
+  }
+}
+
+/* 480px - stop background animation that causes scroll flicker on mobile */
+@media (max-width: 480px) {
+  #section-services {
+    animation: none;
   }
 }

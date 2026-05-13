@@ -133,8 +133,7 @@
   .site-header__tagline { font-size: 0.75rem; }
   .site-header__inner { gap: 6px; }
 
-  /* Hide email, headshot, HOME — keep trust + quote + phone */
-  .site-header__owner-photo { display: none; }
+  /* Hide email and HOME — keep headshot, trust, quote, phone */
   .site-header__actions a[href^="mailto"] { display: none; }
   #TitleHomePageContainer { display: none; }
 
