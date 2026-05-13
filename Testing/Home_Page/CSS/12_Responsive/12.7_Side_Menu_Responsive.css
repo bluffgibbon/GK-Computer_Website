@@ -7,21 +7,51 @@
     width: 300px;
   }
 }
-/* 480px - full-screen side menu; flyout becomes full-screen overlay */
+
+/* Mobile close button hidden on desktop — shown at 480px */
+.flyout__mobile-close {
+  display: none;
+}
+
+/* 480px - full-screen side menu; flyout is a full-screen overlay */
 @media (max-width: 480px) {
   #sideMenu {
     width: 100vw;
     padding-top: 60px;
   }
 
-  /* Override JS-set left/top so flyout covers full screen instead of flying right */
+  /* JS sets left/top/height to 0/0/100vh on mobile — CSS handles width */
   .side-menu__flyout {
-    left: 0 !important;
-    top: 0 !important;
-    width: 100vw !important;
-    min-width: 0 !important;
-    height: 100vh !important;
+    width: 100vw;
+    min-width: 0;
     border-left: none;
     border-top: 2px solid rgb(200, 0, 30);
+  }
+
+  /* Close button: sticky bar at top of flyout panel */
+  .flyout__mobile-close {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(8, 0, 0, 0.97);
+    border: none;
+    border-bottom: 2px solid rgba(200, 0, 30, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .flyout__mobile-close:active {
+    background: rgba(200, 0, 30, 0.2);
   }
 }

@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    SIDE MENU
    - initSideMenu(): hamburger toggle, close arrow, outside-click dismiss
    - initSideMenuFlyouts(): per-item flyout panels with alternating
@@ -26,6 +26,14 @@ function closeAllSideMenuFlyouts() {
 function positionSideMenuFlyout(flyout) {
     var sideMenu = document.getElementById("sideMenu");
     if (!sideMenu || !flyout) return;
+
+    // On mobile, flyout is a full-screen overlay — no repositioning needed
+    if (window.innerWidth <= 480) {
+        flyout.style.left = '0';
+        flyout.style.top = '0';
+        flyout.style.height = '100vh';
+        return;
+    }
 
     var rect = sideMenu.getBoundingClientRect();
     flyout.style.left = rect.right + "px";
@@ -168,6 +176,17 @@ function initSideMenuFlyouts() {
         flyout.classList.add("flyout--" + colorKey);
 
         document.body.appendChild(flyout);
+
+        // Mobile-only close button so users can dismiss flyout and return to menu list
+        var mobileCloseBtn = document.createElement('button');
+        mobileCloseBtn.className = 'flyout__mobile-close';
+        mobileCloseBtn.setAttribute('aria-label', 'Back to services list');
+        mobileCloseBtn.innerHTML = '✕  Back to Menu';
+        mobileCloseBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            closeFlyout();
+        });
+        flyout.insertBefore(mobileCloseBtn, flyout.firstChild);
 
         function openFlyout() {
             // Close all other open side menu flyouts
