@@ -1,9 +1,27 @@
-/* ============================================================
+﻿/* ============================================================
    SIDE MENU RESPONSIVE
 ============================================================ */
 
 @media (max-width: 900px) {
   #sideMenu {
     width: 300px;
+  }
+}
+/* 480px - full-screen side menu; flyout becomes full-screen overlay */
+@media (max-width: 480px) {
+  #sideMenu {
+    width: 100vw;
+    padding-top: 60px;
+  }
+
+  /* Override JS-set left/top so flyout covers full screen instead of flying right */
+  .side-menu__flyout {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    height: 100vh !important;
+    border-left: none;
+    border-top: 2px solid rgb(200, 0, 30);
   }
 }

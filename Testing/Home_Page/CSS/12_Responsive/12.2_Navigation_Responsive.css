@@ -81,9 +81,37 @@
   }
 }
 
-/* 480px - banner(32) + header(~168) = 200px */
+/* 480px - swipeable strip with no forced min-width */
 @media (max-width: 480px) {
   #main-navigation {
     top: 200px;
+    scrollbar-width: none;
+  }
+
+  #main-navigation::-webkit-scrollbar { display: none; }
+
+  .nav-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar { display: none; }
+
+  /* Remove forced minimum width so nav fits phone screen width */
+  .main-navigation__list {
+    min-width: 0;
+    gap: 0;
+    padding: 0 2px;
+  }
+
+  .main-navigation__link {
+    padding: 10px 5px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .main-navigation__dropdown-arrow {
+    padding: 0 2px 0 1px;
+    font-size: 0.7rem;
   }
 }
