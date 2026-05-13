@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    MAIN CONTENT RESPONSIVE
 ============================================================ */
 
@@ -34,5 +34,10 @@
   .title-line {
     width: 24px;
     height: 2px;
+  }
+
+  /* Why Choose Us: stack to single column on phones */
+  .why-choose-us__cards {
+    grid-template-columns: 1fr;
   }
 }

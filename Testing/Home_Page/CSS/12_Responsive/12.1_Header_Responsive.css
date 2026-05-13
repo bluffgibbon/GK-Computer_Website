@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    HEADER RESPONSIVE
 ============================================================ */
 
@@ -105,4 +105,54 @@
   .site-header__actions {
     gap: 4px;
   }
+}
+
+/* 480px - phone: single compact row header */
+@media (max-width: 480px) {
+
+  /* Banner: hide copyright so everything fits on one line */
+  .top-banner__copyright { display: none; }
+
+  /* Header sits below the 32px banner */
+  #header-logo-section {
+    top: 32px;
+    padding: 6px 12px;
+  }
+
+  /* Single horizontal row: hamburger | logo + name | phone */
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .site-header__logo { width: 36px; }
+
+  /* Hide tagline - name only to save space */
+  .site-header__tagline { display: none; }
+  .site-header__name { font-size: 1rem; }
+
+  /* Hide non-essential right-side elements */
+  .site-header__trust { display: none; }
+  .site-header__owner-photo { display: none; }
+  .site-header__actions a[href^="mailto"] { display: none; }
+  .header-cta--primary { display: none; }
+  #TitleHomePageContainer { display: none; }
+
+  /* Right side collapses to phone number only */
+  .site-header__right {
+    margin-left: auto;
+    align-items: flex-end;
+    gap: 0;
+  }
+  .site-header__actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: auto;
+  }
+
+  /* Body padding: banner(32) + header(~52) + nav(~44) */
+  body { padding-top: 135px !important; }
 }

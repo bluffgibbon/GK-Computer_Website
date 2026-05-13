@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    NAVIGATION RESPONSIVE
 ============================================================ */
 
@@ -78,5 +78,12 @@
 
   #main-navigation .main-navigation__item:first-child {
     margin-left: 0;
+  }
+}
+
+/* 480px - match compact single-row header: banner(32) + header(~52) = 84px */
+@media (max-width: 480px) {
+  #main-navigation {
+    top: 84px;
   }
 }
