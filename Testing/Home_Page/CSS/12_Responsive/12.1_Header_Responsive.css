@@ -107,37 +107,54 @@
   }
 }
 
-/* 480px - phone: stacked column, hide email/headshot/HOME, fix flicker */
+/* 480px - phone */
 @media (max-width: 480px) {
 
   /* Banner: hide copyright so it stays one line */
   .top-banner__copyright { display: none; }
 
-  /* Header sits below the 32px banner, stays stacked column */
+  /* Header below banner.
+     STOP the diagonalFlow animation - it is the main cause of scroll
+     flicker because the header is position:fixed and animated at the
+     same time, forcing GPU repaints on every animation frame. */
   #header-logo-section {
     top: 32px;
     padding: 6px 10px 8px;
-    /* Force own GPU layer to stop flicker from animated section backgrounds */
+    animation: none !important;
+    will-change: transform;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
 
-  /* Fix nav flicker too */
+  /* Stop status dot pulse - small but still a repaint trigger */
+  .site-header__status-dot { animation: none; }
+
+  /* Also stop nav from repainting */
   #main-navigation {
+    will-change: transform;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
 
+  /* Compact sizing */
   .site-header__logo { width: 36px; }
   .site-header__name { font-size: 1rem; }
   .site-header__tagline { font-size: 0.75rem; }
   .site-header__inner { gap: 6px; }
 
-  /* Hide email and HOME — keep headshot, trust, quote, phone */
+  /* Shrink headshot from 80px to 44px so it fits in the actions row */
+  .site-header__owner-photo {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Hide email, HOME button, trust badge, quote button */
   .site-header__actions a[href^="mailto"] { display: none; }
   #TitleHomePageContainer { display: none; }
+  .site-header__trust { display: none; }
+  .header-cta--primary { display: none; }
 
-  /* Actions: quote + phone side by side */
+  /* Actions row: headshot + phone side by side */
   .site-header__actions {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -145,6 +162,6 @@
     width: auto;
   }
 
-  /* Body padding: banner(32) + header(~130) + nav(~44) */
-  body { padding-top: 215px !important; }
+  /* Body padding: banner(32) + header(~168) + nav(~44) */
+  body { padding-top: 248px !important; }
 }

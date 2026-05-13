@@ -81,9 +81,9 @@
   }
 }
 
-/* 480px - stacked header is ~130px tall, sits at top:32px, so bottom = 162px */
+/* 480px - banner(32) + header(~168) = 200px */
 @media (max-width: 480px) {
   #main-navigation {
-    top: 164px;
+    top: 200px;
   }
 }
