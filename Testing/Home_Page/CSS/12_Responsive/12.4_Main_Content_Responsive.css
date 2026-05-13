@@ -41,9 +41,12 @@
     grid-template-columns: 1fr;
   }
 }
-/* 480px - stop Why Choose Us background animation that causes scroll flicker */
+/* 480px - kill ALL background animations that cause scroll flicker on mobile */
 @media (max-width: 480px) {
-  #section-why-choose-us {
-    animation: none;
+  #main-content,
+  #section-welcome,
+  #section-why-choose-us,
+  .why-choose_us_backgorund_Animited {
+    animation: none !important;
   }
 }

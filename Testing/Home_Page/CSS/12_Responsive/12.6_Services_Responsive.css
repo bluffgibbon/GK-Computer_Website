@@ -28,6 +28,6 @@
 /* 480px - stop background animation that causes scroll flicker on mobile */
 @media (max-width: 480px) {
   #section-services {
-    animation: none;
+    animation: none !important;
   }
 }

@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    WELCOME RESPONSIVE
 ============================================================ */
 
@@ -45,5 +45,11 @@
 
   .content-section--welcome .content-section__label01::before {
     width: 100vw;
+  }
+}
+/* 480px - stop welcome section background animations */
+@media (max-width: 480px) {
+  #section-welcome {
+    animation: none !important;
   }
 }

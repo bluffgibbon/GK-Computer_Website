@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    FOOTER RESPONSIVE
 ============================================================ */
 
@@ -33,5 +33,13 @@
     padding: 6px 16px;
     padding-right: 50px;
     font-size: 0.72rem;
+  }
+}
+/* 480px - stop footer background animations that cause scroll flicker */
+@media (max-width: 480px) {
+  #site-footer,
+  #Animatedbackground-footer,
+  #Animatedbackground-footer-top {
+    animation: none !important;
   }
 }
