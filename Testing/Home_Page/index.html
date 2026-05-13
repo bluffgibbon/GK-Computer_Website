@@ -138,6 +138,9 @@
     <link rel="stylesheet" href="CSS/12_Responsive/12.8_Footer_Responsive.css">
     <link rel="stylesheet" href="CSS/12_Responsive/12.9_Global_Accessibility.css">
 
+    <!-- Consent Overlay -->
+    <link rel="stylesheet" href="CSS/14_Consent/14.1_Consent_Overlay.css">
+
     <!-- Light Theme Overrides â€” loaded last so they win the cascade -->
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_01_Top_Banner.css">
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_02_Header.css">
@@ -154,6 +157,147 @@
 </head>
 
 <body>
+
+    <!-- ============================================================
+     CONSENT OVERLAY — shown on first visit, hidden via JS if already accepted
+    ============================================================ -->
+    <div id="consent-overlay">
+        <div id="consent-modal">
+
+            <!-- Brand -->
+            <div class="consent-brand">
+                <span class="consent-brand__name">GK Computer Business LLC</span>
+            </div>
+
+            <!-- Progress -->
+            <div class="consent-progress">
+                <div class="consent-progress__dot active"></div>
+                <div class="consent-progress__dot"></div>
+                <div class="consent-progress__dot"></div>
+                <span class="consent-progress__label" id="consent-step-label">Step 1 of 3</span>
+            </div>
+
+            <!-- STEP 1: Terms of Service -->
+            <div class="consent-step active" id="consent-step-tos">
+                <div class="consent-step__sublabel">Step 1 of 3</div>
+                <h2 class="consent-step__title">Terms &amp; Conditions</h2>
+                <div class="consent-body">
+                    <div class="consent-section">
+                        <p class="consent-section__title">Service Terms</p>
+                        <p class="consent-section__text">All services are performed by the owner of GK Computer Business LLC. Diagnostics, repairs, installations, and consultations are conducted to the best of our professional ability.</p>
+                        <ul class="consent-section__list">
+                            <li>Customers are responsible for providing accurate device information</li>
+                            <li>Estimates provided before work begins &mdash; changes communicated promptly</li>
+                            <li>We reserve the right to refuse service outside our scope</li>
+                        </ul>
+                    </div>
+                    <div class="consent-section">
+                        <p class="consent-section__title">Liability</p>
+                        <p class="consent-section__text">GK Computer Business LLC is not responsible for pre-existing damage, manufacturer defects, or data loss beyond our control.</p>
+                        <ul class="consent-section__list">
+                            <li>We recommend backing up data before any service</li>
+                            <li>Pre-existing hardware failures discovered during service are not our liability</li>
+                            <li>Issues from customer-provided parts or software are excluded</li>
+                        </ul>
+                    </div>
+                    <div class="consent-section">
+                        <p class="consent-section__title">Payments</p>
+                        <p class="consent-section__text">Payment is due at completion of service. All costs are communicated upfront &mdash; no hidden fees.</p>
+                        <ul class="consent-section__list">
+                            <li>Accepted: cash, credit/debit cards, digital payments</li>
+                            <li>A deposit may be required for larger projects</li>
+                        </ul>
+                    </div>
+                    <div class="consent-section">
+                        <p class="consent-section__title">Warranty</p>
+                        <ul class="consent-section__list">
+                            <li>7-day labor guarantee for the specific issue repaired</li>
+                            <li>Custom PC builds include a 30-day labor warranty</li>
+                            <li>Warranty void if tampered with by another party after service</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="consent-scroll-hint">Scroll to read all terms</p>
+                <div class="consent-actions">
+                    <button class="consent-btn consent-btn--decline" id="tos-decline">I Decline</button>
+                    <button class="consent-btn consent-btn--accept" id="tos-accept">I Agree</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Privacy Policy -->
+            <div class="consent-step" id="consent-step-privacy">
+                <div class="consent-step__sublabel">Step 2 of 3</div>
+                <h2 class="consent-step__title">Privacy Policy</h2>
+                <div class="consent-body">
+                    <div class="consent-section">
+                        <p class="consent-section__title">What We Collect</p>
+                        <p class="consent-section__text">We collect only what is necessary to provide our services.</p>
+                        <ul class="consent-section__list">
+                            <li>Name, email, phone number, and service details when you contact us</li>
+                            <li>IP address and general browser analytics</li>
+                            <li>We do not collect or store payment card information directly</li>
+                        </ul>
+                    </div>
+                    <div class="consent-section">
+                        <p class="consent-section__title">How We Use It</p>
+                        <ul class="consent-section__list">
+                            <li>To provide and improve our IT and repair services</li>
+                            <li>To communicate regarding appointments and support</li>
+                            <li>To maintain internal business and security records</li>
+                        </ul>
+                    </div>
+                    <div class="consent-section">
+                        <p class="consent-section__title">Data Protection</p>
+                        <ul class="consent-section__list">
+                            <li>Your data is never sold to third parties</li>
+                            <li>Files shared during service are used only for diagnostics and deleted after</li>
+                            <li>All customer information is kept confidential</li>
+                        </ul>
+                    </div>
+                    <div class="consent-section">
+                        <p class="consent-section__title">Your Rights</p>
+                        <ul class="consent-section__list">
+                            <li>Request a copy of any data we hold about you</li>
+                            <li>Request correction or deletion of your information</li>
+                            <li>Contact: support@gkcomputerbusiness.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="consent-scroll-hint">Scroll to read all policy</p>
+                <div class="consent-actions">
+                    <button class="consent-btn consent-btn--decline" id="privacy-decline">I Decline</button>
+                    <button class="consent-btn consent-btn--accept" id="privacy-accept">I Agree</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Theme Selection -->
+            <div class="consent-step" id="consent-step-theme">
+                <div class="consent-step__sublabel">Step 3 of 3</div>
+                <h2 class="consent-step__title">Choose Your Theme</h2>
+                <p class="consent-theme-desc">Select your preferred display mode. You can change it at any time using the toggle in the top banner.</p>
+                <div class="consent-theme-options">
+                    <button class="consent-theme-btn" id="theme-dark">
+                        <span class="consent-theme-icon">🌙</span>
+                        <span>Dark Mode</span>
+                    </button>
+                    <button class="consent-theme-btn" id="theme-light">
+                        <span class="consent-theme-icon">&#x2600;&#xFE0F;</span>
+                        <span>Light Mode</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- BLOCKED -->
+            <div class="consent-step" id="consent-step-blocked">
+                <div class="consent-blocked__icon">&#x1F6AB;</div>
+                <h2 class="consent-step__title">Access Restricted</h2>
+                <p class="consent-blocked__text">You must accept our Terms &amp; Conditions and Privacy Policy to access this site. These agreements protect both you and GK Computer Business LLC.</p>
+                <button class="consent-btn consent-btn--accept" id="consent-restart" style="max-width:260px;">&#x2190; Go Back &amp; Review</button>
+            </div>
+
+        </div>
+    </div>
+
     <!-- ============================================================
      SECTION: TOP BANNER
     ============================================================ -->
@@ -210,6 +354,7 @@
      Load order: hover flyout + calendar first (globals needed by
      JS_Init), then modules, then bootstrap last.
     ============================================================ -->
+    <script src="HTML/Java_Script/JS_Consent.js"></script>
     <script src="HTML/Java_Script/04_Flyout_Panel.js"></script>
     <script src="HTML/Java_Script/05_Flyout_Calendar.js"></script>
     <script src="HTML/Java_Script/JS_Loader.js"></script>
