@@ -181,6 +181,7 @@
             <div class="consent-step active" id="consent-step-tos">
                 <div class="consent-step__sublabel">Step 1 of 3</div>
                 <h2 class="consent-step__title">Terms &amp; Conditions</h2>
+                <p class="consent-notice">Note: This is not a binding contract &mdash; it outlines our general service terms. A formal service agreement will be provided at the time of service if needed.</p>
                 <div class="consent-body">
                     <div class="consent-section">
                         <p class="consent-section__title">Service Terms</p>
@@ -218,7 +219,14 @@
                     </div>
                 </div>
                 <p class="consent-scroll-hint">Scroll to read all terms</p>
-                <div class="consent-actions">
+                <div class="consent-warning" id="tos-warning">
+                    <strong>Heads up:</strong> By declining, a formal service agreement will be required and signed at the time of service, prior to any work being performed.
+                    <div class="consent-warning__actions">
+                        <button class="consent-btn consent-btn--secondary" id="tos-warning-back">&#x2190; Go Back</button>
+                        <button class="consent-btn consent-btn--accept" id="tos-warning-continue">Continue &#x2192;</button>
+                    </div>
+                </div>
+                <div class="consent-actions" id="tos-actions">
                     <button class="consent-btn consent-btn--decline" id="tos-decline">I Decline</button>
                     <button class="consent-btn consent-btn--accept" id="tos-accept">I Agree</button>
                 </div>
@@ -274,7 +282,7 @@
             <div class="consent-step" id="consent-step-theme">
                 <div class="consent-step__sublabel">Step 3 of 3</div>
                 <h2 class="consent-step__title">Choose Your Theme</h2>
-                <p class="consent-theme-desc">Select your preferred display mode. You can change it at any time using the toggle in the top banner.</p>
+                <p class="consent-theme-desc">Click a theme to preview it behind this panel, then click OK to confirm. You can change it any time in the top banner.</p>
                 <div class="consent-theme-options">
                     <button class="consent-theme-btn" id="theme-dark">
                         <span class="consent-theme-icon">🌙</span>
@@ -285,6 +293,7 @@
                         <span>Light Mode</span>
                     </button>
                 </div>
+                <button class="consent-btn consent-btn--accept" id="theme-ok" disabled>OK &mdash; Confirm Theme</button>
             </div>
 
             <!-- BLOCKED -->

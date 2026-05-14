@@ -52,6 +52,7 @@
 
         function completeConsent() {
             localStorage.setItem(STORAGE_KEY, '1');
+            overlay.classList.remove('consent-overlay--preview');
             overlay.classList.add('fadeout');
             setTimeout(function () {
                 overlay.classList.add('hidden');
@@ -72,15 +73,25 @@
 
         // ---------- button wiring ----------
 
-        // Step 1: Terms
+        // Step 1: Terms — decline shows warning and lets user continue anyway
         document.getElementById('tos-accept').addEventListener('click', function () {
             showStep('consent-step-privacy');
         });
         document.getElementById('tos-decline').addEventListener('click', function () {
-            showStep('consent-step-blocked');
+            document.getElementById('tos-warning').style.display = 'block';
+            document.getElementById('tos-actions').style.display = 'none';
+        });
+        document.getElementById('tos-warning-back').addEventListener('click', function () {
+            document.getElementById('tos-warning').style.display = 'none';
+            document.getElementById('tos-actions').style.display = 'flex';
+        });
+        document.getElementById('tos-warning-continue').addEventListener('click', function () {
+            document.getElementById('tos-warning').style.display = 'none';
+            document.getElementById('tos-actions').style.display = 'flex';
+            showStep('consent-step-privacy');
         });
 
-        // Step 2: Privacy
+        // Step 2: Privacy (leave as-is — decline still blocks)
         document.getElementById('privacy-accept').addEventListener('click', function () {
             showStep('consent-step-theme');
         });
@@ -88,13 +99,26 @@
             showStep('consent-step-blocked');
         });
 
-        // Step 3: Theme
+        // Step 3: Theme — clicking previews; OK button confirms
+        var selectedTheme = null;
+
+        function selectTheme(theme) {
+            selectedTheme = theme;
+            applyTheme(theme);
+            document.getElementById('theme-dark').classList.toggle('selected', theme === 'dark');
+            document.getElementById('theme-light').classList.toggle('selected', theme === 'light');
+            document.getElementById('theme-ok').disabled = false;
+            overlay.classList.add('consent-overlay--preview');
+        }
+
         document.getElementById('theme-dark').addEventListener('click', function () {
-            applyTheme('dark');
-            completeConsent();
+            selectTheme('dark');
         });
         document.getElementById('theme-light').addEventListener('click', function () {
-            applyTheme('light');
+            selectTheme('light');
+        });
+        document.getElementById('theme-ok').addEventListener('click', function () {
+            if (!selectedTheme) return;
             completeConsent();
         });
 

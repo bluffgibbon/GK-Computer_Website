@@ -49,4 +49,14 @@
   .why-choose_us_backgorund_Animited {
     animation: none !important;
   }
+
+  #main-content {
+    margin-top: 0 !important;
+    padding-top: 8px;
+    padding-bottom: 24px;
+  }
+
+  .page-container {
+    gap: 24px;
+  }
 }

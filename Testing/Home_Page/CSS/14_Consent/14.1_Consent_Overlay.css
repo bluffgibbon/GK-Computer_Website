@@ -184,3 +184,73 @@
   .consent-step { padding: 14px 18px 18px; }
   .consent-progress { padding: 12px 18px 0; }
 }
+/* Semi-transparent overlay during theme preview so user sees the theme behind */
+#consent-overlay.consent-overlay--preview {
+  background: rgba(2, 4, 10, 0.62);
+}
+
+/* "Not a contract" notice on TOS step */
+.consent-notice {
+  font-size: 0.77rem;
+  color: rgba(0, 212, 255, 0.8);
+  background: rgba(0, 212, 255, 0.07);
+  border-left: 3px solid rgba(0, 212, 255, 0.4);
+  border-radius: 0 4px 4px 0;
+  padding: 8px 12px;
+  margin: 0 0 12px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* Warning shown when user declines TOS */
+.consent-warning {
+  display: none;
+  background: rgba(200, 140, 0, 0.1);
+  border: 1px solid rgba(200, 140, 0, 0.4);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  font-size: 0.82rem;
+  color: rgba(255, 200, 80, 0.92);
+  line-height: 1.55;
+  flex-shrink: 0;
+}
+.consent-warning strong {
+  color: rgb(255, 205, 70);
+}
+.consent-warning__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* Secondary (ghost) button used in warning actions */
+.consent-btn--secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.6);
+}
+.consent-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Selected state on theme preview buttons */
+.consent-theme-btn.selected {
+  border-color: rgba(200, 0, 30, 0.9);
+  background: rgba(200, 0, 30, 0.18);
+  box-shadow: 0 0 28px rgba(200, 0, 30, 0.35);
+}
+
+/* OK confirm button on theme step */
+#theme-ok {
+  margin-top: 14px;
+  width: 100%;
+  flex-shrink: 0;
+}
+#theme-ok:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
