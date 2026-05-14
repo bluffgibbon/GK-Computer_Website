@@ -15,11 +15,23 @@ function initNavigation() {
         var nav = document.getElementById("main-navigation");
         if (!header || !nav) return;
 
+        var navTop = header.offsetHeight + 31;
         nav.style.position = "fixed";
-        nav.style.top = (header.offsetHeight + 31) + "px";
+        nav.style.top = navTop + "px";
         nav.style.left = "0";
         nav.style.width = "100%";
         nav.style.zIndex = "9999";
+
+        // On mobile the nav becomes a 2-row grid — measure actual height after
+        // layout and set body padding so content starts just below the nav bar.
+        if (window.innerWidth <= 480) {
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    var pad = navTop + nav.offsetHeight + 12;
+                    document.body.style.setProperty('padding-top', pad + 'px', 'important');
+                });
+            });
+        }
     }
 
     positionNav();

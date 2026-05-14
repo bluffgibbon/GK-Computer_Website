@@ -112,12 +112,30 @@ function initSideMenu() {
     var btn = document.getElementById("hamburger-menu_left");
     if (!menu || !btn) return;
 
+    // On mobile, the side menu covers the full viewport (z-index max).
+    // Lift the hamburger button above it so the user can click it to close.
+    function liftHamburger() {
+        if (window.innerWidth > 480) return;
+        btn.style.position = 'fixed';
+        btn.style.top = '36px';
+        btn.style.left = '10px';
+        btn.style.zIndex = '2147483648';
+    }
+
+    function resetHamburger() {
+        btn.style.position = '';
+        btn.style.top = '';
+        btn.style.left = '';
+        btn.style.zIndex = '';
+    }
+
     function closeSideMenu() {
         menu.classList.remove("active");
         btn.classList.remove("active");
         var bd = getSideMenuBackdrop();
         if (bd) bd.classList.remove("is-active");
         closeAllSideMenuFlyouts();
+        resetHamburger();
     }
 
     btn.addEventListener("click", function (e) {
@@ -127,8 +145,13 @@ function initSideMenu() {
         btn.classList.toggle("active");
         var bd = getSideMenuBackdrop();
         if (bd) {
-            if (isOpening) bd.classList.add("is-active");
-            else bd.classList.remove("is-active");
+            if (isOpening) {
+                bd.classList.add("is-active");
+                liftHamburger();
+            } else {
+                bd.classList.remove("is-active");
+                resetHamburger();
+            }
         }
     });
 
@@ -153,6 +176,13 @@ function initSideMenu() {
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
             closeSideMenu();
+        }
+    });
+
+    // Reset hamburger position if viewport grows past mobile breakpoint while menu is open
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 480) {
+            resetHamburger();
         }
     });
 }
@@ -192,7 +222,7 @@ function initSideMenuFlyouts() {
         var mobileCloseBtn = document.createElement('button');
         mobileCloseBtn.className = 'flyout__mobile-close';
         mobileCloseBtn.setAttribute('aria-label', 'Back to services list');
-        mobileCloseBtn.innerHTML = '✕  Back to Menu';
+        mobileCloseBtn.innerHTML = '✕  Back to Menu';
         mobileCloseBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             closeFlyout();
