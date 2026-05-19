@@ -51,8 +51,14 @@
 @media (max-width: 480px) {
   #section-welcome {
     animation: none !important;
-    padding: 14px 4% 14px;
+    padding: 52px 4% 14px;
     gap: 14px;
+  }
+
+  /* Push label up so it doesn't crowd the heading */
+  .content-section--welcome .content-section__label01 {
+    top: 8px;
+    left: 12px;
   }
 
   .welcome__heading {

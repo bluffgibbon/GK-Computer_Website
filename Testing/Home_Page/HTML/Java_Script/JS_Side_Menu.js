@@ -155,10 +155,17 @@ function initSideMenu() {
         }
     });
 
-    // Only the ◄ arrow span closes the side menu
+    // The close arrow span AND the full h1 pill both close the side menu
     var closeArrow = menu.querySelector("#sideMenuCloseArrow");
     if (closeArrow) {
         closeArrow.addEventListener("click", function (e) {
+            e.stopPropagation();
+            closeSideMenu();
+        });
+    }
+    var menuTitle = menu.querySelector(".side-menu__header-title");
+    if (menuTitle) {
+        menuTitle.addEventListener("click", function (e) {
             e.stopPropagation();
             closeSideMenu();
         });

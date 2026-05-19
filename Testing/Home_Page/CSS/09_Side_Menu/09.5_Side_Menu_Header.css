@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    HEADER ITEM
 ============================================================ */
 /* This section defines the styles for the header item in the side menu of the home page. 
@@ -74,4 +74,33 @@
 /* RESET ARROW */
 #sideMenu li:first-child::before {
   display: none;
+}
+
+/* ============================================================
+   CLOSE ARROW — styled as a visible button inside the pill
+============================================================ */
+.side-menu__close-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 12px;
+  padding: 4px 12px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.side-menu__close-arrow:hover {
+  background: rgba(200, 0, 30, 0.35);
+  border-color: rgba(255, 80, 80, 0.6);
+  box-shadow: 0 0 10px rgba(200, 0, 30, 0.4);
+  color: #fff;
 }

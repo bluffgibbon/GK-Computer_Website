@@ -15,7 +15,7 @@ function initNavigation() {
         var nav = document.getElementById("main-navigation");
         if (!header || !nav) return;
 
-        var navTop = header.offsetHeight + 31;
+        var navTop = header.offsetHeight + 31 + (window.innerWidth <= 480 ? 8 : 0);
         nav.style.position = "fixed";
         nav.style.top = navTop + "px";
         nav.style.left = "0";

@@ -42,4 +42,20 @@
   #Animatedbackground-footer-top {
     animation: none !important;
   }
+
+  /* Give the "Support" label more breathing room from the column title */
+  .footer-top-section {
+    padding-top: 76px;
+  }
+
+  #content-section_label04 {
+    top: 14px;
+    left: 14px;
+    font-size: 0.68rem;
+    padding: 5px 14px;
+  }
+
+  #Footer_Header {
+    margin-top: 8px;
+  }
 }
