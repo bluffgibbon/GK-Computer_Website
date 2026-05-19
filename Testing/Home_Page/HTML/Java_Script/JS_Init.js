@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadComponent("Components-04_Section_Why_Choose_Us",
         "HTML/Components/04_Section_Why_Choose_Us.html",
-        initWhyChooseUsCards);
+        function () { initWhyChooseUsCards(); initGenericModal(); });
 
     loadComponent("Components-05_Section_Services",
         "HTML/Components/05_Section_Services.html");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ], function () {
                 initSideMenu();
                 initSideMenuFlyouts();
-                initServiceCardLinks();
+                // service card clicks now handled by initGenericModal()
             });
         });
 

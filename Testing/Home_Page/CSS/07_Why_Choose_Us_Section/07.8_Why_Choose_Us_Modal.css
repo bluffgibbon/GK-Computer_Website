@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    MODAL (.card-modal and children)
    (Pop-out modal for expanded card content, overlays section)
 ============================================================ */
@@ -172,4 +172,73 @@
   font-size: 1.05rem;
   font-weight: 600;
   color: #d4deea;
+}
+
+/* ============================================================
+   GENERIC MODAL — cursor hints for clickable images
+============================================================ */
+.site-header__owner-photo,
+.footer__bottom-images img {
+  cursor: pointer;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.site-header__owner-photo:hover,
+.footer__bottom-images img:hover {
+  opacity: 0.82;
+  transform: scale(1.04);
+}
+
+/* ============================================================
+   SERVICE CARD CLONE in modal
+============================================================ */
+.modal-service-card-clone {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(200, 0, 30, 0.5);
+  background: linear-gradient(135deg, rgba(200, 0, 30, 0.09) 0%, #080808 100%);
+  box-shadow: 0 10px 30px rgba(200, 0, 30, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+  gap: 12px;
+}
+.modal-service-card-clone .service-card__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(200, 0, 30, 0.9);
+  border: 1px solid rgba(200, 0, 30, 0.4);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+.modal-service-card-clone .service-card__icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-service-card-clone .service-card__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: rgba(200, 0, 30, 0.9);
+  stroke-width: 1.5;
+  fill: none;
+}
+.modal-service-card-clone .service-card__title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+.modal-service-card-clone .service-card__text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
 }

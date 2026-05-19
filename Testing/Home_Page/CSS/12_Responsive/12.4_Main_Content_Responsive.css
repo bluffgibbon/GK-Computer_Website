@@ -73,4 +73,13 @@
   #section-services {
     margin-bottom: 20px;
   }
+
+  /* Match label01 sizing/position for label02 and label03 at phone */
+  .content-section--why-choose-us .content-section__label02,
+  .content-section--services .content-section__label03 {
+    top: 8px;
+    left: 12px;
+    font-size: 0.65rem;
+    padding: 4px 14px;
+  }
 }

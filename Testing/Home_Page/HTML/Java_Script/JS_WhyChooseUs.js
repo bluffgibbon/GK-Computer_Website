@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    WHY CHOOSE US — CARD MODAL
    Click a card to open an expanded modal overlay.
    Click an image to open it in a pop-out view.
@@ -116,6 +116,90 @@ function initWhyChooseUsCards() {
     document.addEventListener('keydown', function (e) {
         if (modal && modal.style.display !== 'none' && (e.key === 'Escape' || e.key === 'Esc')) {
             closeModal();
+        }
+    });
+}
+
+
+/* ============================================================
+   GENERIC IMAGE / CARD MODAL
+   Reuses the why-choose-us modal to pop out:
+   - Owner headshot in header
+   - Certification/partner logos in footer bottom bar
+   - Service cards in section 05
+============================================================ */
+function initGenericModal() {
+    var modal = document.getElementById('why-choose-us-card-modal');
+    if (!modal) return;
+
+    if (modal.parentElement !== document.body) {
+        document.body.appendChild(modal);
+    }
+
+    var modalBody = modal.querySelector('.card-modal__body');
+
+    function openImageModal(img) {
+        if (!modal || !modalBody) return;
+        var clone = img.cloneNode(true);
+        clone.className = 'modal-image-popout';
+        clone.removeAttribute('style');
+        modalBody.innerHTML = '';
+        modalBody.appendChild(clone);
+        if (img.alt) {
+            var caption = document.createElement('div');
+            caption.textContent = img.alt;
+            caption.className = 'modal-image-caption';
+            modalBody.appendChild(caption);
+        }
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function openServiceCardModal(card) {
+        if (!modal || !modalBody) return;
+        var clone = card.cloneNode(true);
+        clone.removeAttribute('style');
+        clone.removeAttribute('role');
+        clone.removeAttribute('tabindex');
+        clone.removeAttribute('aria-label');
+        clone.className = 'modal-service-card-clone';
+        // Remove the dot span from the text to avoid double-dot in modal
+        var dot = clone.querySelector('.service-card__text-dot');
+        if (dot) dot.remove();
+        modalBody.innerHTML = '';
+        modalBody.appendChild(clone);
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () {
+            var content = modal.querySelector('.card-modal__content');
+            if (content) content.focus();
+        }, 10);
+    }
+
+    // Event delegation — works regardless of when elements are added to DOM
+    document.addEventListener('click', function (e) {
+        // Skip if modal is already open (avoid double-open from multiple handlers)
+        if (modal.style.display === 'flex') return;
+
+        // Owner headshot
+        if (e.target.matches('.site-header__owner-photo')) {
+            openImageModal(e.target);
+            return;
+        }
+
+        // Footer certification/partner logos
+        var footerImg = e.target.closest('.footer__bottom-images img');
+        if (footerImg) {
+            openImageModal(footerImg);
+            return;
+        }
+
+        // Service cards
+        var card = e.target.closest('.service-card[data-service-key]');
+        if (card) {
+            e.preventDefault();
+            e.stopPropagation();
+            openServiceCardModal(card);
         }
     });
 }

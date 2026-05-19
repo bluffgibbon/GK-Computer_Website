@@ -78,6 +78,7 @@
   .welcome__description {
     font-size: 0.84rem;
     line-height: 1.55;
+    padding: 0 10px;
   }
 
   .welcome__cta-button {
