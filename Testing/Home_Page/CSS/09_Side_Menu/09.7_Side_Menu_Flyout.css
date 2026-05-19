@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    SIDE MENU — FLYOUT ITEM TRIGGER
    Styles for the <li> items that have flyout panels,
    the clickable label, and the directional arrow.
@@ -53,14 +53,48 @@
 .side-menu__flyout-arrow {
   display: inline-flex;
   align-items: center;
-  padding-left: 10px;
-  font-size: 1.49rem;
-  color: rgba(255, 255, 255, 0.8);
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.85);
   pointer-events: none;
-  transition: color 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+/* Red items */
+.side-menu__item--has-flyout.item--red .side-menu__flyout-arrow {
+  background: rgba(200, 0, 30, 0.15);
+  border-color: rgba(200, 0, 30, 0.35);
+  color: rgba(255, 120, 120, 0.9);
+}
+
+/* Teal items */
+.side-menu__item--has-flyout.item--teal .side-menu__flyout-arrow {
+  background: rgba(0, 110, 141, 0.15);
+  border-color: rgba(0, 180, 220, 0.35);
+  color: rgba(0, 210, 255, 0.9);
+}
+
+/* Hover — whole row glow + arrow pops */
 .side-menu__item--has-flyout:hover .side-menu__flyout-arrow {
-  color: rgba(255, 255, 255, 1);
-  transform: translateX(3px);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+.side-menu__item--has-flyout.item--red:hover .side-menu__flyout-arrow {
+  background: rgba(200, 0, 30, 0.35);
+  border-color: rgba(255, 80, 80, 0.7);
+  box-shadow: 0 0 10px rgba(200, 0, 30, 0.5);
+  color: #fff;
+}
+.side-menu__item--has-flyout.item--teal:hover .side-menu__flyout-arrow {
+  background: rgba(0, 110, 141, 0.35);
+  border-color: rgba(0, 200, 240, 0.7);
+  box-shadow: 0 0 10px rgba(0, 180, 220, 0.5);
+  color: #fff;
 }

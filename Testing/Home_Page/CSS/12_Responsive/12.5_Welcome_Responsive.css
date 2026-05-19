@@ -58,6 +58,11 @@
   .welcome__heading {
     font-size: 1.2rem;
     line-height: 1.3;
+    white-space: normal;
+  }
+
+  .welcome__heading-row {
+    margin-top: 12px;
   }
 
   .welcome__image {

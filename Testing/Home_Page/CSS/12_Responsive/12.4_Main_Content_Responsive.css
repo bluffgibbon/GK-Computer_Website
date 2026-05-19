@@ -57,6 +57,20 @@
   }
 
   .page-container {
+    top: 0;
     gap: 24px;
+    padding: 0 12px;
+  }
+
+  /* Why Choose Us title: allow wrap and match welcome size at phone */
+  .why-choose-us__title,
+  .why-choose-us__heading {
+    white-space: normal;
+    font-size: 1.2rem;
+  }
+
+  /* Reduce large bottom margin on services section */
+  #section-services {
+    margin-bottom: 20px;
   }
 }
