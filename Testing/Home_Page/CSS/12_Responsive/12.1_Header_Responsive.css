@@ -170,14 +170,43 @@
   /* Body padding: fallback — JS positionNav() sets the accurate value after layout */
   body { padding-top: 270px !important; }
 }
-/* Smooth slide transitions for auto-hide on scroll (mobile only) */
+/* Collapse toggle button — hidden on desktop, shown on phone */
+#nav-collapse-btn {
+  display: none;
+}
+
 @media (max-width: 480px) {
+  /* Smooth slide for collapse toggle */
   #top-banner,
   #header-logo-section,
   #main-navigation {
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  body {
-    transition: padding-top 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Collapse button: full-width pull-tab below the nav grid */
+  #nav-collapse-btn {
+    display: flex;
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 24px;
+    z-index: 9998;
+    align-items: center;
+    justify-content: center;
+    background: rgba(3, 6, 16, 0.96);
+    border: none;
+    border-top: 1px solid rgba(0, 212, 255, 0.25);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+    color: rgba(0, 212, 255, 0.65);
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: top 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.15s ease;
+  }
+
+  #nav-collapse-btn:active {
+    background: rgba(0, 212, 255, 0.08);
   }
 }

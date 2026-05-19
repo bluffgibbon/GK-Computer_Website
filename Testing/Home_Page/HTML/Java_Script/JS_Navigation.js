@@ -15,19 +15,23 @@ function initNavigation() {
         var nav = document.getElementById("main-navigation");
         if (!header || !nav) return;
 
-        var navTop = header.offsetHeight + 31 + (window.innerWidth <= 480 ? 8 : 0);
+        var navTop = Math.round(header.getBoundingClientRect().bottom);
         nav.style.position = "fixed";
         nav.style.top = navTop + "px";
         nav.style.left = "0";
         nav.style.width = "100%";
         nav.style.zIndex = "9999";
 
-        // On mobile the nav becomes a 2-row grid — measure actual height after
-        // layout and set body padding so content starts just below the nav bar.
+        // On mobile: position the collapse button below the nav, then set body padding.
         if (window.innerWidth <= 480) {
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
-                    var pad = navTop + nav.offsetHeight + 12;
+                    var navBottom = navTop + nav.offsetHeight;
+                    var collapseBtn = document.getElementById('nav-collapse-btn');
+                    if (collapseBtn && collapseBtn.dataset.collapsed !== 'true') {
+                        collapseBtn.style.top = navBottom + 'px';
+                    }
+                    var pad = navBottom + 30;
                     document.body.style.setProperty('padding-top', pad + 'px', 'important');
                 });
             });
@@ -377,63 +381,50 @@ function initNavigation() {
         }, { passive: false });
     }
 
-    /* ---------- AUTO-HIDE HEADER/NAV ON SCROLL (mobile only) ---------- */
-    (function () {
-        var banner     = document.getElementById('top-banner');
-        var hdr        = document.getElementById('header-logo-section');
-        var scrollNav  = document.getElementById('main-navigation');
-        if (!hdr || !scrollNav) return;
+    /* ---------- COLLAPSE TOGGLE (mobile only) ---------- */
+    (function initCollapseToggle() {
+        if (window.innerWidth > 480) return;
 
-        var lastY    = 0;
-        var ticking  = false;
-        var isHidden = false;
-        var THRESHOLD = 60; // px scrolled before hiding
+        var banner    = document.getElementById('top-banner');
+        var hdr       = document.getElementById('header-logo-section');
+        var navEl     = document.getElementById('main-navigation');
+        if (!hdr || !navEl) return;
 
-        function menuIsOpen() {
-            return !!activeDropdown ||
-                   !!document.querySelector('.main-navigation__flyout.is-open') ||
-                   !!(document.getElementById('sideMenu') && document.getElementById('sideMenu').classList.contains('open'));
-        }
+        var btn = document.createElement('button');
+        btn.id = 'nav-collapse-btn';
+        btn.setAttribute('aria-label', 'Toggle navigation visibility');
+        btn.innerHTML = '&#9652;';
+        document.body.appendChild(btn);
 
-        function hideStack() {
-            if (isHidden || menuIsOpen()) return;
-            var stackH = scrollNav.getBoundingClientRect().bottom;
-            var t = 'translateY(-' + (stackH + 4) + 'px)';
+        var isCollapsed = false;
+
+        function collapse() {
+            var stackH = navEl.getBoundingClientRect().bottom;
+            var t = 'translateY(-' + (stackH + 24) + 'px)';
             if (banner) banner.style.transform = t;
-            hdr.style.transform         = t;
-            scrollNav.style.transform   = t;
-            document.body.style.setProperty('padding-top', '0px', 'important');
-            isHidden = true;
+            hdr.style.transform   = t;
+            navEl.style.transform = t;
+            btn.style.top = '0px';
+            btn.innerHTML = '&#9662;';
+            btn.dataset.collapsed = 'true';
+            document.body.style.setProperty('padding-top', '28px', 'important');
+            isCollapsed = true;
         }
 
-        function showStack() {
-            if (!isHidden) return;
+        function expand() {
             if (banner) banner.style.transform = '';
-            hdr.style.transform        = '';
-            scrollNav.style.transform  = '';
+            hdr.style.transform   = '';
+            navEl.style.transform = '';
+            btn.innerHTML = '&#9652;';
+            btn.dataset.collapsed = 'false';
+            isCollapsed = false;
             positionNav();
-            isHidden = false;
         }
 
-        window.addEventListener('scroll', function () {
-            if (window.innerWidth > 480) { if (isHidden) showStack(); return; }
-            var y = window.pageYOffset;
-            if (!ticking) {
-                requestAnimationFrame(function () {
-                    if (y > lastY && y > THRESHOLD) {
-                        hideStack();
-                    } else if (y < lastY) {
-                        showStack();
-                    }
-                    lastY   = Math.max(0, y);
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
-
-        window.addEventListener('resize', function () {
-            if (isHidden) showStack();
+        btn.addEventListener('click', function () {
+            if (isCollapsed) { expand(); } else { collapse(); }
         });
+
+        positionNav();
     })();
 }
