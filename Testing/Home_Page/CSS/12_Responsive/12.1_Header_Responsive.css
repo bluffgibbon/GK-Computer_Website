@@ -170,3 +170,14 @@
   /* Body padding: fallback — JS positionNav() sets the accurate value after layout */
   body { padding-top: 270px !important; }
 }
+/* Smooth slide transitions for auto-hide on scroll (mobile only) */
+@media (max-width: 480px) {
+  #top-banner,
+  #header-logo-section,
+  #main-navigation {
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body {
+    transition: padding-top 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

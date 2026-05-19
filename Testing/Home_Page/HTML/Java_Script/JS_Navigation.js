@@ -376,4 +376,64 @@ function initNavigation() {
             e.preventDefault();
         }, { passive: false });
     }
+
+    /* ---------- AUTO-HIDE HEADER/NAV ON SCROLL (mobile only) ---------- */
+    (function () {
+        var banner     = document.getElementById('top-banner');
+        var hdr        = document.getElementById('header-logo-section');
+        var scrollNav  = document.getElementById('main-navigation');
+        if (!hdr || !scrollNav) return;
+
+        var lastY    = 0;
+        var ticking  = false;
+        var isHidden = false;
+        var THRESHOLD = 60; // px scrolled before hiding
+
+        function menuIsOpen() {
+            return !!activeDropdown ||
+                   !!document.querySelector('.main-navigation__flyout.is-open') ||
+                   !!(document.getElementById('sideMenu') && document.getElementById('sideMenu').classList.contains('open'));
+        }
+
+        function hideStack() {
+            if (isHidden || menuIsOpen()) return;
+            var stackH = scrollNav.getBoundingClientRect().bottom;
+            var t = 'translateY(-' + (stackH + 4) + 'px)';
+            if (banner) banner.style.transform = t;
+            hdr.style.transform         = t;
+            scrollNav.style.transform   = t;
+            document.body.style.setProperty('padding-top', '0px', 'important');
+            isHidden = true;
+        }
+
+        function showStack() {
+            if (!isHidden) return;
+            if (banner) banner.style.transform = '';
+            hdr.style.transform        = '';
+            scrollNav.style.transform  = '';
+            positionNav();
+            isHidden = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (window.innerWidth > 480) { if (isHidden) showStack(); return; }
+            var y = window.pageYOffset;
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    if (y > lastY && y > THRESHOLD) {
+                        hideStack();
+                    } else if (y < lastY) {
+                        showStack();
+                    }
+                    lastY   = Math.max(0, y);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', function () {
+            if (isHidden) showStack();
+        });
+    })();
 }
