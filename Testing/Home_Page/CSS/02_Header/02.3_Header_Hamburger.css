@@ -167,3 +167,28 @@
   text-shadow: 0 0 10px rgba(200, 0, 30, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
   transform: translateX(-3px);
 }
+
+/* ============================================================
+   MOBILE HAMBURGER (@media max-width: 768px)
+   (Compact hamburger button for small screens)
+============================================================ */
+@media (max-width: 768px) {
+  #hamburger-menu_left {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    gap: 5px;
+  }
+
+  .arrow_inward_left {
+    font-size: 0.72rem;
+  }
+
+  .hamburger-menu__line_left {
+    width: 18px;
+    height: 2px;
+  }
+
+  .hamburger-lines {
+    gap: 4px;
+  }
+}

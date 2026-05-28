@@ -44,3 +44,22 @@
   align-items: flex-end;
   gap: 12px;
 }
+
+/* ============================================================
+   MOBILE LAYOUT (@media max-width: 768px)
+   (Compact header for small screens)
+============================================================ */
+@media (max-width: 768px) {
+  #header-logo-section {
+    min-height: 0;
+    padding: 8px 10px 8px;
+  }
+
+  .site-header__inner {
+    gap: 8px;
+  }
+
+  .site-header__right {
+    gap: 6px;
+  }
+}

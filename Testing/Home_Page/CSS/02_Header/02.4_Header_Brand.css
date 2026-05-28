@@ -93,3 +93,31 @@
   font-weight: 700;
   filter: brightness(1.15) drop-shadow(0 0 4px rgba(0, 0, 0, 0.08));
 }
+
+/* ============================================================
+   MOBILE BRAND (@media max-width: 768px)
+   (Compact logo and brand text for small screens)
+============================================================ */
+@media (max-width: 768px) {
+  .site-header__brand-link {
+    gap: 8px;
+  }
+
+  .site-header__logo {
+    width: 44px;
+  }
+
+  .site-header__brand-text {
+    gap: 3px;
+  }
+
+  .site-header__name {
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+
+  .site-header__tagline {
+    font-size: 0.72rem;
+    white-space: normal;
+  }
+}

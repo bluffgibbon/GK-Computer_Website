@@ -78,3 +78,28 @@
     0 0 30px rgba(255, 255, 255, 0.25);
   transform: scale(1.08);
 }
+
+/* ============================================================
+   MOBILE TRUST & PHOTO (@media max-width: 768px)
+   (Compact trust badge and smaller owner photo)
+============================================================ */
+@media (max-width: 768px) {
+  .site-header__trust {
+    padding: 4px 8px;
+    gap: 6px;
+  }
+
+  .site-header__status-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .site-header__trust-text {
+    font-size: 0.68rem;
+  }
+
+  .site-header__owner-photo {
+    width: 46px;
+    height: 46px;
+  }
+}

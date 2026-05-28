@@ -112,3 +112,23 @@
     0 0 50px rgba(0, 212, 255, 0.2),
     0 16px 40px rgba(0, 0, 0, 0.55);
 }
+
+/* ============================================================
+   MOBILE CTA BUTTONS (@media max-width: 768px)
+   (Compact call-to-action buttons for small screens)
+============================================================ */
+@media (max-width: 768px) {
+  .site-header__actions {
+    gap: 5px;
+  }
+
+  .header-cta {
+    padding: 5px 9px;
+    font-size: 0.72rem;
+    border-width: 1px;
+  }
+
+  .header-cta--primary {
+    display: none;
+  }
+}
