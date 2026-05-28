@@ -157,15 +157,29 @@ function initGenericModal() {
 
     function openServiceCardModal(card) {
         if (!modal || !modalBody) return;
+        var serviceKey = card.getAttribute('data-service-key');
         var clone = card.cloneNode(true);
         clone.removeAttribute('style');
         clone.removeAttribute('role');
         clone.removeAttribute('tabindex');
         clone.removeAttribute('aria-label');
         clone.className = 'modal-service-card-clone';
-        // Remove the dot span from the text to avoid double-dot in modal
         var dot = clone.querySelector('.service-card__text-dot');
         if (dot) dot.remove();
+        // "Click here for more info" link — opens the matching side menu flyout
+        if (serviceKey) {
+            var moreBtn = document.createElement('button');
+            moreBtn.className = 'modal-service-card__more-info';
+            moreBtn.textContent = 'Click here for more info';
+            moreBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                closeModal();
+                if (typeof window.openSideMenuFlyoutByKey === 'function') {
+                    window.openSideMenuFlyoutByKey(serviceKey);
+                }
+            });
+            clone.appendChild(moreBtn);
+        }
         modalBody.innerHTML = '';
         modalBody.appendChild(clone);
         modal.style.display = 'flex';

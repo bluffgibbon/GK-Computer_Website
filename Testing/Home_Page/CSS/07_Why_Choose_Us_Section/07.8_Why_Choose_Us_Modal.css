@@ -203,7 +203,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  pointer-events: none;
+  pointer-events: auto;
   gap: 12px;
 }
 .modal-service-card-clone .service-card__tag {
@@ -217,6 +217,7 @@
   padding: 3px 12px;
 }
 .modal-service-card-clone .service-card__icon {
+  position: relative;
   width: 72px;
   height: 72px;
   display: flex;
@@ -241,4 +242,23 @@
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.68);
   margin: 0;
+}
+.modal-service-card__more-info {
+  margin-top: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  background: rgba(0, 212, 255, 0.08);
+  color: rgba(0, 212, 255, 0.9);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+.modal-service-card__more-info:hover {
+  background: rgba(0, 212, 255, 0.18);
+  border-color: rgba(0, 212, 255, 1);
+  color: #fff;
 }
