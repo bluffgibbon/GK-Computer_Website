@@ -18,18 +18,6 @@ function initScrollButtons() {
         bottomBtn.addEventListener("click", function () {
             window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
         });
-
-        // Position the bottom button flush under the nav bar
-        function positionBottomBtn() {
-            var nav = document.getElementById("main-navigation");
-            if (nav) {
-                var navBottom = nav.getBoundingClientRect().bottom;
-                bottomBtn.style.top = (navBottom - 1) + "px";
-            }
-        }
-        positionBottomBtn();
-        window.addEventListener("resize", positionBottomBtn);
-        window.addEventListener("scroll", positionBottomBtn);
     }
 }
 

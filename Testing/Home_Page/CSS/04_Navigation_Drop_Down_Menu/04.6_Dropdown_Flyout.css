@@ -365,14 +365,6 @@
   pointer-events: auto;
 }
 
-/* Hide scroll buttons when flyout is open */
-.flyout-backdrop.is-active ~ .scroll-button,
-body.flyout-open .scroll-button {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: opacity 300ms ease, visibility 300ms ease;
-}
 
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
