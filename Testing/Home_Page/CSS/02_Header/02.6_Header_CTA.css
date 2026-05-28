@@ -120,12 +120,18 @@
 @media (max-width: 768px) {
   .site-header__actions {
     gap: 5px;
+    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: flex-end;
   }
 
   .header-cta {
-    padding: 5px 9px;
-    font-size: 0.72rem;
+    padding: 4px 7px;
+    font-size: 0.62rem;
     border-width: 1px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .header-cta--primary {

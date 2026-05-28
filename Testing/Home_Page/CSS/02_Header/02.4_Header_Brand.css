@@ -112,12 +112,12 @@
   }
 
   .site-header__name {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     white-space: normal;
   }
 
   .site-header__tagline {
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     white-space: normal;
   }
 }

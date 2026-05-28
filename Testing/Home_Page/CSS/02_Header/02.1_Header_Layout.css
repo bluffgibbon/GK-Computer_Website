@@ -52,15 +52,20 @@
 @media (max-width: 768px) {
   #header-logo-section {
     min-height: 0;
-    padding: 8px 10px 8px;
+    padding: 6px 10px 6px;
   }
 
   .site-header__inner {
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
     padding-right: 56px;
   }
 
   .site-header__right {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     gap: 6px;
   }
 }
