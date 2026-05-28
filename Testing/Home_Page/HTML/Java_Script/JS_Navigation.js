@@ -418,7 +418,8 @@ function initNavigation() {
             btn.innerHTML = '&#9652;';
             btn.dataset.collapsed = 'false';
             isCollapsed = false;
-            positionNav();
+            // Wait for the 0.28s CSS transition to finish before remeasuring positions
+            setTimeout(positionNav, 320);
         }
 
         btn.addEventListener('click', function () {

@@ -128,6 +128,29 @@
   background: rgb(200, 0, 30);
 }
 
+/* ---------- MOBILE: stack image below text ---------- */
+@media (max-width: 480px) {
+  .flyout__content {
+    padding: 20px 18px 28px;
+  }
+
+  .flyout__content:has(.flyout__image-col) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .flyout__image-col {
+    width: 120px;
+    padding-top: 0;
+  }
+
+  .flyout__text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
 /* ---------- HEADSHOT IMAGE ---------- */
 .flyout__headshot {
   display: block;
