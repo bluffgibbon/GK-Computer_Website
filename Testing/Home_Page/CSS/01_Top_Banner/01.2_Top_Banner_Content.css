@@ -21,3 +21,16 @@
   font-weight: 600;
   letter-spacing: 0.35px;
 }
+
+/* ============================================================
+   MOBILE CONTENT (@media max-width: 768px)
+============================================================ */
+@media (max-width: 768px) {
+  .top-banner__text {
+    font-size: 0.68em;
+  }
+
+  .top-banner__copyright {
+    display: none;
+  }
+}

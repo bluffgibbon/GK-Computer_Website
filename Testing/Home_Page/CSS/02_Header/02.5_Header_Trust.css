@@ -99,6 +99,9 @@
   }
 
   .site-header__owner-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 46px;
     height: 46px;
   }

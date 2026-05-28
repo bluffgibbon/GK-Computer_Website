@@ -108,3 +108,25 @@
   border-color: rgba(0, 90, 200, 0.45);
   box-shadow: 0 0 0 1px rgba(0, 90, 200, 0.14);
 }
+
+/* ============================================================
+   MOBILE THEME TOGGLE (@media max-width: 768px)
+============================================================ */
+@media (max-width: 768px) {
+  .theme-toggle-wrap {
+    gap: 4px;
+    margin-left: 6px;
+    padding: 2px 4px;
+  }
+
+  .Theme--dark,
+  .Theme--light {
+    padding: 2px 8px;
+    font-size: 0.68em;
+  }
+
+  .Theme\: {
+    font-size: 0.68em;
+    padding-right: 4px;
+  }
+}

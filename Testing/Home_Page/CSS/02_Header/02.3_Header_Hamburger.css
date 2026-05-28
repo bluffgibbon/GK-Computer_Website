@@ -174,21 +174,21 @@
 ============================================================ */
 @media (max-width: 768px) {
   #hamburger-menu_left {
-    padding: 6px 10px;
-    font-size: 0.72rem;
-    gap: 5px;
+    padding: 4px 7px;
+    font-size: 0.62rem;
+    gap: 4px;
   }
 
   .arrow_inward_left {
-    font-size: 0.72rem;
+    font-size: 0.62rem;
   }
 
   .hamburger-menu__line_left {
-    width: 18px;
+    width: 14px;
     height: 2px;
   }
 
   .hamburger-lines {
-    gap: 4px;
+    gap: 3px;
   }
 }

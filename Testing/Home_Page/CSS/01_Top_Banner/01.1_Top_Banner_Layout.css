@@ -24,3 +24,15 @@
   align-items: center;
   gap: 10px;
 }
+
+/* ============================================================
+   MOBILE LAYOUT (@media max-width: 768px)
+============================================================ */
+@media (max-width: 768px) {
+  #top-banner {
+    height: auto;
+    min-height: 28px;
+    padding: 4px 10px;
+    gap: 6px;
+  }
+}

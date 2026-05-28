@@ -57,6 +57,7 @@
 
   .site-header__inner {
     gap: 8px;
+    padding-right: 56px;
   }
 
   .site-header__right {
