@@ -5,26 +5,24 @@
 /* ---- Section backgrounds (06.1 layout + 06.2 background) ---- */
 body.light #section-welcome {
   background: linear-gradient(160deg, #e8edf3 0%, #eef2f8 30%, #e4eaf2 50%, #eef2f8 70%, #e8edf3 100%);
-  border-top: 2px solid rgb(0, 0, 0);
-  border-bottom: 2px solid rgb(0, 0, 0);
-  box-shadow: 0 14px 40px rgb(0, 149, 255);
+  border-top: 2px solid rgba(0, 80, 160, 0.25);
+  border-bottom: 2px solid rgba(0, 80, 160, 0.25);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08), 0 -4px 20px rgba(0, 80, 160, 0.05), 0 4px 20px rgba(0, 80, 160, 0.05);
   animation: none;
 }
 
 body.light #section-welcome:hover {
   border-color: rgba(0, 80, 160, 0.45);
-  border-top: 2px solid rgb(0, 0, 0);
-  border-bottom: 2px solid rgb(0, 0, 0);
-  box-shadow: 0 14px 40px rgb(0, 0, 0);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.06), 0 -6px 30px rgba(0, 80, 160, 0.08), 0 6px 30px rgba(0, 80, 160, 0.08);
 }
 
-/* ---- Section auras: replace red top / white bottom with blue ---- */
+/* ---- Section auras: subtle blue to match 07 and 08 ---- */
 body.light #section-welcome::before {
-  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgb(48, 149, 212), transparent 100%);
+  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgba(0, 80, 160, 0.15), transparent 100%);
 }
 
 body.light #section-welcome::after {
-  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgb(149, 221, 255), transparent 70%);
+  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(0, 90, 200, 0.08), transparent 70%);
 }
 
 /* ---- Section label badge → blue background ---- */
