@@ -21,10 +21,27 @@
   box-sizing: border-box;
 
   position: relative;
-  overflow: clip;
+  overflow: hidden;
 
-  border-radius: 12px;
+  background: linear-gradient(
+    160deg,
+    #080808 0%,
+    #0a0a0a 30%,
+    #060606 50%,
+    #0a0a0a 70%,
+    #080808 100%
+  );
+  background-size: 300% 300%;
 
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+
+  animation: diagonalFlow 18s linear infinite, borderPulse 7s ease infinite;
   transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
