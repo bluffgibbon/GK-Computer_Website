@@ -55,46 +55,31 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   margin-left: 8px;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.45);
   pointer-events: none;
   transition: color 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-/* Red items */
-.side-menu__item--has-flyout.item--red .side-menu__flyout-arrow {
-  background: rgba(200, 0, 30, 0.15);
-  border-color: rgba(200, 0, 30, 0.35);
-  color: rgba(255, 120, 120, 0.9);
-}
-
-/* Teal items */
-.side-menu__item--has-flyout.item--teal .side-menu__flyout-arrow {
-  background: rgba(0, 110, 141, 0.15);
-  border-color: rgba(0, 180, 220, 0.35);
-  color: rgba(0, 210, 255, 0.9);
-}
-
-/* Hover — whole row glow + arrow pops */
+/* Hover — arrow pops with item color */
 .side-menu__item--has-flyout:hover .side-menu__flyout-arrow {
-  color: #ffffff;
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 .side-menu__item--has-flyout.item--red:hover .side-menu__flyout-arrow {
-  background: rgba(200, 0, 30, 0.35);
-  border-color: rgba(255, 80, 80, 0.7);
-  box-shadow: 0 0 10px rgba(200, 0, 30, 0.5);
+  background: rgba(200, 0, 30, 0.30);
+  border-color: rgba(255, 80, 80, 0.6);
+  box-shadow: 0 0 8px rgba(200, 0, 30, 0.45);
   color: #fff;
 }
 .side-menu__item--has-flyout.item--teal:hover .side-menu__flyout-arrow {
-  background: rgba(0, 110, 141, 0.35);
-  border-color: rgba(0, 200, 240, 0.7);
-  box-shadow: 0 0 10px rgba(0, 180, 220, 0.5);
+  background: rgba(0, 110, 141, 0.30);
+  border-color: rgba(0, 200, 240, 0.6);
+  box-shadow: 0 0 8px rgba(0, 180, 220, 0.45);
   color: #fff;
 }

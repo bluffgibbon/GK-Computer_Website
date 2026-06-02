@@ -139,33 +139,40 @@
   /* Compact sizing */
   .site-header__logo { width: 36px; }
   .site-header__name { font-size: 1rem; }
+  .site-header__brand-link {
+    width: 100%;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .site-header__brand-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    gap: 4px;
+  }
   .site-header__tagline {
     font-size: 0.66rem;
     white-space: nowrap;
     letter-spacing: 0.15px;
   }
   .site-header__inner { gap: 6px; }
-  .site-header__brand-link {
-    align-items: flex-start;
-  }
-  .site-header__brand-text {
-    gap: 4px;
-  }
 
   .site-header__mobile-contact {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
+    width: 100%;
+    min-width: 0;
   }
 
   .site-header__mobile-contact-link {
+    display: block;
     font-size: 0.63rem;
     font-weight: 600;
     line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
     max-width: 100%;
   }
 
@@ -190,6 +197,10 @@
     flex-wrap: nowrap;
     gap: 6px;
     width: auto;
+  }
+
+  .site-header__actions .site-header__owner-photo {
+    margin-left: 0;
   }
 
   /* Stop header ::before pseudo-element animation (not covered by element rule) */

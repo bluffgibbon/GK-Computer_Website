@@ -402,6 +402,23 @@
   align-items: flex-start;
 }
 
+.modal-welcome-section-clone .welcome__heading {
+  white-space: normal;
+  font-size: clamp(1.4rem, 4.8vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.modal-welcome-section-clone .welcome__description {
+  width: 100%;
+  max-width: 60ch;
+}
+
+.modal-welcome-section-clone .welcome__cta-button {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
 .modal-welcome-section-clone .welcome__image {
   width: min(100%, 380px);
   margin-inline: auto;
@@ -411,5 +428,59 @@
   .modal-welcome-section-clone {
     grid-template-columns: 1fr;
     padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-modal {
+    padding: 12px;
+  }
+
+  .card-modal__content {
+    width: min(100vw - 24px, 100%);
+    max-height: calc(100vh - 24px);
+    padding: 16px 14px;
+    border-radius: 16px;
+  }
+
+  .card-modal__close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-welcome-section-clone {
+    padding: 18px 16px;
+    gap: 18px;
+    border-radius: 18px;
+  }
+
+  .modal-welcome-section-clone .content-section__label01 {
+    font-size: 0.68rem;
+  }
+
+  .modal-welcome-section-clone .welcome__heading-row {
+    margin-top: 18px;
+    gap: 10px;
+  }
+
+  .modal-welcome-section-clone .welcome__heading {
+    font-size: 1.25rem;
+  }
+
+  .modal-welcome-section-clone .welcome__description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .modal-welcome-section-clone .welcome__cta-button {
+    width: 100%;
+    padding-inline: 14px;
+    font-size: 0.88rem;
+  }
+
+  .modal-welcome-section-clone .welcome__image {
+    width: min(100%, 240px);
   }
 }

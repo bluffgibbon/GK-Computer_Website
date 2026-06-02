@@ -15,9 +15,10 @@ navigation items have additional options available. */
   padding: 0 6px 0 2px;
 
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
 
-  /* ADDED: missing cursor from master */
   cursor: pointer;
 
   transition: color 200ms ease, transform 200ms ease;
