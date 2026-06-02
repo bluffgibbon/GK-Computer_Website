@@ -50,6 +50,15 @@
   min-width: 0;
 }
 
+.site-header__mobile-contact {
+  display: none;
+}
+
+.site-header__mobile-contact-link {
+  text-decoration: none;
+  color: #d6e4f2;
+}
+
 /* ============================================================
    BRAND NAME (.site-header__name)
    (Main business name text in the header)

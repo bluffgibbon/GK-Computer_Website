@@ -69,12 +69,16 @@ function openSideMenuFlyoutByKey(serviceKey) {
     hamburger.classList.add("active");
 
     closeAllSideMenuFlyouts();
-    positionSideMenuFlyout(flyout);
     flyout.classList.add("is-open");
     arrow.textContent = "◂";
 
     var backdrop = getSideMenuBackdrop();
     if (backdrop) backdrop.classList.add("is-active");
+
+    // Wait for the 240ms side menu slide-in transition before measuring position
+    setTimeout(function () {
+        positionSideMenuFlyout(flyout);
+    }, 260);
 
     if (typeof item.scrollIntoView === "function") {
         item.scrollIntoView({ block: "nearest" });
