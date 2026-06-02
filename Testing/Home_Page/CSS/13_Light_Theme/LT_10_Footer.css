@@ -199,6 +199,53 @@ body.light .footer__links-item:hover a {
   text-shadow: none;
 }
 
+/* ---- Footer column modal clone ---- */
+body.light .modal-footer-column-clone {
+  border-color: rgba(0, 90, 200, 0.22);
+  background: linear-gradient(160deg, rgba(0, 90, 200, 0.08) 0%, #f3f7fb 100%);
+  box-shadow:
+    0 18px 44px rgba(0, 80, 160, 0.12),
+    0 0 28px rgba(0, 90, 200, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+body.light .modal-footer-column-clone .footer__column-title_Computer_Business,
+body.light .modal-footer-column-clone .footer__column-title_Business_Hours,
+body.light .modal-footer-column-clone .footer__column-title_Contact,
+body.light .modal-footer-column-clone .footer__column-title_Quick_Links,
+body.light .modal-footer-column-clone .footer__column-title_Services {
+  color: var(--text-0);
+  border-bottom-color: rgba(0, 80, 160, 0.20);
+}
+
+body.light .modal-footer-column-clone .footer__column-title_Computer_Business::after,
+body.light .modal-footer-column-clone .footer__column-title_Business_Hours::after,
+body.light .modal-footer-column-clone .footer__column-title_Contact::after,
+body.light .modal-footer-column-clone .footer__column-title_Quick_Links::after,
+body.light .modal-footer-column-clone .footer__column-title_Services::after {
+  background: var(--blue);
+  box-shadow: 0 0 8px rgba(0, 80, 160, 0.28);
+}
+
+body.light .modal-footer-column-clone .footer__text01,
+body.light .modal-footer-column-clone .footer__text02,
+body.light .modal-footer-column-clone .footer__text03,
+body.light .modal-footer-column-clone .footer__text04,
+body.light .modal-footer-column-clone .footer__text05,
+body.light .modal-footer-column-clone .footer__text06,
+body.light .modal-footer-column-clone .footer__text07,
+body.light .modal-footer-column-clone .footer__text08,
+body.light .modal-footer-column-clone .footer__text09,
+body.light .modal-footer-column-clone .footer__text10,
+body.light .modal-footer-column-clone .footer__links-item,
+body.light .modal-footer-column-clone .footer__links-item a {
+  color: var(--text-2);
+}
+
+body.light .modal-footer-column-clone .footer__text--highlight {
+  color: var(--text-1);
+}
+
 /* ---- Bottom bar ---- */
 body.light .footer__bottom-bar {
   background: linear-gradient(180deg, rgba(210, 220, 235, 0.70) 0%, rgba(200, 212, 230, 0.85) 100%);

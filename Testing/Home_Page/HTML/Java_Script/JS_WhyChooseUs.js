@@ -190,6 +190,25 @@ function initGenericModal() {
         }, 10);
     }
 
+    function openFooterColumnModal(column) {
+        if (!modal || !modalBody) return;
+        var clone = column.cloneNode(true);
+        clone.className = 'modal-footer-column-clone';
+
+        clone.querySelectorAll('[class$="_background"]').forEach(function (bg) {
+            bg.remove();
+        });
+
+        modalBody.innerHTML = '';
+        modalBody.appendChild(clone);
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () {
+            var content = modal.querySelector('.card-modal__content');
+            if (content) content.focus();
+        }, 10);
+    }
+
     // Event delegation — works regardless of when elements are added to DOM
     document.addEventListener('click', function (e) {
         // Skip if modal is already open (avoid double-open from multiple handlers)
@@ -205,6 +224,19 @@ function initGenericModal() {
         var footerImg = e.target.closest('.footer__bottom-images img');
         if (footerImg) {
             openImageModal(footerImg);
+            return;
+        }
+
+        // Footer content cards/columns
+        var footerColumn = e.target.closest(
+            '.footer__column_GK_Computer_Business, ' +
+            '.footer__column_Business_Hours, ' +
+            '.footer__column_Contact, ' +
+            '.footer__column_Quick_Links, ' +
+            '.footer__column_Services'
+        );
+        if (footerColumn) {
+            openFooterColumnModal(footerColumn);
             return;
         }
 

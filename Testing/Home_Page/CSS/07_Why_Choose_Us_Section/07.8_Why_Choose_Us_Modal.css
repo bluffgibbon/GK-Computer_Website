@@ -178,12 +178,22 @@
    GENERIC MODAL — cursor hints for clickable images
 ============================================================ */
 .site-header__owner-photo,
-.footer__bottom-images img {
+.footer__bottom-images img,
+.footer__column_GK_Computer_Business,
+.footer__column_Business_Hours,
+.footer__column_Contact,
+.footer__column_Quick_Links,
+.footer__column_Services {
   cursor: pointer;
   transition: opacity 180ms ease, transform 180ms ease;
 }
 .site-header__owner-photo:hover,
-.footer__bottom-images img:hover {
+.footer__bottom-images img:hover,
+.footer__column_GK_Computer_Business:hover,
+.footer__column_Business_Hours:hover,
+.footer__column_Contact:hover,
+.footer__column_Quick_Links:hover,
+.footer__column_Services:hover {
   opacity: 0.82;
   transform: scale(1.04);
 }
@@ -261,4 +271,82 @@
   background: rgba(0, 212, 255, 0.18);
   border-color: rgba(0, 212, 255, 1);
   color: #fff;
+}
+
+/* ============================================================
+   FOOTER COLUMN CLONE in modal
+============================================================ */
+.modal-footer-column-clone {
+  width: 100%;
+  max-width: 720px;
+  padding: 30px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  background: linear-gradient(160deg, rgba(0, 110, 141, 0.12) 0%, #080b12 100%);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.42),
+    0 0 28px rgba(0, 212, 255, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transform: none;
+  opacity: 1;
+}
+
+.modal-footer-column-clone::before,
+.modal-footer-column-clone::after {
+  display: none;
+}
+
+.modal-footer-column-clone .footer__column-title_Computer_Business,
+.modal-footer-column-clone .footer__column-title_Business_Hours,
+.modal-footer-column-clone .footer__column-title_Contact,
+.modal-footer-column-clone .footer__column-title_Quick_Links,
+.modal-footer-column-clone .footer__column-title_Services {
+  margin: 0 0 8px;
+  padding-bottom: 12px;
+  color: #ffffff;
+  text-align: center;
+  border-bottom-color: rgba(0, 212, 255, 0.22);
+}
+
+.modal-footer-column-clone .footer__column-title_Computer_Business::after,
+.modal-footer-column-clone .footer__column-title_Business_Hours::after,
+.modal-footer-column-clone .footer__column-title_Contact::after,
+.modal-footer-column-clone .footer__column-title_Quick_Links::after,
+.modal-footer-column-clone .footer__column-title_Services::after {
+  background: rgba(0, 212, 255, 0.85);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.35);
+}
+
+.modal-footer-column-clone .footer__text01,
+.modal-footer-column-clone .footer__text02,
+.modal-footer-column-clone .footer__text03,
+.modal-footer-column-clone .footer__text04,
+.modal-footer-column-clone .footer__text05,
+.modal-footer-column-clone .footer__text06,
+.modal-footer-column-clone .footer__text07,
+.modal-footer-column-clone .footer__text08,
+.modal-footer-column-clone .footer__text09,
+.modal-footer-column-clone .footer__text10,
+.modal-footer-column-clone .footer__text--highlight,
+.modal-footer-column-clone .footer__links-item,
+.modal-footer-column-clone .footer__links-item a {
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: none;
+}
+
+.modal-footer-column-clone .footer__text--highlight {
+  color: rgba(0, 212, 255, 0.88);
+}
+
+.modal-footer-column-clone .footer__links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-footer-column-clone .footer__links-item {
+  margin: 0 0 10px;
 }
