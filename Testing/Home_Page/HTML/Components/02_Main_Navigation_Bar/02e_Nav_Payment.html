@@ -9,14 +9,14 @@
                 <div class="flyout__content">
                     <div class="flyout__text-col">
                         <h2 class="flyout__heading">Payment Options Accepted</h2>
-                        <p class="flyout__text">We accept a variety of payment methods for your convenience:</p>
+                        <p class="flyout__text">We accept the following payment methods for your convenience:</p>
                         <ul class="flyout__list">
                             <li class="flyout__list-item">Cash</li>
-                            <li class="flyout__list-item">Credit / Debit Cards</li>
-                            <li class="flyout__list-item">Digital Payments</li>
-                            <li class="flyout__list-item">PayPal, Venmo, Apple Pay</li>
-                            <li class="flyout__list-item">Zelle, etc.</li>
+                            <li class="flyout__list-item">Check</li>
+                            <li class="flyout__list-item">Zelle</li>
+                            <li class="flyout__list-item">Cash App</li>
                         </ul>
+                        <p class="flyout__text">A secure online payment link will be available soon.</p>
                     </div>
                 </div>
             </div>
@@ -27,18 +27,32 @@
                 <div class="flyout__content">
                     <div class="flyout__text-col">
                         <h2 class="flyout__heading">Pay an Invoice</h2>
-                        <p class="flyout__text">Enter your invoice number and amount below to begin payment.</p>
+                        <p class="flyout__text">Enter your invoice number and email address. A secure payment link will be sent to you shortly.</p>
                         <form class="flyout__form" action="../../Make_Payment/Html/Make_Payment_HTML.html#Section-number2" method="get">
                             <label class="flyout__form-label" for="invoiceNumber">Invoice Number</label>
                             <input class="flyout__form-input" type="text" id="invoiceNumber" name="invoiceNumber" placeholder="e.g. INV-10234" required />
-                            <label class="flyout__form-label" for="invoiceAmount">Amount ($)</label>
-                            <input class="flyout__form-input" type="number" id="invoiceAmount" name="invoiceAmount" placeholder="0.00" min="0" step="0.01" required />
-                            <button class="flyout__form-button" type="submit">Proceed to Payment</button>
+                            <label class="flyout__form-label" for="invoiceEmail">Email Address</label>
+                            <input class="flyout__form-input" type="email" id="invoiceEmail" name="invoiceEmail" placeholder="you@example.com" required />
+                            <button class="flyout__form-button" type="submit">Submit</button>
                         </form>
-                        <ul class="flyout__list">
-                            <li class="flyout__list-item">Secure payment processing</li>
-                            <li class="flyout__list-item">Confirmation email sent after payment</li>
-                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="main-navigation__dropdown-item--has-flyout">
+            <span class="main-navigation__flyout-label">Confirmation of Invoice <span class="main-navigation__flyout-arrow">▸</span></span>
+            <div class="main-navigation__flyout">
+                <div class="flyout__content">
+                    <div class="flyout__text-col">
+                        <h2 class="flyout__heading">Confirm Your Invoice</h2>
+                        <p class="flyout__text">Enter your invoice number and email address to confirm receipt of your invoice.</p>
+                        <form class="flyout__form" method="get">
+                            <label class="flyout__form-label" for="confirmInvoiceNumber">Invoice Number</label>
+                            <input class="flyout__form-input" type="text" id="confirmInvoiceNumber" name="confirmInvoiceNumber" placeholder="e.g. INV-10234" required />
+                            <label class="flyout__form-label" for="confirmInvoiceEmail">Email Address</label>
+                            <input class="flyout__form-input" type="email" id="confirmInvoiceEmail" name="confirmInvoiceEmail" placeholder="you@example.com" required />
+                            <button class="flyout__form-button" type="submit">Confirm Invoice</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -51,9 +65,9 @@
                         <h2 class="flyout__heading">Secure Payment Processing</h2>
                         <p class="flyout__text">Your financial security is our priority. All transactions are handled through trusted, encrypted channels.</p>
                         <ul class="flyout__list">
-                            <li class="flyout__list-item">PCI-compliant payment gateway</li>
                             <li class="flyout__list-item">We do not store payment card information</li>
                             <li class="flyout__list-item">Your financial information is protected</li>
+                            <li class="flyout__list-item">Secure payment link coming soon</li>
                         </ul>
                     </div>
                 </div>
