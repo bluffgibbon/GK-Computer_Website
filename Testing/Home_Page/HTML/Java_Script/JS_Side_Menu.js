@@ -60,7 +60,8 @@ function openSideMenuFlyoutByKey(serviceKey) {
     var item = document.querySelector('.side-menu__item--has-flyout[data-service-key="' + serviceKey + '"]');
     if (!sideMenu || !hamburger || !item) return false;
 
-    var flyout = item.querySelector(".side-menu__flyout");
+    // Flyouts are moved to document.body by initSideMenuFlyouts — find by key
+    var flyout = document.querySelector('.side-menu__flyout[data-flyout-key="' + serviceKey + '"]');
     var arrow = item.querySelector(".side-menu__flyout-arrow");
     if (!flyout || !arrow) return false;
 
@@ -223,6 +224,8 @@ function initSideMenuFlyouts() {
         item.classList.add("item--" + colorKey);
         flyout.classList.add("flyout--" + colorKey);
 
+        var itemKey = item.getAttribute('data-service-key');
+        if (itemKey) flyout.setAttribute('data-flyout-key', itemKey);
         document.body.appendChild(flyout);
 
         // Mobile-only close button so users can dismiss flyout and return to menu list

@@ -5,8 +5,9 @@
 /* ---- Section backgrounds (07.1 layout + 07.2 background) ---- */
 body.light #section-why-choose-us {
   background: linear-gradient(160deg, #e8edf3 0%, #eef2f8 30%, #e4eaf2 50%, #eef2f8 70%, #e8edf3 100%);
-  border-top: 2px solid rgba(0, 80, 160, 0.25);
-  border-bottom: 2px solid rgba(0, 80, 160, 0.25);
+  border: 1px solid rgba(0, 80, 160, 0.14);
+  border-top-color: rgba(0, 80, 160, 0.25);
+  border-bottom-color: rgba(0, 80, 160, 0.25);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08), 0 -4px 20px rgba(0, 80, 160, 0.05), 0 4px 20px rgba(0, 80, 160, 0.05);
   animation: none;
 }

@@ -19,11 +19,10 @@
     #080808 100%
   );
   background-size: 300% 300%;
-  border-top: 2px solid rgba(255, 255, 255, 0.9);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.72);
+  border-radius: 28px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
   animation: diagonalFlow 18s linear infinite, borderPulse 7s ease infinite;
   transition: border-color 200ms ease, box-shadow 200ms ease;
@@ -31,6 +30,6 @@
 
 /* Hover */
 #section-why-choose-us:hover {
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 18px 48px rgba(255, 255, 255, 0.08);
 }

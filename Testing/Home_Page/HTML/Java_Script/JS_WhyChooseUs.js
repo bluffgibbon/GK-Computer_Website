@@ -137,6 +137,26 @@ function initGenericModal() {
     }
 
     var modalBody = modal.querySelector('.card-modal__body');
+    var modalContent = modal.querySelector('.card-modal__content');
+    var modalClose = modal.querySelector('.card-modal__close');
+    var modalOverlay = modal.querySelector('.card-modal__overlay');
+
+    function showModal() {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () {
+            if (modalContent) modalContent.focus();
+        }, 10);
+    }
+
+    function closeModal() {
+        if (!modal) return;
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (modalBody) {
+            modalBody.innerHTML = '';
+        }
+    }
 
     function openImageModal(img) {
         if (!modal || !modalBody) return;
@@ -151,8 +171,7 @@ function initGenericModal() {
             caption.className = 'modal-image-caption';
             modalBody.appendChild(caption);
         }
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        showModal();
     }
 
     function openServiceCardModal(card) {
@@ -182,12 +201,7 @@ function initGenericModal() {
         }
         modalBody.innerHTML = '';
         modalBody.appendChild(clone);
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        setTimeout(function () {
-            var content = modal.querySelector('.card-modal__content');
-            if (content) content.focus();
-        }, 10);
+        showModal();
     }
 
     function openFooterColumnModal(column) {
@@ -201,13 +215,34 @@ function initGenericModal() {
 
         modalBody.innerHTML = '';
         modalBody.appendChild(clone);
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        setTimeout(function () {
-            var content = modal.querySelector('.card-modal__content');
-            if (content) content.focus();
-        }, 10);
+        showModal();
     }
+
+    function openWelcomeSectionModal(section) {
+        if (!modal || !modalBody) return;
+        var clone = section.cloneNode(true);
+        var cloneButton = clone.querySelector('.welcome__cta-button');
+
+        clone.removeAttribute('id');
+        clone.removeAttribute('role');
+        clone.removeAttribute('tabindex');
+        clone.removeAttribute('aria-label');
+        clone.className = 'modal-welcome-section-clone content-section content-section--welcome';
+
+        if (cloneButton) {
+            cloneButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                closeModal();
+            });
+        }
+
+        modalBody.innerHTML = '';
+        modalBody.appendChild(clone);
+        showModal();
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
     // Event delegation — works regardless of when elements are added to DOM
     document.addEventListener('click', function (e) {
@@ -224,6 +259,16 @@ function initGenericModal() {
         var footerImg = e.target.closest('.footer__bottom-images img');
         if (footerImg) {
             openImageModal(footerImg);
+            return;
+        }
+
+        // Welcome section shell
+        var welcomeSection = e.target.closest('#section-welcome');
+        if (welcomeSection) {
+            if (e.target.closest('.welcome__cta-button')) {
+                return;
+            }
+            openWelcomeSectionModal(welcomeSection);
             return;
         }
 
@@ -246,6 +291,20 @@ function initGenericModal() {
             e.preventDefault();
             e.stopPropagation();
             openServiceCardModal(card);
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (modal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+            closeModal();
+            return;
+        }
+
+        if ((e.key === 'Enter' || e.key === ' ') && document.activeElement && document.activeElement.matches('#section-welcome')) {
+            e.preventDefault();
+            if (modal.style.display !== 'flex') {
+                openWelcomeSectionModal(document.activeElement);
+            }
         }
     });
 }
