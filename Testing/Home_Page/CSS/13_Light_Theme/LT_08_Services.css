@@ -135,3 +135,76 @@ body.light .service-card:hover .service-card__text {
 body.light .service-card__text-dot {
   background: var(--cyan);
 }
+
+/* ---- Service card modal popout ---- */
+body.light .card-modal__overlay {
+  background: rgba(226, 234, 244, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+body.light .card-modal__content {
+  border-color: rgba(0, 90, 200, 0.30);
+  background: linear-gradient(160deg, #f7faff 0%, #edf3f9 52%, #e4edf6 100%);
+  box-shadow:
+    0 24px 64px rgba(21, 42, 74, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.55) inset;
+}
+
+body.light .card-modal__close {
+  border-color: rgba(0, 90, 200, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(226, 235, 246, 0.96));
+  color: #1b3554;
+  box-shadow: 0 8px 20px rgba(21, 42, 74, 0.10);
+}
+
+body.light .card-modal__close:hover {
+  background: linear-gradient(180deg, rgba(219, 236, 255, 1), rgba(197, 221, 248, 1));
+  border-color: rgba(0, 90, 200, 0.45);
+  color: #003878;
+}
+
+body.light .modal-service-card-clone {
+  border-color: rgba(0, 90, 200, 0.26);
+  background: linear-gradient(160deg, rgba(0, 90, 200, 0.06) 0%, #f8fbff 100%);
+  box-shadow:
+    0 16px 36px rgba(21, 42, 74, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+}
+
+body.light .modal-service-card-clone .service-card__tag {
+  color: #ffffff;
+  border-color: rgba(0, 100, 200, 0.24);
+  background: linear-gradient(135deg, rgb(0, 90, 200) 0%, rgb(0, 50, 120) 100%);
+  box-shadow: 0 6px 18px rgba(0, 90, 200, 0.18);
+}
+
+body.light .modal-service-card-clone .service-card__icon {
+  background: rgba(220, 230, 242, 0.80);
+  border: 1px solid rgba(0, 80, 160, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(21, 42, 74, 0.10);
+}
+
+body.light .modal-service-card-clone .service-card__icon svg {
+  stroke: rgba(0, 80, 160, 0.88);
+}
+
+body.light .modal-service-card-clone .service-card__title {
+  color: #10233a;
+}
+
+body.light .modal-service-card-clone .service-card__text {
+  color: #425a77;
+}
+
+body.light .modal-service-card__more-info {
+  border-color: rgba(0, 90, 200, 0.34);
+  background: rgba(0, 90, 200, 0.08);
+  color: rgba(0, 80, 160, 0.92);
+}
+
+body.light .modal-service-card__more-info:hover {
+  background: rgba(0, 90, 200, 0.14);
+  border-color: rgba(0, 90, 200, 0.50);
+  color: #003878;
+}
