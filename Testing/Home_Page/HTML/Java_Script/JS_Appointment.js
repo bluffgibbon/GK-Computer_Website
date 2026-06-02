@@ -11,8 +11,8 @@ function openAppointmentSchedulerFlyout() {
 
     if (!navItem || !schedulerTrigger) return;
 
-    var dropdown = navItem.querySelector(".main-navigation__dropdown");
-    var flyout = schedulerTrigger.querySelector(".main-navigation__flyout");
+    // Dropdowns are moved to document.body by JS_Navigation — find them there
+    var dropdown = document.body.querySelector(".main-navigation__dropdown") || navItem.querySelector(".main-navigation__dropdown");
 
     if (!dropdown) return;
 
@@ -23,10 +23,9 @@ function openAppointmentSchedulerFlyout() {
         navItem.click();
     }
 
+    // Wait for dropdown open animation, then click the flyout trigger directly
     window.setTimeout(function () {
-        if (flyout && !flyout.classList.contains("is-open")) {
-            schedulerTrigger.click();
-        }
+        schedulerTrigger.click();
 
         window.setTimeout(function () {
             var firstField = document.querySelector(
@@ -36,7 +35,7 @@ function openAppointmentSchedulerFlyout() {
                 firstField.focus();
             }
         }, 60);
-    }, 80);
+    }, 150);
 }
 
 // Expose globally for inline HTML onclick usage
