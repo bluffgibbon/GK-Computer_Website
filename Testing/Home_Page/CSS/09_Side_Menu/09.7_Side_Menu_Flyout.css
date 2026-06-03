@@ -60,9 +60,9 @@
   margin-left: 8px;
   border-radius: 5px;
   font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.70);
+  background: rgba(0, 180, 220, 0.10);
+  border: 1px solid rgba(0, 200, 240, 0.40);
+  color: rgba(0, 220, 255, 0.90);
   pointer-events: none;
   transition: color 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }

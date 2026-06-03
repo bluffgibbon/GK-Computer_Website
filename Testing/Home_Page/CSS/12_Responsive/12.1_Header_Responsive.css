@@ -136,26 +136,43 @@
     -webkit-transform: translateZ(0);
   }
 
-  /* Compact sizing */
-  .site-header__logo { width: 36px; }
-  .site-header__name { font-size: 1rem; }
+  /* Phone layout: hamburger + brand + headshot all on one row */
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .site-header__logo { width: 36px; flex-shrink: 0; }
+  .site-header__name { font-size: 0.95rem; }
+
   .site-header__brand-link {
-    width: 100%;
-    align-items: flex-start;
-    gap: 8px;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    align-items: center;
+    gap: 6px;
   }
   .site-header__brand-text {
     flex: 1 1 auto;
     min-width: 0;
-    width: 100%;
-    gap: 4px;
+    gap: 2px;
   }
   .site-header__tagline {
-    font-size: 0.66rem;
-    white-space: nowrap;
-    letter-spacing: 0.15px;
+    font-size: 0.62rem;
+    white-space: normal;
+    letter-spacing: 0.1px;
   }
-  .site-header__inner { gap: 6px; }
+
+  /* Right section: just the headshot, inline with brand row */
+  .site-header__right {
+    flex-shrink: 0;
+    width: auto;
+    align-items: center;
+    gap: 0;
+  }
+  .site-header__trust { display: none; }
 
   .site-header__mobile-contact {
     display: flex;
