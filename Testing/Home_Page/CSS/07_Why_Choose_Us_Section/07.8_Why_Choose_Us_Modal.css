@@ -407,11 +407,22 @@
   white-space: normal;
   font-size: clamp(1.4rem, 4.8vw, 2.4rem);
   line-height: 1.2;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  flex: 1 1 auto;
+}
+
+.modal-welcome-section-clone .welcome__content {
+  min-width: 0;
+  overflow: hidden;
 }
 
 .modal-welcome-section-clone .welcome__description {
   width: 100%;
-  max-width: 60ch;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .modal-welcome-section-clone .welcome__cta-button {
