@@ -180,7 +180,8 @@
   .site-header__mobile-contact {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    align-items: flex-start;
+    gap: 2px;
     min-width: 0;
     overflow: hidden;
   }
@@ -198,11 +199,27 @@
     font-weight: 700;
     letter-spacing: 0.3px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
     text-decoration: none;
-    transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+    transition: background 200ms ease, border-color 200ms ease,
+                color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  }
+
+  /* Phone hover — red glow matching desktop CTA */
+  .site-header__mobile-contact-link[href^="tel:"]:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 1);
+    background: rgba(160, 0, 20, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(200, 0, 30, 0.35);
+  }
+
+  /* Email hover — teal glow to distinguish from phone */
+  .site-header__mobile-contact-link[href^="mailto:"]:hover {
+    color: #ffffff;
+    border-color: rgba(0, 212, 255, 0.9);
+    background: rgba(0, 90, 115, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 110, 141, 0.35);
   }
 
   /* Hide home link */
