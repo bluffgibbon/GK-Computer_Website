@@ -124,47 +124,55 @@
     padding: 6px 8px 8px;
   }
 
-  /* === LAYOUT: hamburger top-left, logo+text below it, headshot right === */
-  /* Grid is cleaner than flex for this stacked arrangement */
+  /* === LAYOUT: 3-column grid
+       Col 1: SERVICES (row 1) | logo (rows 2-3)
+       Col 2: name (row 1) | phone (row 2) | email (row 3)
+       Col 3: headshot spanning all rows
+     display:contents on brand-link dissolves it so logo and brand-text
+     become direct grid children === */
   .site-header__inner {
     display: grid             !important;
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto;
-    column-gap: 6px;
+    grid-template-rows: auto auto auto;
+    column-gap: 8px;
     row-gap: 3px;
     align-items: center;
     padding: 0;
   }
 
-  /* === HAMBURGER: top-left cell === */
+  /* === HAMBURGER: row 1, col 1 === */
   #hamburger-menu_left {
     grid-column: 1;
     grid-row: 1;
     align-self: center;
   }
 
-  /* === BRAND BLOCK: spans bottom-left + middle, below hamburger === */
+  /* === DISSOLVE brand-link so logo + brand-text sit in the parent grid === */
   .site-header__brand-link {
-    grid-column: 1 / 3;
-    grid-row: 2;
-    min-width: 0;
-    overflow: hidden;
-    align-items: center;
-    gap: 6px;
+    display: contents !important;
   }
 
+  /* === LOGO: col 1, rows 2-3 (below SERVICES, left of phone+email) === */
   .site-header__logo {
+    grid-column: 1;
+    grid-row: 2 / 4;
     width: 32px;
     height: 32px;
-    flex-shrink: 0;
     object-fit: contain;
+    align-self: center;
+    justify-self: center;
   }
 
+  /* === BRAND TEXT: col 2, all 3 rows — name / phone / email stacked === */
   .site-header__brand-text {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 0;
     overflow: hidden;
-    gap: 1px;
-    flex: 1 1 auto;
+    gap: 0;
   }
 
   .site-header__name {
@@ -172,25 +180,22 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    align-self: flex-start;
   }
 
-  /* Hide tagline on phone — too long, bleeds behind headshot */
+  /* Hide tagline — too long for phone */
   .site-header__tagline { display: none; }
 
-  /* Mobile contact: phone + email stacked under name */
+  /* Dissolve mobile-contact so phone + email are direct flex children of brand-text */
   .site-header__mobile-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    min-width: 0;
-    overflow: hidden;
+    display: contents;
   }
 
   .site-header__mobile-contact-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    align-self: flex-start;  /* don't stretch to full column width */
     padding: 3px 8px;
     border-radius: 8px;
     border: 2px solid rgba(255, 255, 255, 0.9);
@@ -226,10 +231,10 @@
   /* Hide home link */
   #TitleHomePageContainer { display: none; }
 
-  /* === RIGHT SECTION: headshot spans both rows on the right === */
+  /* === RIGHT SECTION: headshot spans all 3 rows === */
   .site-header__right {
     grid-column: 3;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
     width: auto   !important;
     margin-left: 0;
     align-self: center;
