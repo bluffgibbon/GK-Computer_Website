@@ -25,6 +25,8 @@ body.light #header-logo-section::before {
 /* ---- Mobile contact links ---- */
 body.light .site-header__mobile-contact-link {
   color: rgb(0, 30, 80);
+  border-color: rgba(0, 80, 160, 0.35);
+  background: rgba(0, 80, 160, 0.08);
 }
 
 /* ---- Brand text ---- */
