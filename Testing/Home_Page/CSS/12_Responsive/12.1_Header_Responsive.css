@@ -121,21 +121,16 @@
   /* === HEADER WRAPPER === */
   #header-logo-section {
     top: 32px;
-    padding: 6px 8px 8px;
+    padding: 4px 6px 5px;
   }
 
-  /* === LAYOUT: 3-column grid
-       Col 1: SERVICES (row 1) | logo (rows 2-3)
-       Col 2: name (row 1) | phone (row 2) | email (row 3)
-       Col 3: headshot spanning all rows
-     display:contents on brand-link dissolves it so logo and brand-text
-     become direct grid children === */
+  /* === LAYOUT: 3-column grid — layout unchanged, everything just smaller === */
   .site-header__inner {
     display: grid             !important;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto auto auto;
-    column-gap: 8px;
-    row-gap: 3px;
+    column-gap: 5px;
+    row-gap: 2px;
     align-items: center;
     padding: 0;
   }
@@ -145,25 +140,32 @@
     grid-column: 1;
     grid-row: 1;
     align-self: center;
+    padding: 3px 6px;
+    font-size: 0.55rem;
+    gap: 3px;
   }
+
+  .arrow_inward_left  { font-size: 0.55rem; }
+  .hamburger-menu__line_left { width: 11px; height: 2px; }
+  .hamburger-lines   { gap: 2px; }
 
   /* === DISSOLVE brand-link so logo + brand-text sit in the parent grid === */
   .site-header__brand-link {
     display: contents !important;
   }
 
-  /* === LOGO: col 1, rows 2-3 (below SERVICES, left of phone+email) === */
+  /* === LOGO: col 1, rows 2-3 === */
   .site-header__logo {
     grid-column: 1;
     grid-row: 2 / 4;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     object-fit: contain;
     align-self: center;
     justify-self: center;
   }
 
-  /* === BRAND TEXT: col 2, all 3 rows — name / phone / email stacked === */
+  /* === BRAND TEXT: col 2, all 3 rows === */
   .site-header__brand-text {
     grid-column: 2;
     grid-row: 1 / 4;
@@ -176,7 +178,7 @@
   }
 
   .site-header__name {
-    font-size: 0.88rem;
+    font-size: 0.78rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -195,15 +197,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;  /* don't stretch to full column width */
-    padding: 3px 8px;
-    border-radius: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.9);
+    align-self: flex-start;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
     background: rgba(10, 16, 30, 0.7);
     color: #e0e8f0;
-    font-size: 0.58rem;
+    font-size: 0.54rem;
     font-weight: 700;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
     white-space: nowrap;
     text-decoration: none;
     transition: background 200ms ease, border-color 200ms ease,
@@ -257,8 +259,8 @@
   .site-header__actions .header-cta[href^="mailto:"] { display: none; }
 
   .site-header__owner-photo {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     margin-left: 0;
   }
 
