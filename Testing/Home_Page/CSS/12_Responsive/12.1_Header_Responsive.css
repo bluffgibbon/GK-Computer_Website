@@ -110,147 +110,123 @@
 /* 480px - phone */
 @media (max-width: 480px) {
 
-  /* Banner: hide copyright so it stays one line */
-  .top-banner__copyright { display: none; }
+  /* === PERFORMANCE: stop animations that cause GPU repaints on fixed elements === */
+  .top-banner__copyright          { display: none; }
+  .site-header__status-dot        { animation: none; }
+  .top-banner__status-indicator   { animation: none; }
+  #header-logo-section            { animation: none !important; will-change: transform; transform: translateZ(0); }
+  #header-logo-section::before    { animation: none !important; }
+  #main-navigation                { will-change: transform; transform: translateZ(0); }
 
-  /* Header below banner.
-     STOP the diagonalFlow animation - it is the main cause of scroll
-     flicker because the header is position:fixed and animated at the
-     same time, forcing GPU repaints on every animation frame. */
+  /* === HEADER WRAPPER === */
   #header-logo-section {
     top: 32px;
-    padding: 6px 10px 8px;
-    animation: none !important;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    padding: 6px 8px 8px;
   }
 
-  /* Stop status dot pulse - small but still a repaint trigger */
-  .site-header__status-dot { animation: none; }
-
-  /* Also stop nav from repainting */
-  #main-navigation {
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-  }
-
-  /* Phone layout: [hamburger] [logo + name/tagline/contact] [headshot] — single row */
+  /* === INNER ROW: [hamburger] [logo + text] [headshot] all on one line === */
+  /* !important on flex-direction, flex-wrap, align-items because the 900px block
+     in this same file sets column layout and the 768px rule in 02.1 sets flex-wrap:wrap */
   .site-header__inner {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    gap: 8px;
-    padding-right: 0;    /* clear the 56px reserved from the 768px rule */
+    flex-direction: row     !important;
+    flex-wrap:      nowrap  !important;
+    align-items:    center  !important;
+    gap: 6px;
+    padding: 0;
     justify-content: flex-start;
   }
 
-  .hamburger-menu {
-    flex-shrink: 0;
+  /* === HAMBURGER: natural width, vertically centered === */
+  #hamburger-menu_left {
+    flex: 0 0 auto;
     align-self: center;
   }
 
+  /* === BRAND BLOCK: fills all remaining space === */
   .site-header__brand-link {
-    flex: 1 1 auto;
-    width: auto;
+    flex: 1 1 0   !important;   /* grow from 0, not from content width */
+    width:   0    !important;   /* prevent content-width from fighting flex */
     min-width: 0;
     align-items: flex-start;
     gap: 4px;
   }
 
-  .site-header__brand-text {
-    flex: 1 1 auto;
-    min-width: 0;
-    width: 100%;
-    gap: 2px;
+  .site-header__logo {
+    width: 32px;
+    flex-shrink: 0;
   }
 
-  .site-header__logo { width: 34px; flex-shrink: 0; }
+  .site-header__brand-text {
+    min-width: 0;
+    gap: 2px;
+    flex: 1 1 auto;
+  }
 
   .site-header__name {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .site-header__tagline {
-    font-size: 0.60rem;
+    font-size: 0.58rem;
     white-space: normal;
-    letter-spacing: 0.1px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    line-height: 1.3;
   }
 
-  /* Right: headshot only, no grow/shrink fight */
-  .site-header__right {
-    flex-shrink: 0;
-    flex-grow: 0;
-    width: auto;
-    align-self: flex-start;
-    margin-left: 0;
-    align-items: center;
-    gap: 0;
-  }
-
-  .site-header__trust { display: none; }
-
+  /* Mobile contact: phone + email stacked under tagline */
   .site-header__mobile-contact {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    width: 100%;
+    gap: 1px;
     min-width: 0;
   }
 
   .site-header__mobile-contact-link {
-    display: block;
-    font-size: 0.63rem;
+    font-size: 0.60rem;
     font-weight: 600;
-    line-height: 1.2;
-    white-space: normal;
-    word-break: break-word;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 100%;
   }
 
-  /* Shrink headshot from 80px to 44px so it fits in the actions row */
-  .site-header__owner-photo {
-    width: 44px;
-    height: 44px;
-  }
-
-  /* Hide HOME button, trust badge, quote button (email is kept visible) */
+  /* Hide home link */
   #TitleHomePageContainer { display: none; }
-  .site-header__trust { display: none; }
-  .header-cta--primary { display: none; }
-  .site-header__actions .header-cta[href^="tel:"],
-  .site-header__actions .header-cta[href^="mailto:"] {
-    display: none;
-  }
 
-  /* Actions row: headshot + phone side by side */
-  .site-header__actions {
+  /* === RIGHT SECTION: headshot only, fixed size, no growth === */
+  .site-header__right {
+    flex: 0 0 auto !important;  /* override width:100% from 900px block */
+    width: auto   !important;
+    margin-left: 0;
+    align-self: center;
+    align-items: center;
     flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 6px;
-    width: auto;
   }
 
-  .site-header__actions .site-header__owner-photo {
+  .site-header__trust { display: none; }
+
+  /* Actions: kill the flex:1 from the 768px CTA rule, show only headshot */
+  .site-header__actions {
+    flex: 0 0 auto !important;
+    gap: 0;
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .header-cta--primary                          { display: none; }
+  .site-header__actions .header-cta[href^="tel:"],
+  .site-header__actions .header-cta[href^="mailto:"] { display: none; }
+
+  .site-header__owner-photo {
+    width: 40px;
+    height: 40px;
     margin-left: 0;
   }
 
-  /* Stop header ::before pseudo-element animation (not covered by element rule) */
-  #header-logo-section::before { animation: none !important; }
-
-  /* Stop status indicator pulse (correct class name) */
-  .top-banner__status-indicator { animation: none; }
-
-  /* Body padding: fallback — JS positionNav() sets the accurate value after layout */
+  /* Body padding fallback */
   body { padding-top: 270px !important; }
 }
 /* Collapse toggle button — hidden on desktop, shown on phone */
