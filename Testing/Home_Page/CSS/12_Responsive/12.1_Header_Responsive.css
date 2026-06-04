@@ -124,32 +124,33 @@
     padding: 6px 8px 8px;
   }
 
-  /* === INNER ROW: [hamburger] [logo + text] [headshot] all on one line === */
-  /* !important on flex-direction, flex-wrap, align-items because the 900px block
-     in this same file sets column layout and the 768px rule in 02.1 sets flex-wrap:wrap */
+  /* === LAYOUT: hamburger top-left, logo+text below it, headshot right === */
+  /* Grid is cleaner than flex for this stacked arrangement */
   .site-header__inner {
-    flex-direction: row     !important;
-    flex-wrap:      nowrap  !important;
-    align-items:    center  !important;
-    gap: 6px;
+    display: grid             !important;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 6px;
+    row-gap: 3px;
+    align-items: center;
     padding: 0;
-    justify-content: flex-start;
   }
 
-  /* === HAMBURGER: natural width, vertically centered === */
+  /* === HAMBURGER: top-left cell === */
   #hamburger-menu_left {
-    flex: 0 0 auto;
+    grid-column: 1;
+    grid-row: 1;
     align-self: center;
   }
 
-  /* === BRAND BLOCK: fills all remaining space === */
+  /* === BRAND BLOCK: spans bottom-left + middle, below hamburger === */
   .site-header__brand-link {
-    flex: 1 1 0   !important;
-    width:   0    !important;
+    grid-column: 1 / 3;
+    grid-row: 2;
     min-width: 0;
-    align-items: center;     /* vertically center logo with text block */
+    overflow: hidden;
+    align-items: center;
     gap: 6px;
-    overflow: hidden;        /* clip anything that tries to escape */
   }
 
   .site-header__logo {
@@ -213,21 +214,22 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(200, 0, 30, 0.35);
   }
 
-  /* Email hover — teal glow to distinguish from phone */
+  /* Email hover — matches desktop CTA hover (red, same rule as phone) */
   .site-header__mobile-contact-link[href^="mailto:"]:hover {
     color: #ffffff;
-    border-color: rgba(0, 212, 255, 0.9);
-    background: rgba(0, 90, 115, 0.85);
+    border-color: rgba(255, 255, 255, 1);
+    background: rgba(160, 0, 20, 0.85);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 110, 141, 0.35);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(200, 0, 30, 0.35);
   }
 
   /* Hide home link */
   #TitleHomePageContainer { display: none; }
 
-  /* === RIGHT SECTION: headshot only, fixed size, no growth === */
+  /* === RIGHT SECTION: headshot spans both rows on the right === */
   .site-header__right {
-    flex: 0 0 auto !important;  /* override width:100% from 900px block */
+    grid-column: 3;
+    grid-row: 1 / 3;
     width: auto   !important;
     margin-left: 0;
     align-self: center;
