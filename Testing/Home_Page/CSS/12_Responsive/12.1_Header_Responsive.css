@@ -2,6 +2,14 @@
    HEADER RESPONSIVE
 ============================================================ */
 
+/* Desktop: larger headshot */
+@media (min-width: 901px) {
+  .site-header__owner-photo {
+    width: 110px;
+    height: 110px;
+  }
+}
+
 /* 900px */
 @media (max-width: 900px) {
   #header-logo-section {

@@ -2,6 +2,23 @@
    WELCOME RESPONSIVE
 ============================================================ */
 
+/* Desktop: fill the grid column fully */
+@media (min-width: 901px) {
+  .welcome__image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .welcome__content {
+    padding-top: 20px;
+  }
+
+  .content-section--welcome .content-section__label01 {
+    left: 5%;
+    top: 18px;
+  }
+}
+
 /* 900px */
 @media (max-width: 900px) {
   #section-welcome {

@@ -1,52 +1,57 @@
 /* ============================================================
    JS_Welcome_Modal.js
    Opens a flyout modal when the welcome section is clicked on desktop.
+   Uses event delegation so it works with async-loaded components.
    Desktop only (> 900px width).
 ============================================================ */
 
 (function () {
 
     function openWelcomeModal() {
-        document.getElementById('welcome-modal-backdrop').classList.add('open');
-        document.getElementById('welcome-modal').classList.add('open');
+        var backdrop = document.getElementById('welcome-modal-backdrop');
+        var modal    = document.getElementById('welcome-modal');
+        if (!backdrop || !modal) return;
+        backdrop.classList.add('open');
+        modal.classList.add('open');
         document.body.style.overflow = 'hidden';
     }
 
     function closeWelcomeModal() {
-        document.getElementById('welcome-modal-backdrop').classList.remove('open');
-        document.getElementById('welcome-modal').classList.remove('open');
+        var backdrop = document.getElementById('welcome-modal-backdrop');
+        var modal    = document.getElementById('welcome-modal');
+        if (!backdrop || !modal) return;
+        backdrop.classList.remove('open');
+        modal.classList.remove('open');
         document.body.style.overflow = '';
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
+    // Event delegation — works even though #section-welcome loads async
+    document.addEventListener('click', function (e) {
         if (window.innerWidth <= 900) return;
 
-        var section = document.getElementById('section-welcome');
-        var backdrop = document.getElementById('welcome-modal-backdrop');
-        var closeBtn = document.getElementById('welcome-modal-close');
-
-        if (!section || !backdrop) return;
-
-        // Open on section click — but NOT if the CTA button was clicked
-        section.addEventListener('click', function (e) {
-            if (e.target.closest('.welcome__cta-button')) return;
-            openWelcomeModal();
-        });
-
         // Close via backdrop click
-        backdrop.addEventListener('click', function (e) {
-            if (e.target === backdrop) closeWelcomeModal();
-        });
+        if (e.target.id === 'welcome-modal-backdrop') {
+            closeWelcomeModal();
+            return;
+        }
 
         // Close via close buttons
-        if (closeBtn) closeBtn.addEventListener('click', closeWelcomeModal);
-        var closeBtnBottom = document.getElementById('welcome-modal-close-bottom');
-        if (closeBtnBottom) closeBtnBottom.addEventListener('click', closeWelcomeModal);
+        if (e.target.closest('#welcome-modal-close') ||
+            e.target.closest('#welcome-modal-close-bottom')) {
+            closeWelcomeModal();
+            return;
+        }
 
-        // Close via Escape key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeWelcomeModal();
-        });
+        // Open when clicking welcome section (but not the CTA schedule button)
+        var section = e.target.closest('#section-welcome');
+        if (section && !e.target.closest('.welcome__cta-button')) {
+            openWelcomeModal();
+        }
+    });
+
+    // Close via Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeWelcomeModal();
     });
 
 })();
