@@ -2,11 +2,10 @@
    WELCOME RESPONSIVE
 ============================================================ */
 
-/* Desktop: fill the grid column fully */
+/* Desktop: larger image for 1920x1080 */
 @media (min-width: 901px) {
   .welcome__image {
-    width: 100%;
-    max-width: 100%;
+    max-width: 480px;
   }
 }
 

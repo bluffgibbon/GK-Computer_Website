@@ -9,7 +9,7 @@
 /* Section label */
 .content-section--welcome .content-section__label01 {
   position: absolute;
-  top: 20px;
+  top: -18px;
   left: 20px;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
