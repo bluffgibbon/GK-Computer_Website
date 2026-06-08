@@ -141,6 +141,9 @@
     <!-- Consent Overlay -->
     <link rel="stylesheet" href="CSS/14_Consent/14.1_Consent_Overlay.css">
 
+    <!-- Zoom Hint -->
+    <link rel="stylesheet" href="CSS/15_Zoom_Hint/15.1_Zoom_Hint.css">
+
     <!-- Light Theme Overrides â€” loaded last so they win the cascade -->
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_01_Top_Banner.css">
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_02_Header.css">
@@ -305,6 +308,27 @@
             </div>
 
         </div>
+    </div>
+
+    <!-- Zoom hint: shown once on desktop after consent completes -->
+    <div id="zoom-hint" aria-hidden="true">
+        <div class="zoom-hint__keys">
+            <span class="zoom-hint__key">&#x2303; Ctrl</span>
+            <span class="zoom-hint__plus">+</span>
+            <span class="zoom-hint__scroll-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7" y="3" width="10" height="16" rx="5" stroke="currentColor" stroke-width="1.6"/>
+                    <line x1="12" y1="7" x2="12" y2="11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    <polyline points="9.5,8.5 12,6 14.5,8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="9.5,9.5 12,12 14.5,9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+        <div class="zoom-hint__text">
+            <span class="zoom-hint__title">Ctrl + Scroll to Zoom</span>
+            <span class="zoom-hint__sub">Works anywhere on the page</span>
+        </div>
+        <button class="zoom-hint__dismiss" aria-label="Dismiss">&#x2715;</button>
     </div>
 
     <!-- ============================================================

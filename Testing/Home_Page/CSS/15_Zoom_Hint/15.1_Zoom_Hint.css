@@ -1,0 +1,164 @@
+/* ============================================================
+   ZOOM HINT — desktop only, shown once after consent
+============================================================ */
+
+#zoom-hint {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9000;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 18px;
+  border-radius: 16px;
+
+  background: rgba(18, 18, 20, 0.88);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55), 0 0 0 0.5px rgba(255,255,255,0.06);
+
+  cursor: pointer;
+  user-select: none;
+
+  /* hidden state — slide down + invisible */
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity 380ms cubic-bezier(0.34, 1.36, 0.64, 1),
+              transform 380ms cubic-bezier(0.34, 1.36, 0.64, 1);
+}
+
+/* visible state */
+#zoom-hint.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* fade-out state */
+#zoom-hint.hiding {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 280ms ease, transform 280ms ease;
+  pointer-events: none;
+}
+
+/* ============================================================
+   KEY PILLS
+============================================================ */
+
+.zoom-hint__keys {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.zoom-hint__key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+}
+
+.zoom-hint__plus {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 300;
+}
+
+/* ============================================================
+   SCROLL WHEEL ICON
+============================================================ */
+
+.zoom-hint__scroll-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.zoom-hint__scroll-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* ============================================================
+   LABEL TEXT
+============================================================ */
+
+.zoom-hint__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.zoom-hint__title {
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.zoom-hint__sub {
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   DISMISS X BUTTON
+============================================================ */
+
+.zoom-hint__dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.zoom-hint__dismiss:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================================
+   DESKTOP ONLY — hidden on mobile/tablet
+============================================================ */
+
+@media (max-width: 900px) {
+  #zoom-hint {
+    display: none !important;
+  }
+}

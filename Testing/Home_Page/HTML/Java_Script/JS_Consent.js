@@ -50,6 +50,30 @@
             }
         }
 
+        function showZoomHint() {
+            if (window.innerWidth <= 900) return;
+            var hint = document.getElementById('zoom-hint');
+            if (!hint) return;
+
+            // Show after the consent overlay finishes fading out
+            setTimeout(function () {
+                hint.classList.add('visible');
+
+                // Auto-dismiss after 6 seconds
+                var autoTimer = setTimeout(function () {
+                    hint.classList.add('hiding');
+                    setTimeout(function () { hint.classList.remove('visible', 'hiding'); }, 300);
+                }, 6000);
+
+                // Click anywhere on the hint to dismiss early
+                hint.addEventListener('click', function () {
+                    clearTimeout(autoTimer);
+                    hint.classList.add('hiding');
+                    setTimeout(function () { hint.classList.remove('visible', 'hiding'); }, 300);
+                }, { once: true });
+            }, 600);
+        }
+
         function completeConsent() {
             localStorage.setItem(STORAGE_KEY, '1');
             overlay.classList.remove('consent-overlay--preview');
@@ -57,6 +81,7 @@
             setTimeout(function () {
                 overlay.classList.add('hidden');
             }, 420);
+            showZoomHint();
         }
 
         function applyTheme(theme) {
