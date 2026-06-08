@@ -25,6 +25,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Desktop: larger base font so all rem values scale up for readability */
+@media (min-width: 901px) {
+  html {
+    font-size: 18px;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
+
 /* ============================================================
    BODY BASE
 ============================================================ */

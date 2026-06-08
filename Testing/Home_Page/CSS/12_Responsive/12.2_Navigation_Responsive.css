@@ -2,6 +2,13 @@
    NAVIGATION RESPONSIVE
 ============================================================ */
 
+/* Desktop: bump nav link size up to match increased 18px root */
+@media (min-width: 901px) {
+  .main-navigation__link {
+    font-size: 1rem;
+  }
+}
+
 /* 900px */
 @media (max-width: 900px) {
   #main-navigation {
