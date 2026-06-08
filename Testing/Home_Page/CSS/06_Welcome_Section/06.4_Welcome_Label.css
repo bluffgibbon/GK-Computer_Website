@@ -9,8 +9,8 @@
 /* Section label */
 .content-section--welcome .content-section__label01 {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 5%;
   z-index: 10;
 
   display: inline-block;

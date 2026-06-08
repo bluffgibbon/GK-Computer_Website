@@ -6,11 +6,12 @@
  and engaging user experience. */
 .welcome__image {
   width: 100%;
-  max-width: 260px;
+  max-width: 420px;
   height: auto;
 
   grid-column: 2;
-  justify-self: end;
+  justify-self: center;
+  align-self: center;
   flex-shrink: 0;
 
   border-radius: 12px;

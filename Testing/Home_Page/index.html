@@ -144,6 +144,9 @@
     <!-- Zoom Hint -->
     <link rel="stylesheet" href="CSS/15_Zoom_Hint/15.1_Zoom_Hint.css">
 
+    <!-- Welcome Modal -->
+    <link rel="stylesheet" href="CSS/16_Welcome_Modal/16.1_Welcome_Modal.css">
+
     <!-- Light Theme Overrides â€” loaded last so they win the cascade -->
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_01_Top_Banner.css">
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_02_Header.css">
@@ -331,6 +334,53 @@
         <button class="zoom-hint__dismiss" aria-label="Dismiss">&#x2715;</button>
     </div>
 
+    <!-- Welcome section flyout modal — desktop only -->
+    <div id="welcome-modal-backdrop"></div>
+    <div id="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-modal-heading">
+        <div class="welcome-modal__header">
+            <div>
+                <h2 class="welcome-modal__title" id="welcome-modal-heading">Welcome to GK Computer Business</h2>
+                <div class="welcome-modal__subtitle">Naples, Florida &mdash; Licensed &amp; Insured</div>
+            </div>
+            <button class="welcome-modal__close" id="welcome-modal-close" aria-label="Close">&#x2715;</button>
+        </div>
+        <div class="welcome-modal__body">
+            <p class="welcome-modal__intro">
+                GK Computer Business is a locally owned IT support company serving individuals and small businesses in Naples, Florida.
+                I provide fast, reliable, and affordable tech solutions — from same-day computer repairs to full network setups.
+                Every job is handled personally by the owner with no outsourcing and no corporate runaround.
+            </p>
+
+            <div>
+                <div class="welcome-modal__section-title">Services Offered</div>
+                <div class="welcome-modal__services">
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F5A5;</span> PC &amp; Laptop Repair</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F527;</span> Custom PC Builds</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F4BB;</span> Software &amp; OS Help</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F4F6;</span> Network &amp; Wi-Fi Setup</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F6E1;</span> Virus &amp; Malware Removal</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F4BE;</span> Data Recovery</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F9D3;</span> Senior Tech Support</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F310;</span> Website Services</div>
+                    <div class="welcome-modal__service-item"><span class="welcome-modal__service-icon">&#x1F916;</span> AI Consulting</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="welcome-modal__section-title">Get in Touch</div>
+                <div class="welcome-modal__contact">
+                    <a class="welcome-modal__contact-link" href="tel:15614498212">&#x1F4DE; (561) 449-8212</a>
+                    <a class="welcome-modal__contact-link" href="mailto:support@gkcomputerbusiness.com">&#x2709; support@gkcomputerbusiness.com</a>
+                </div>
+            </div>
+
+            <div class="welcome-modal__cta-row">
+                <a class="welcome-modal__cta welcome-modal__cta--primary" href="../../Make_An_Appiontment/HTML/Apiontment.html">Get a Free Quote</a>
+                <button class="welcome-modal__cta welcome-modal__cta--ghost" id="welcome-modal-close-bottom">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- ============================================================
      SECTION: TOP BANNER
     ============================================================ -->
@@ -388,6 +438,7 @@
      JS_Init), then modules, then bootstrap last.
     ============================================================ -->
     <script src="HTML/Java_Script/JS_Consent.js"></script>
+    <script src="HTML/Java_Script/JS_Welcome_Modal.js"></script>
     <script src="HTML/Java_Script/04_Flyout_Panel.js"></script>
     <script src="HTML/Java_Script/05_Flyout_Calendar.js"></script>
     <script src="HTML/Java_Script/JS_Loader.js"></script>

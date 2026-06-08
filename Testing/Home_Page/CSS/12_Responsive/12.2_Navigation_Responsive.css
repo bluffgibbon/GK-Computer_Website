@@ -2,10 +2,28 @@
    NAVIGATION RESPONSIVE
 ============================================================ */
 
-/* Desktop: bump nav link size up to match increased 18px root */
+/* Desktop: rounded professional nav with proper text fit */
 @media (min-width: 901px) {
+  #main-navigation {
+    height: 56px;
+    padding: 0 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 14px 14px;
+  }
+
+  .main-navigation__list {
+    gap: 6px;
+  }
+
+  .main-navigation__item {
+    border-radius: 10px;
+  }
+
   .main-navigation__link {
     font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 10px;
   }
 }
 

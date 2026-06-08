@@ -155,12 +155,12 @@
     display: contents !important;
   }
 
-  /* === LOGO: col 1, rows 2-3 === */
+  /* === LOGO: col 1, rows 2-3 — same visual weight as services button === */
   .site-header__logo {
     grid-column: 1;
     grid-row: 2 / 4;
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
     align-self: center;
     justify-self: center;
@@ -262,9 +262,13 @@
   .site-header__actions .header-cta[href^="mailto:"] { display: none; }
 
   .site-header__owner-photo {
-    width: 34px;
-    height: 34px;
+    width: 100%;
+    height: auto;
+    max-width: 44px;
     margin-left: 0;
+    align-self: stretch;
+    object-fit: cover;
+    border-radius: 6px;
   }
 
   /* Body padding fallback */
