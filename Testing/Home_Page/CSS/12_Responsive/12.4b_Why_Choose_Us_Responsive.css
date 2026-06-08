@@ -1,0 +1,46 @@
+/* ============================================================
+   WHY CHOOSE US RESPONSIVE
+============================================================ */
+
+/* 1100px: drop from 3 to 2 columns so cards stay readable */
+@media (max-width: 1100px) {
+  .why-choose-us__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 900px: section padding + single column */
+@media (max-width: 900px) {
+  #section-why-choose-us {
+    padding: 40px 5%;
+  }
+
+  .why-choose-us__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* 600px: single column on small tablets */
+@media (max-width: 600px) {
+  .why-choose-us__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 480px: stop heavy animation on phone */
+@media (max-width: 480px) {
+  #section-why-choose-us {
+    animation: none !important;
+    padding: 36px 4%;
+  }
+
+  .why-choose-us__cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .why-choose-us__card {
+    --iconSize: 70px;
+  }
+}
