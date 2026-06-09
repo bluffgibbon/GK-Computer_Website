@@ -1,90 +1,52 @@
 /* ============================================================
-   HOVER ZONE
+   SIDE MENU BACKGROUND & BORDER
 ============================================================ */
-/* This section defines the styles for the hover zone in the side menu of the home page. 
- The hover zone is a fixed element that spans the full height of the viewport and is positioned
-  on the left edge of the screen. 
- It serves as an invisible trigger area for activating the side menu when users hover over it. 
- The width of the hover zone is set to 18px, providing a sufficient area for users to interact 
- with while remaining unobtrusive. 
- The transparent background ensures that the hover zone does not interfere with the visual design
-  of the page, while its high z-index value ensures that it remains above other elements, allowing
-  it to function effectively as an interactive trigger for the side menu. */
-#hoverZone {
-  position: fixed;
-  top: 0;
-  left: 0;
 
-  width: 18px;
-  height: 100vh;
-
-  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: transparent;
-  
-
-  z-index: 2147483646;
-}
-
-/* ============================================================
-   SIDE MENU PANEL (BACKGROUND & BORDER)
-============================================================ */
-/* This section defines the single background layer, border, and visual styling of the side menu panel.
- The side menu uses one dark gradient background directly on the panel itself.
- Additional transitions for box-shadow and border-color enhance the opening animation
- without stacking multiple full-panel background layers on top of each other. */
 #sideMenu {
-  position: fixed;
-  top: 0;
-  left: 0;
+  background: linear-gradient(
+    180deg,
+    #060D1A 0%,
+    #040910 35%,
+    #050B16 65%,
+    #030608 100%
+  );
 
-  width: 320px;
-  height: 100vh;
-
-  padding: 84px 16px 20px;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  z-index: 2147483647;
-
-  /* Panel background — slightly lighter than pure black so items have contrast */
-  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background:
-    linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%) 25%,
-      rgb(95, 95, 95) 60%,
-      rgb(29, 29, 29) 100%
-    );
-
-  /* Right edge: red accent line */
   border-right: 2px solid rgba(0, 212, 255, 0.55);
 
-  /* Subtle red left-edge glow + teal inner warmth */
   box-shadow:
-    inset -1px 0 0 rgba(200, 0, 30, 0.2),
-    inset 0 0 60px rgba(200, 0, 30, 0.04),
-    inset 0 0 120px rgba(0, 0, 0, 0.6);
+    12px 0 60px rgba(0, 0, 0, 0.85),
+    inset -1px 0 0 rgba(0, 212, 255, 0.15),
+    inset 0 0 80px rgba(0, 0, 0, 0.5);
 
-  transform: translateX(-105%);
   transition: transform 260ms cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 260ms ease,
               border-color 260ms ease;
-
-  box-sizing: border-box;
-  will-change: transform;
 }
 
-/* Top red aura bar */
+/* Active: cyan glow intensifies */
+#sideMenu.active {
+  border-right-color: rgba(0, 212, 255, 0.85);
+  box-shadow:
+    12px 0 60px rgba(0, 0, 0, 0.9),
+    4px 0 30px rgba(0, 212, 255, 0.15),
+    inset -1px 0 0 rgba(0, 212, 255, 0.3),
+    inset 0 0 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Cyan top accent line */
 #sideMenu::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: linear-gradient(90deg, transparent, rgb(200, 0, 30) 40%, rgb(255, 80, 80) 50%, rgb(200, 0, 30) 60%, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.8) 40%, rgba(0, 240, 255, 1) 50%, rgba(0, 212, 255, 0.8) 60%, transparent);
   z-index: 3;
   pointer-events: none;
 }
 
-/* Bottom teal aura bar */
+/* Red bottom accent line */
 #sideMenu::after {
   content: "";
   position: absolute;
@@ -92,26 +54,15 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: linear-gradient(90deg, transparent, rgba(0, 110, 141, 0.7) 50%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 26, 60, 0.6) 40%, rgba(255, 26, 60, 0.9) 50%, rgba(255, 26, 60, 0.6) 60%, transparent);
   z-index: 3;
   pointer-events: none;
 }
 
-/* ACTIVE — slides in with a stronger glow */
-#sideMenu.active {
-  transform: translateX(0);
-  border-right-color: rgba(200, 0, 30, 1);
-  box-shadow:
-    12px 0 60px rgba(0, 0, 0, 0.8),
-    4px 0 30px rgba(200, 0, 30, 0.25),
-    inset -1px 0 0 rgba(200, 0, 30, 0.35),
-    inset 0 0 80px rgba(200, 0, 30, 0.06);
-}
-
 /* Scrollbar */
 #sideMenu::-webkit-scrollbar { width: 3px; }
-#sideMenu::-webkit-scrollbar-track { background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: transparent; }
+#sideMenu::-webkit-scrollbar-track { background: transparent; }
 #sideMenu::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: rgba(200, 0, 30, 0.4);
+  background: rgba(0, 212, 255, 0.35);
   border-radius: 2px;
 }

@@ -44,15 +44,15 @@
   transition: transform 400ms ease;
 }
 
-/* Hover */
+/* Hover: circuit engaged — flips to cyan */
 .welcome__cta-button:hover {
   transform: translateX(5px) scale(0.98);
-  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
-  border: 3px solid rgb(124, 58, 237);
+  background: linear-gradient(135deg, rgb(0, 180, 230) 0%, rgb(0, 50, 90) 100%);
+  border: 3px solid rgb(0, 212, 255);
   box-shadow:
-    0 0 18px rgba(124, 58, 237, 0.7),
-    0 0 40px rgba(124, 58, 237, 0.25);
-  border-color: rgba(124, 58, 237, 1);
+    0 0 22px rgba(0, 212, 255, 0.65),
+    0 0 45px rgba(0, 212, 255, 0.22);
+  border-color: rgba(0, 212, 255, 1);
 }
 
 /* Shine hover */
@@ -60,12 +60,12 @@
   transform: translateX(100%);
 }
 
-/* CTA button hover triggered by section hover */
+/* Section hover also triggers cyan */
 #section-welcome:hover .welcome__cta-button {
   transform: translateX(5px) scale(0.98);
-  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
+  background: linear-gradient(135deg, rgb(0, 180, 230) 0%, rgb(0, 50, 90) 100%);
   box-shadow:
-    0 0 18px rgba(124, 58, 237, 0.7),
-    0 0 40px rgba(124, 58, 237, 0.25);
-  border-color: rgb(124, 58, 237);
+    0 0 22px rgba(0, 212, 255, 0.65),
+    0 0 45px rgba(0, 212, 255, 0.22);
+  border-color: rgb(0, 212, 255);
 }

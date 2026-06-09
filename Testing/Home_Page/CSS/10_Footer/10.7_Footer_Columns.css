@@ -152,21 +152,21 @@
 .footer__column-title_Contact,
 .footer__column-title_Quick_Links,
 .footer__column-title_Services {
-  margin: 0 0 20px 0;
-  padding: 0 0 14px 0;
+  margin: 0 0 18px 0;
+  padding: 0 0 20px 0;
 
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
 
   color: rgb(251, 251, 251);
   text-shadow:
-    0 0 16px rgba(0, 110, 141, 0.6),
-    0 0 4px rgba(0, 180, 220, 0.3);
+    0 0 16px rgba(0, 212, 255, 0.45),
+    0 0 4px rgba(0, 212, 255, 0.2);
 
-  border-bottom: 2px solid rgba(0, 110, 141, 0.35);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.25);
   position: relative;
   transition: all 260ms ease;
 }
@@ -180,13 +180,12 @@
   content: "";
   display: block;
   position: absolute;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
+  bottom: -1px;
+  left: 0;
+  width: 36px;
   height: 2px;
-  background: rgb(200, 0, 30);
-  box-shadow: 0 0 8px rgba(200, 0, 30, 0.7);
+  background: rgba(255, 26, 60, 0.9);
+  box-shadow: 0 0 8px rgba(255, 26, 60, 0.6);
   transition: width 260ms ease;
 }
 
@@ -198,10 +197,10 @@
 .footer__column_Services:hover .footer__column-title_Services {
   color: #ffffff;
   text-shadow:
-    0 0 20px rgba(200, 0, 30, 0.7),
-    0 0 8px rgba(255, 80, 80, 0.4),
+    0 0 20px rgba(0, 212, 255, 0.65),
+    0 0 8px rgba(0, 212, 255, 0.3),
     0 2px 4px rgba(0, 0, 0, 0.6);
-  border-bottom-color: rgba(200, 0, 30, 0.5);
+  border-bottom-color: rgba(0, 212, 255, 0.45);
 }
 
 /* Accent bar widens on hover */
