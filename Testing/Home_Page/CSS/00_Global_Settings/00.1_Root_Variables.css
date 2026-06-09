@@ -1,42 +1,50 @@
 /* ============================================================
-   ROOT VARIABLES
+   ROOT VARIABLES — GK Computer Business LLC
+   Logo reference: black bg, cyan circuit traces, red power glow
 ============================================================ */
-/* Define global CSS variables for colors, spacing, typography, 
-and other design tokens to maintain consistency across the website */
 :root {
-  /* Deep navy-black — adds depth vs flat black */
-  --bg-0: #050D1C;
-  --bg-1: #060E1A;
-  --bg-2: #081422;
+  /* ── Backgrounds: near-pure black, circuit board depth ── */
+  --bg-0: #030608;
+  --bg-1: #050A12;
+  --bg-2: #070E18;
 
-  /* Blue-glass panels */
-  --panel-0: rgba(5, 15, 45, 0.82);
-  --panel-1: rgba(8, 22, 58, 0.70);
+  /* ── Glass panels ── */
+  --panel-0: rgba(0, 15, 28, 0.90);
+  --panel-1: rgba(0, 10, 20, 0.78);
 
-  /* Text — brighter for better contrast parity with light theme */
+  /* ── Text: clean on black ── */
   --text-0: #ffffff;
-  --text-1: #E2EAF5;
-  --text-2: #B8CADE;
-  --text-3: #8FA5BF;
+  --text-1: #C8DCE8;
+  --text-2: #8AACBE;
+  --text-3: #567890;
 
-  /* Accents — electric, neon pop */
-  --red:    rgb(255, 26, 60);
-  --blue:   #0066FF;
-  --cyan:   #00F0FF;
-  --purple: #7C3AED;
-  --green:  #00FF88;
+  /* ── PRIMARY: Cyan / teal — circuit board identity color ── */
+  --cyan:       #00D4FF;
+  --cyan-bright:#00EEFF;
+  --cyan-dark:  #0088BB;
 
-  /* Brighter neon borders */
-  --border-1: rgba(0, 240, 255, 0.28);
-  --border-2: rgba(0, 240, 255, 0.45);
+  /* ── ACCENT: Red — power glow / hover / CTA ── */
+  --red:        #FF1A3C;
+  --red-dark:   #BB0020;
 
+  /* ── Supporting ── */
+  --blue:  #0066FF;
+  --green: #00FF88;
+
+  /* ── Borders ── */
+  --border-1: rgba(0, 212, 255, 0.28);
+  --border-2: rgba(0, 212, 255, 0.52);
+
+  /* ── Radii ── */
   --radius-1: 6px;
   --radius-2: 10px;
   --radius-3: 14px;
 
-  --shadow-1: 0 10px 28px rgba(0, 0, 0, 0.45);
-  --shadow-2: 0 16px 44px rgba(0, 0, 0, 0.55);
+  /* ── Shadows ── */
+  --shadow-1: 0 10px 28px rgba(0, 0, 0, 0.65);
+  --shadow-2: 0 16px 44px rgba(0, 0, 0, 0.75);
 
+  /* ── Timing ── */
   --ease: 220ms ease;
   --anim-diagonal: 15s;
   --anim-ease: ease;
@@ -44,27 +52,28 @@ and other design tokens to maintain consistency across the website */
 
 /* ============================================================
    LIGHT THEME OVERRIDES
-   Applied when body.light is active via JS_Theme.js
 ============================================================ */
 body.light {
   --bg-0: #f0f4f8;
   --bg-1: #e8edf3;
   --bg-2: #dce3ec;
 
-  --panel-0: rgba(220, 228, 240, 0.80);
-  --panel-1: rgba(200, 212, 228, 0.70);
+  --panel-0: rgba(220, 228, 240, 0.85);
+  --panel-1: rgba(200, 212, 228, 0.72);
 
   --text-0: #0d1525;
   --text-1: #1e2d42;
   --text-2: #3a4f68;
   --text-3: #5a7090;
 
-  --blue:  #0050cc;
-  --cyan:  #0099bb;
-  --green: #00994d;
+  --cyan:      #0088BB;
+  --cyan-dark: #005577;
+
+  --red:       #CC0020;
+  --red-dark:  #880015;
 
   --border-1: rgba(0, 100, 180, 0.18);
-  --border-2: rgba(0, 100, 180, 0.32);
+  --border-2: rgba(0, 100, 180, 0.38);
 
   --shadow-1: 0 10px 28px rgba(0, 0, 0, 0.12);
   --shadow-2: 0 16px 44px rgba(0, 0, 0, 0.18);

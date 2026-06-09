@@ -22,8 +22,8 @@
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(160deg, #0d1525 0%, #070b14 100%);
-  border: 1px solid rgba(200, 0, 30, 0.45);
+  background: linear-gradient(160deg, #050A14 0%, #030608 100%);
+  border: 1px solid rgba(255, 26, 60, 0.45);
   border-radius: 16px;
   box-shadow: 0 0 60px rgba(200,0,30,0.15), 0 24px 64px rgba(0,0,0,0.8);
   overflow: hidden;
@@ -237,9 +237,9 @@
 
 /* Selected state on theme preview buttons */
 .consent-theme-btn.selected {
-  border-color: rgba(200, 0, 30, 0.9);
-  background: rgba(200, 0, 30, 0.18);
-  box-shadow: 0 0 28px rgba(200, 0, 30, 0.35);
+  border-color: rgba(255, 26, 60, 0.9);
+  background: rgba(255, 26, 60, 0.18);
+  box-shadow: 0 0 28px rgba(255, 26, 60, 0.35);
 }
 
 /* OK confirm button on theme step */

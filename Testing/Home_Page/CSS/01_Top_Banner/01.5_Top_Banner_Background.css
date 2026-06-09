@@ -2,6 +2,6 @@
    BANNER BACKGROUND
 ============================================================ */
 #top-banner {
-  background: linear-gradient(180deg, #06121a, #0a0f1a);
-  border-bottom: 1px solid rgba(0, 212, 255, 0.16);
+  background: linear-gradient(180deg, #040A14, #030608);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.30);
 }

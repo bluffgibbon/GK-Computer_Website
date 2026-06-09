@@ -27,11 +27,11 @@
   white-space: nowrap;
 
   color: #fff;
-  background: linear-gradient(135deg, rgb(255, 26, 60) 0%, rgb(80, 10, 40) 100%);
+  background: rgba(0, 15, 28, 0.90); border: 1.5px solid rgba(0, 212, 255, 0.65); color: #00D4FF;
 
   box-shadow:
-    0 4px 15px rgb(255, 255, 255),
-    0 0 30px rgba(255, 255, 255, 0.2);
+    0 0 12px rgba(0, 212, 255, 0.4),
+    0 0 25px rgba(0, 212, 255, 0.15);
 
   transition: all 200ms ease;
 }
@@ -39,17 +39,17 @@
 /* Section label hover */
 .content-section--welcome .content-section__label01:hover {
   transform: translateX(-5px) scale(1.02);
-  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
+  background: rgba(0, 25, 45, 0.95); border-color: rgba(0, 212, 255, 0.90); color: #00EEFF;
   box-shadow:
-    0 6px 20px rgba(255, 255, 255, 0.6),
-    0 0 40px rgba(255, 255, 255, 0.25);
+    0 0 18px rgba(0, 212, 255, 0.6),
+    0 0 35px rgba(0, 212, 255, 0.2);
 }
 
 /* Section label hover triggered by section hover */
 #section-welcome:hover .content-section__label01 {
   transform: translateX(-5px) scale(1.02);
-  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
+  background: rgba(0, 25, 45, 0.95); border-color: rgba(0, 212, 255, 0.90); color: #00EEFF;
   box-shadow:
-    0 6px 20px rgba(255, 255, 255, 0.6),
-    0 0 40px rgba(255, 255, 255, 0.25);
+    0 0 18px rgba(0, 212, 255, 0.6),
+    0 0 35px rgba(0, 212, 255, 0.2);
 }

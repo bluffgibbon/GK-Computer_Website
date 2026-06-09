@@ -12,16 +12,16 @@
   overflow: hidden;
   background: linear-gradient(
     160deg,
-    #060E1C 0%,
-    #081220 30%,
-    #050C18 50%,
-    #081220 70%,
-    #060E1C 100%
+    #050A14 0%,
+    #070D18 30%,
+    #040910 50%,
+    #070D18 70%,
+    #050A14 100%
   );
   background-size: 300% 300%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-top-color: rgba(255, 255, 255, 0.9);
-  border-bottom-color: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 212, 255, 0.18);
+  border-top-color: rgba(0, 212, 255, 0.70);
+  border-bottom-color: rgba(255, 26, 60, 0.35);
   border-radius: 28px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
   animation: diagonalFlow 18s linear infinite, borderPulse 7s ease infinite;
@@ -30,6 +30,6 @@
 
 /* Hover */
 #section-why-choose-us:hover {
-  border-color: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 18px 48px rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(0, 212, 255, 1); border-color: rgba(0, 212, 255, 0.45);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 212, 255, 0.10);
 }

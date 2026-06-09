@@ -17,8 +17,14 @@
 }
 
 @keyframes borderPulse {
-  0%,100% { border-color: rgba(255, 255, 255, 0.7); }
-  50% { border-color: rgba(255, 255, 255, 1); }
+  0%, 100% {
+    border-top-color: rgba(0, 212, 255, 0.55);
+    border-bottom-color: rgba(255, 26, 60, 0.28);
+  }
+  50% {
+    border-top-color: rgba(0, 212, 255, 0.95);
+    border-bottom-color: rgba(255, 26, 60, 0.55);
+  }
 }
 
 @keyframes statusPulse {

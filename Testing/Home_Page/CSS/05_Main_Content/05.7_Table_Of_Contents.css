@@ -18,15 +18,15 @@
 
     background: linear-gradient(
         160deg,
-        #080808 0%,
-        #0d1117 30%,
-        #080808 50%,
-        #0d1117 70%,
-        #080808 100%
+        #050A14 0%,
+        #070D18 30%,
+        #040910 50%,
+        #070D18 70%,
+        #050A14 100%
     );
 
-    border-top: 2px solid rgba(255, 255, 255, 0.9);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+    border-top: 2px solid rgba(0, 212, 255, 0.60);
+    border-bottom: 2px solid rgba(255, 26, 60, 0.30);
 }
 
 /* ---- Label ---- */
@@ -36,7 +36,7 @@
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgb(253, 253, 253);
+    color: rgba(0, 212, 255, 0.85);
 }
 
 /* ---- Navigation Row ---- */
@@ -64,7 +64,7 @@
     color: rgba(255, 255, 255, 0.85);
 
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.40);
 
     transition: all 220ms ease;
     cursor: pointer;
@@ -72,9 +72,9 @@
 
 .toc__link:hover {
     color: #ffffff;
-    background: linear-gradient(135deg,  rgb(0, 110, 141) 0%, rgba(0, 0, 0, 0.3) 100%);
-    border-color: rgb(255, 255, 255);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.923);
+    background: rgba(0, 30, 55, 0.90);
+    border-color: rgba(0, 212, 255, 0.85);
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.45);
     transform: translateY(-1px);
 }
 

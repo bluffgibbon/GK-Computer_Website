@@ -18,7 +18,7 @@
   width: 18px;
   height: 100vh;
 
-  background: transparent;
+  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: transparent;
   
 
   z-index: 2147483646;
@@ -47,16 +47,14 @@
   z-index: 2147483647;
 
   /* Panel background — slightly lighter than pure black so items have contrast */
-  background:
-    linear-gradient(180deg,
-      rgb(104, 23, 17) 0%,
-      rgb(63, 63, 63) 25%,
+  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background:
+    linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%) 25%,
       rgb(95, 95, 95) 60%,
       rgb(29, 29, 29) 100%
     );
 
   /* Right edge: red accent line */
-  border-right: 2px solid rgba(200, 0, 30, 0.8);
+  border-right: 2px solid rgba(0, 212, 255, 0.55);
 
   /* Subtle red left-edge glow + teal inner warmth */
   box-shadow:
@@ -81,7 +79,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgb(200, 0, 30) 40%, rgb(255, 80, 80) 50%, rgb(200, 0, 30) 60%, transparent);
+  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: linear-gradient(90deg, transparent, rgb(200, 0, 30) 40%, rgb(255, 80, 80) 50%, rgb(200, 0, 30) 60%, transparent);
   z-index: 3;
   pointer-events: none;
 }
@@ -94,7 +92,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 110, 141, 0.7) 50%, transparent);
+  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: linear-gradient(90deg, transparent, rgba(0, 110, 141, 0.7) 50%, transparent);
   z-index: 3;
   pointer-events: none;
 }
@@ -112,8 +110,8 @@
 
 /* Scrollbar */
 #sideMenu::-webkit-scrollbar { width: 3px; }
-#sideMenu::-webkit-scrollbar-track { background: transparent; }
+#sideMenu::-webkit-scrollbar-track { background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: transparent; }
 #sideMenu::-webkit-scrollbar-thumb {
-  background: rgba(200, 0, 30, 0.4);
+  background: linear-gradient(180deg, #040A14 0%, #030608 25%, #050A12 60%, #030608 100%); /* was:background: rgba(200, 0, 30, 0.4);
   border-radius: 2px;
 }

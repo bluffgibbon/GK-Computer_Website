@@ -21,7 +21,7 @@
     padding: 18px 2vw 10px;
     border-bottom-width: 1px;
     z-index: 1000;
-    background: linear-gradient(180deg, #050a15 0%, #0a1628 100%);
+    background: linear-gradient(180deg, #040910 0%, #050A14 100%);
   }
 
   body {
@@ -227,18 +227,18 @@
   .site-header__mobile-contact-link[href^="tel:"]:hover {
     color: #ffffff;
     border-color: rgba(255, 255, 255, 1);
-    background: rgba(160, 0, 20, 0.85);
+    background: rgba(0, 40, 65, 0.95);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(200, 0, 30, 0.35);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 14px rgba(0, 212, 255, 0.4);
   }
 
   /* Email hover — matches desktop CTA hover (red, same rule as phone) */
   .site-header__mobile-contact-link[href^="mailto:"]:hover {
     color: #ffffff;
     border-color: rgba(255, 255, 255, 1);
-    background: rgba(160, 0, 20, 0.85);
+    background: rgba(0, 40, 65, 0.95);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(200, 0, 30, 0.35);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 14px rgba(0, 212, 255, 0.4);
   }
 
   /* Hide home link */
