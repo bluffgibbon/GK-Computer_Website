@@ -62,9 +62,16 @@
     gap: 10px;
   }
 
-  /* Hide decorative image — reclaims the vertical space */
+  /* Switch back to 2 columns — text left, small image right */
+  #section-welcome {
+    grid-template-columns: 1fr 100px;
+  }
+
   .welcome__image {
-    display: none;
+    max-width: 90px;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
   }
 
   /* Label — tucked into top corner, smaller */
