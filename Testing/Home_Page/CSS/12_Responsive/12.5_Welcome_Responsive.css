@@ -60,14 +60,14 @@
     animation: none !important;
     /* 2-column: text fills left, small image on right */
     grid-template-columns: 1fr 80px;
-    padding: 36px 4% 16px;
+    padding: 46px 4% 16px;   /* extra top gives label room above content */
     gap: 10px;
     border-radius: 16px;
   }
 
-  /* Label: small pill tucked to top-left, clear of content */
+  /* Label: sits at the very top, well above the grid content area */
   .content-section--welcome .content-section__label01 {
-    top: 6px;
+    top: 8px;
     left: 10px;
     font-size: 0.55rem;
     padding: 2px 10px;
@@ -82,7 +82,7 @@
   }
 
   .welcome__heading-row {
-    margin-top: 6px;
+    margin-top: 0;
     gap: 4px;
     align-items: flex-start;
   }
