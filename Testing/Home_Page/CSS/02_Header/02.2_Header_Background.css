@@ -6,11 +6,11 @@
 #header-logo-section {
   background: linear-gradient(
     160deg,
-    #080808 0%,
-    #0a0a0a 30%,
-    #060606 50%,
-    #0a0a0a 70%,
-    #080808 100%
+    #060E1A 0%,
+    #081220 30%,
+    #050D18 50%,
+    #081220 70%,
+    #060E1A 100%
   );
   background-size: 300% 300%;
   border-bottom: 2px solid rgb(255, 255, 255);
@@ -39,7 +39,7 @@
   background:
     radial-gradient(
       ellipse 80% 100% at 50% 0%,
-      rgb(107, 0, 0),
+      rgba(100, 30, 180, 0.55),
       transparent 100%
     ),
     repeating-linear-gradient(

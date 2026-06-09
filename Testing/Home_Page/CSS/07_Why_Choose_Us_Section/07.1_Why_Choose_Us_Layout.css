@@ -12,11 +12,11 @@
   overflow: hidden;
   background: linear-gradient(
     160deg,
-    #080808 0%,
-    #0a0a0a 30%,
-    #060606 50%,
-    #0a0a0a 70%,
-    #080808 100%
+    #060E1C 0%,
+    #081220 30%,
+    #050C18 50%,
+    #081220 70%,
+    #060E1C 100%
   );
   background-size: 300% 300%;
   border: 1px solid rgba(255, 255, 255, 0.14);

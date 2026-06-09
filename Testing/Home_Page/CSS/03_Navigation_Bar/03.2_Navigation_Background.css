@@ -11,12 +11,12 @@ enhanced visual experience. */
 #main-navigation {
   background: linear-gradient(
     180deg,
-    #080808 0%,
-    #060606 100%
+    #081220 0%,
+    #060E1A 100%
   );
 
-  border-top: 2px solid rgba(255, 255, 255, 0.9);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+  border-top: 2px solid rgba(0, 240, 255, 0.6);
+  border-bottom: 2px solid rgba(124, 58, 237, 0.5);
 }
 
 /* ============================================================

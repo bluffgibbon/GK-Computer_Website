@@ -20,7 +20,7 @@
   white-space: nowrap;
 
   color: #fff;
-  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(135deg, rgb(255, 26, 60) 0%, rgb(80, 10, 40) 100%);
 
   box-shadow:
     0 4px 15px rgb(255, 255, 255),
@@ -32,7 +32,7 @@
 /* Label own hover */
 .content-section--why-choose-us .content-section__label02:hover {
   transform: translateX(-5px) scale(1.02);
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
   box-shadow:
     0 6px 20px rgba(255, 255, 255, 0.6),
     0 0 40px rgba(255, 255, 255, 0.25);
@@ -41,7 +41,7 @@
 /* Section hover triggers label */
 #section-why-choose-us:hover .content-section__label02 {
   transform: translateX(-5px) scale(1.02);
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
   box-shadow:
     0 6px 20px rgba(255, 255, 255, 0.6),
     0 0 40px rgba(255, 255, 255, 0.25);

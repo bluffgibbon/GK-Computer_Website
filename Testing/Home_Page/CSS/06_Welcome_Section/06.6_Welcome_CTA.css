@@ -15,15 +15,15 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
 
-  color: #ececec;
-  background: linear-gradient(135deg, rgb(143, 0, 0) 0%, rgb(0, 0, 0) 100%);
-  border: 3px solid rgb(255, 0, 0);
+  color: #ffffff;
+  background: linear-gradient(135deg, rgb(255, 26, 60) 0%, rgb(80, 5, 30) 100%);
+  border: 3px solid rgb(255, 26, 60);
 
   cursor: pointer;
   position: relative;
   overflow: hidden;
 
-  box-shadow: 0 0 20px rgb(255, 0, 0);
+  box-shadow: 0 0 22px rgba(255, 26, 60, 0.6);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -47,12 +47,12 @@
 /* Hover */
 .welcome__cta-button:hover {
   transform: translateX(5px) scale(0.98);
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
-  border: 3px solid rgb(0, 157, 255);
+  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
+  border: 3px solid rgb(124, 58, 237);
   box-shadow:
-    0 0 12px rgba(255, 255, 255, 0.6),
-    0 0 30px rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 1);
+    0 0 18px rgba(124, 58, 237, 0.7),
+    0 0 40px rgba(124, 58, 237, 0.25);
+  border-color: rgba(124, 58, 237, 1);
 }
 
 /* Shine hover */
@@ -63,9 +63,9 @@
 /* CTA button hover triggered by section hover */
 #section-welcome:hover .welcome__cta-button {
   transform: translateX(5px) scale(0.98);
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(135deg, rgb(124, 58, 237) 0%, rgb(20, 5, 50) 100%);
   box-shadow:
-    0 0 12px rgb(0, 157, 255),
-    0 0 30px rgba(0, 157, 255, 0.25);
-  border-color: rgb(0, 157, 255);
+    0 0 18px rgba(124, 58, 237, 0.7),
+    0 0 40px rgba(124, 58, 237, 0.25);
+  border-color: rgb(124, 58, 237);
 }
