@@ -9,13 +9,13 @@
  These styles work together to create an effective and attractive header that enhances the presentation
   of the side menu and encourages users to explore its contents. */
 #sideMenu li h1 {
+  /* flex + fit-content + auto margin = pill wraps both text and arrow */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
   margin: 0 auto;
   padding: 11px 20px;
-
-  /* inline-flex keeps text + arrow in one pill row */
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
 
   border-radius: 999px;
   border: 2px solid rgba(0, 212, 255, 0.70);
@@ -79,28 +79,16 @@
 /* ============================================================
    CLOSE ARROW — styled as a visible button inside the pill
 ============================================================ */
+/* Arrow is a plain flex child inside the pill — no separate box */
 .side-menu__close-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  margin-left: 12px;
-  padding: 4px 12px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.92);
-  cursor: pointer;
-  white-space: nowrap;
-  text-transform: uppercase;
-  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  font-size: 0.9rem;
+  color: rgba(0, 212, 255, 0.75);
+  flex-shrink: 0;
+  transition: color 180ms ease;
 }
 
-.side-menu__close-arrow:hover {
-  background: rgba(255, 26, 60, 0.25);
-  border-color: rgba(255, 26, 60, 0.7);
-  box-shadow: 0 0 10px rgba(255, 26, 60, 0.4);
-  color: #fff;
+#sideMenu li h1:hover .side-menu__close-arrow {
+  color: rgba(255, 26, 60, 0.9);
 }
