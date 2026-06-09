@@ -19,12 +19,12 @@
   padding-right: 40px;
 
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(0, 212, 255, 0.14);
 
   background: rgba(0, 0, 0, 0.35);
 
   box-shadow:
-    0 2px 8px rgba(254, 254, 254, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
   font-size: 0.88rem;
@@ -54,24 +54,24 @@
 
 /* Even items — red */
 #sideMenu li:nth-child(even):hover {
-  background: linear-gradient(120deg, rgba(160, 0, 0, 0.9) 0%, rgba(8, 0, 0, 0.95) 100%);
-  border-color: rgba(200, 0, 30, 0.6);
+  background: linear-gradient(120deg, rgba(180, 10, 30, 0.9) 0%, rgba(8, 0, 0, 0.95) 100%);
+  border-color: rgba(255, 26, 60, 0.65);
   box-shadow:
-    0 4px 20px rgb(255, 0, 0),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 0 20px rgba(200, 0, 30, 0.08);
+    0 4px 20px rgba(255, 26, 60, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 20px rgba(255, 26, 60, 0.06);
   transform: translateX(4px);
   color: #ffffff;
 }
 
 /* Odd items (excluding header) — teal */
 #sideMenu li:nth-child(odd):not(:first-child):hover {
-  background: linear-gradient(120deg, rgba(0, 90, 115, 0.9) 0%, rgba(0, 4, 8, 0.95) 100%);
-  border-color: rgba(0, 110, 141, 0.6);
+  background: linear-gradient(120deg, rgba(0, 25, 50, 0.95) 0%, rgba(0, 4, 8, 0.95) 100%);
+  border-color: rgba(0, 212, 255, 0.55);
   box-shadow:
-    0 4px 20px rgb(0, 200, 255),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 0 20px rgba(0, 110, 141, 0.08);
+    0 4px 20px rgba(0, 212, 255, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 20px rgba(0, 212, 255, 0.05);
   transform: translateX(4px);
   color: #ffffff;
 }
@@ -116,14 +116,14 @@
 #sideMenu li:nth-child(even):hover::before {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
-  color: rgba(255, 100, 100, 0.9);
+  color: rgba(255, 26, 60, 0.9);
 }
 
 /* Odd items — teal arrow */
 #sideMenu li:nth-child(odd):not(:first-child):hover::before {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
-  color: rgba(0, 180, 220, 0.9);
+  color: rgba(0, 212, 255, 0.9);
 }
 
 /* ============================================================
@@ -165,14 +165,14 @@ appears below each item in the side menu when hovered.
 #sideMenu li:nth-child(even):hover::after {
   opacity: 1;
   transform: scaleX(1);
-  background: linear-gradient(90deg, rgb(200, 0, 30), rgba(255, 255, 255, 0.6));
-  box-shadow: 0 0 6px rgba(200, 0, 30, 0.6);
+  background: linear-gradient(90deg, rgb(255, 26, 60), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 6px rgba(255, 26, 60, 0.6);
 }
 
 /* Odd items (excluding header) hover — teal underline */
 #sideMenu li:nth-child(odd):not(:first-child):hover::after {
   opacity: 1;
   transform: scaleX(1);
-  background: linear-gradient(90deg, rgb(0, 110, 141), rgba(255, 255, 255, 0.6));
-  box-shadow: 0 0 6px rgba(0, 110, 141, 0.6);
+  background: linear-gradient(90deg, rgb(0, 212, 255), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
 }

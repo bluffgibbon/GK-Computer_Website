@@ -10,10 +10,10 @@
   creating a dynamic and engaging interface for users. */
 @keyframes navBorderPulse {
   0%,100% {
-    border-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 212, 255, 0.55);
   }
   50% {
-    border-color: rgba(200, 0, 30, 0.8);
+    border-color: rgba(255, 26, 60, 0.75);
   }
 }
 
