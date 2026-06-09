@@ -145,6 +145,9 @@
     <!-- Zoom Hint -->
     <link rel="stylesheet" href="CSS/15_Zoom_Hint/15.1_Zoom_Hint.css">
 
+    <!-- Quote Estimator Modal -->
+    <link rel="stylesheet" href="CSS/17_Quote_Modal/17.1_Quote_Modal.css">
+
 
     <!-- Light Theme Overrides â€” loaded last so they win the cascade -->
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_01_Top_Banner.css">
@@ -312,6 +315,79 @@
         </div>
     </div>
 
+    <!-- Free Quote Estimator Modal -->
+    <div id="quote-backdrop"></div>
+    <div id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+        <div class="quote-modal__header">
+            <div class="quote-modal__header-text">
+                <div class="quote-modal__eyebrow">GK Computer Business &mdash; Naples, FL</div>
+                <h2 class="quote-modal__title" id="quote-modal-title">Your Free Quote Estimate</h2>
+            </div>
+            <button class="quote-modal__close" id="quote-modal-close" aria-label="Close">&#x2715;</button>
+        </div>
+        <div class="quote-modal__body">
+
+            <div>
+                <div class="quote-modal__section-label">1. Select a Service</div>
+                <div class="quote-modal__services">
+                    <button class="quote-modal__service-btn" data-service="pc-repair" type="button">
+                        <span class="quote-modal__service-icon">🖥️</span> PC &amp; Laptop Repair
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="virus" type="button">
+                        <span class="quote-modal__service-icon">🛡️</span> Virus &amp; Malware Removal
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="software" type="button">
+                        <span class="quote-modal__service-icon">💻</span> Software &amp; OS Help
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="network" type="button">
+                        <span class="quote-modal__service-icon">📶</span> Network &amp; Wi-Fi Setup
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="custom-pc" type="button">
+                        <span class="quote-modal__service-icon">🔧</span> Custom PC Build
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="data" type="button">
+                        <span class="quote-modal__service-icon">💾</span> Data Recovery
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="consulting" type="button">
+                        <span class="quote-modal__service-icon">🤝</span> IT Consulting
+                    </button>
+                    <button class="quote-modal__service-btn" data-service="other" type="button">
+                        <span class="quote-modal__service-icon">❓</span> Not Sure / Other
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <div class="quote-modal__section-label">2. Your Estimated Price</div>
+                <div class="quote-modal__price-box">
+                    <span class="quote-modal__price-icon">💰</span>
+                    <div class="quote-modal__price-info">
+                        <div class="quote-modal__price-amount" id="quote-price-amount">Select a service above</div>
+                        <div class="quote-modal__price-note" id="quote-price-note">All pricing is an estimate &mdash; final quote given on-site after diagnosis</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-modal__fine-print">
+                &#x2139; All services start with a <strong>$75 service call fee</strong>. Final pricing depends on the complexity of the job. No hidden charges &mdash; you approve the cost before any work begins.
+            </div>
+
+            <div>
+                <div class="quote-modal__section-label">3. Get It Sent to Your Email</div>
+                <div class="quote-modal__email-row">
+                    <input class="quote-modal__email-input" id="quote-email-input" type="email" placeholder="your@email.com" />
+                    <button class="quote-modal__email-send" id="quote-email-send" type="button">Send Quote &#x2192;</button>
+                </div>
+                <div class="quote-modal__email-success" id="quote-email-success">&#x2713; Your email client is opening with the quote pre-filled!</div>
+            </div>
+
+            <div class="quote-modal__cta-row">
+                <button class="quote-cta quote-cta--primary" id="quote-schedule-btn" type="button">Schedule a Service Call</button>
+                <button class="quote-cta quote-cta--ghost" id="quote-modal-close-bottom" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Zoom hint: shown once on desktop after consent completes -->
     <div id="zoom-hint" aria-hidden="true">
         <div class="zoom-hint__keys">
@@ -390,6 +466,7 @@
      JS_Init), then modules, then bootstrap last.
     ============================================================ -->
     <script src="HTML/Java_Script/JS_Consent.js"></script>
+    <script src="HTML/Java_Script/JS_Quote_Modal.js"></script>
     <script src="HTML/Java_Script/04_Flyout_Panel.js"></script>
     <script src="HTML/Java_Script/05_Flyout_Calendar.js"></script>
     <script src="HTML/Java_Script/JS_Loader.js"></script>
