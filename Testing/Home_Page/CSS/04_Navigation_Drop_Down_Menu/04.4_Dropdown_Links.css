@@ -40,22 +40,20 @@ padding, font properties, and a color that contrasts with the background for rea
 
 /* HOVER — even (teal) nav tab dropdown */
 .dropdown--teal li a:hover {
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 40, 70, 0.95) 0%, #040910 100%);
+  border-color: rgba(0, 212, 255, 0.85);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.40);
   transform: translateY(-1px);
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
 /* HOVER — odd (red) nav tab dropdown */
 .dropdown--blue li a:hover {
-  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(180, 10, 30, 0.95) 0%, #040910 100%);
+  border-color: rgba(255, 26, 60, 0.85);
+  box-shadow: 0 0 14px rgba(255, 26, 60, 0.40);
   transform: translateY(-1px);
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
 /* ACTIVE */

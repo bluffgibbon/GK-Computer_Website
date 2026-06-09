@@ -40,18 +40,18 @@
 
 /* Hover — teal dropdown */
 .dropdown--teal .main-navigation__flyout-label:hover {
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 0, 0) 100%);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 40, 70, 0.95) 0%, #040910 100%);
+  border-color: rgba(0, 212, 255, 0.85);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.40);
   transform: translateY(-1px);
   color: #ffffff;
 }
 
 /* Hover — red/blue dropdown */
 .dropdown--blue .main-navigation__flyout-label:hover {
-  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, rgb(0, 0, 0) 100%);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(180, 10, 30, 0.95) 0%, #040910 100%);
+  border-color: rgba(255, 26, 60, 0.85);
+  box-shadow: 0 0 14px rgba(255, 26, 60, 0.40);
   transform: translateY(-1px);
   color: #ffffff;
 }
@@ -86,7 +86,7 @@
 
   background: rgb(9, 9, 9);
 
-  border-left: 2px solid rgb(200, 0, 30);
+  border-left: 2px solid rgb(255, 26, 60);
 
   box-shadow: -16px 0 48px rgba(0, 0, 0, 0.85);
 
@@ -199,8 +199,8 @@
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
 }
 .main-navigation__flyout.flyout--blue .flyout__heading::after {
-  background: rgb(200, 0, 30);
-  box-shadow: 0 0 8px rgba(200, 0, 30, 0.8);
+  background: rgb(255, 26, 60);
+  box-shadow: 0 0 8px rgba(255, 26, 60, 0.8);
 }
 
 /* ---------- BODY TEXT ---------- */
@@ -241,7 +241,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgb(200, 0, 30);
+  background: rgb(255, 26, 60);
 }
 
 /* ---------- FLYOUT FORM (Pay an Invoice, etc.) ---------- */
@@ -331,7 +331,7 @@
   background: transparent;
 }
 .main-navigation__flyout::-webkit-scrollbar-thumb {
-  background: rgba(200, 0, 30, 0.35);
+  background: rgba(255, 26, 60, 0.35);
   border-radius: 2px;
 }
 
@@ -460,7 +460,7 @@
 }
 
 .flyout-appointment__required {
-  color: rgb(200, 0, 30);
+  color: rgb(255, 26, 60);
   font-weight: 700;
 }
 

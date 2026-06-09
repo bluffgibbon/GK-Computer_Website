@@ -10,11 +10,11 @@ borders, and shadows.
 .main-navigation__dropdown {
   background: linear-gradient(
     180deg,
-    #080808 0%,
-    #060606 100%
+    #050A14 0%,
+    #040910 100%
   );
 
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(0, 212, 255, 0.50);
   border-radius: 12px;
 
   box-shadow:
@@ -40,9 +40,9 @@ positioned to cover the entire dropdown panel.
   z-index: 0;
 
   background:
-    linear-gradient(180deg, #080808 0%, #060606 100%),
-    repeating-linear-gradient(135deg, rgba(200, 0, 30, 0.06) 0 2px, transparent 2px 40px),
-    repeating-linear-gradient(45deg, rgba(0, 110, 141, 0.06) 0 2px, transparent 2px 40px);
+    linear-gradient(180deg, #050A14 0%, #040910 100%),
+    repeating-linear-gradient(135deg, rgba(255, 26, 60, 0.05) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(45deg, rgba(0, 212, 255, 0.05) 0 2px, transparent 2px 40px);
 
   opacity: 0.6;
   border-radius: 10px;

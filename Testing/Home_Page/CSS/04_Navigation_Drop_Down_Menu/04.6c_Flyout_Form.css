@@ -44,8 +44,8 @@
 }
 
 .flyout__form-input:focus {
-  border-color: rgb(0, 110, 141);
-  box-shadow: 0 0 8px rgba(0, 110, 141, 0.4);
+  border-color: rgb(0, 212, 255);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
 }
 
 /* ---------- SUBMIT BUTTON ---------- */
@@ -54,7 +54,7 @@
   padding: 10px 20px;
   border: 2px solid transparent;
   border-radius: 6px;
-  background: linear-gradient(135deg, rgb(0, 110, 141) 0%, rgb(0, 70, 100) 100%);
+  background: linear-gradient(135deg, rgb(0, 212, 255) 0%, rgb(0, 70, 100) 100%);
   color: #ffffff;
   font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
   font-size: 0.9rem;

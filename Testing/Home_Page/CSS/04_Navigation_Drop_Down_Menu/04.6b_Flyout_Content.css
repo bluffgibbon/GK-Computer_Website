@@ -40,9 +40,9 @@
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgb(255, 60, 80); /* fallback — overridden per dropdown color below */
+  color: rgb(255, 26, 60); /* fallback — overridden per dropdown color below */
   padding-bottom: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.25);
   position: relative;
 }
 
@@ -58,33 +58,33 @@
 
 /* ---------- ALTERNATING PANEL BACKGROUNDS + HEADING COLORS ---------- */
 .main-navigation__flyout.flyout--teal {
-  background: linear-gradient(135deg, rgb(0, 86, 109) 0%, rgb(0, 0, 0) 100%) !important;
-  border-left-color: rgb(0, 200, 255);
+  background: linear-gradient(135deg, rgba(0, 25, 50, 0.95) 0%, #040910 100%) !important;
+  border-left-color: rgb(0, 212, 255);
 }
 
 .main-navigation__flyout.flyout--blue {
-  background: linear-gradient(rgb(98, 0, 0), rgb(0, 0, 0)) !important;
-  border-left-color: rgb(255, 0, 0);
+  background: linear-gradient(rgba(80, 5, 18, 0.95), #040910) !important;
+  border-left-color: rgb(255, 26, 60);
 }
 
 /* Teal dropdown — heading matches flyout-label hover background */
 .main-navigation__flyout.flyout--teal .flyout__heading {
-  color: rgb(0, 200, 255);
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+  color: rgba(0, 212, 255, 0.95);
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.35), 0 0 6px rgba(0, 0, 0, 0.4);
 }
 .main-navigation__flyout.flyout--teal .flyout__heading::after {
-  background: rgb(0, 110, 141);
-  box-shadow: 0 0 8px rgba(0, 110, 141, 0.8);
+  background: rgb(0, 212, 255);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
 }
 
 /* Red dropdown — heading matches flyout-label hover background */
 .main-navigation__flyout.flyout--blue .flyout__heading {
-  color: rgb(255, 0, 0);
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+  color: rgb(255, 26, 60);
+  text-shadow: 0 0 20px rgba(255, 26, 60, 0.45), 0 0 6px rgba(0, 0, 0, 0.4);
 }
 .main-navigation__flyout.flyout--blue .flyout__heading::after {
-  background: rgb(200, 0, 30);
-  box-shadow: 0 0 8px rgba(200, 0, 30, 0.8);
+  background: rgb(255, 26, 60);
+  box-shadow: 0 0 8px rgba(255, 26, 60, 0.7);
 }
 
 /* ---------- BODY TEXT ---------- */
@@ -102,7 +102,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid rgb(255, 255, 255);
+  border-top: 1px solid rgba(0, 212, 255, 0.18);
 }
 
 .flyout__list-item {
@@ -113,7 +113,7 @@
   font-weight: 400;
   line-height: 1.4;
   color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
 }
 
 .flyout__list-item::before {

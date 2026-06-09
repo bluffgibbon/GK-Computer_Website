@@ -34,5 +34,5 @@ user interacts with a navigation item that has a dropdown menu.
     visibility 200ms ease;
 
   overflow: hidden;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgba(0, 212, 255, 0.50);
 }
