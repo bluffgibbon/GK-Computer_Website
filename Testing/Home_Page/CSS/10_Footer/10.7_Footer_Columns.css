@@ -21,16 +21,16 @@
   padding: 32px 26px;
 
   border-radius: 14px;
-  border: 3px solid rgb(46, 46, 46);
-  background: linear-gradient(160deg, rgb(0, 40, 52) 0%, rgb(6, 6, 10) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.38);
+  background: linear-gradient(160deg, rgba(0, 20, 38, 0.88) 0%, #040910 100%);
   backdrop-filter: blur(14px);
 
   box-shadow:
-    0 8px 40px rgba(187, 187, 187, 0.378),
-    0 0 0 1px rgb(111, 111, 111) inset,
-    inset 0 1px 0 rgb(0, 0, 0),
-    inset 0 0 40px rgb(0, 200, 255),
-    0 0 20px rgba(0, 110, 141, 0.08);
+    0 8px 32px rgba(0, 0, 0, 0.65),
+    0 0 14px rgba(0, 212, 255, 0.12),
+    inset 0 1px 0 rgba(0, 212, 255, 0.08),
+    inset 0 0 30px rgba(0, 212, 255, 0.06),
+    0 0 20px rgba(0, 0, 0, 0.4);
 
   transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease, background 280ms ease;
 }
@@ -66,12 +66,7 @@
   left: 20%;
   right: 20%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 110, 141, 0.5) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.45) 50%, transparent 100%);
   border-radius: 0 0 14px 14px;
   transition: left 280ms ease, right 280ms ease, opacity 280ms ease;
   pointer-events: none;
@@ -84,15 +79,15 @@
 .footer__column_Quick_Links:hover,
 .footer__column_Services:hover {
   transform: translateY(-6px) scale(1.02);
-  background: linear-gradient(160deg, rgb(80, 0, 0) 0%, rgb(8, 4, 6) 100%);
-  border-color: rgb(255, 0, 0);
+  background: linear-gradient(160deg, rgba(80, 5, 20, 0.90) 0%, #040910 100%);
+  border-color: rgba(255, 26, 60, 0.90);
   box-shadow:
-    0 20px 60px rgb(255, 0, 0),
-    0 0 30px rgba(255, 0, 0, 0.25),
-    0 0 60px rgba(255, 0, 0, 0.1),
-    inset 0 0 50px rgba(255, 0, 0, 0.07),
-    inset 0 1px 0 rgb(255, 0, 0),
-    0 0 0 1px rgba(255, 0, 0, 0.2) inset;
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    0 0 28px rgba(255, 26, 60, 0.50),
+    0 0 55px rgba(255, 26, 60, 0.18),
+    inset 0 0 40px rgba(255, 26, 60, 0.08),
+    inset 0 1px 0 rgba(255, 26, 60, 0.6),
+    0 0 0 1px rgba(255, 26, 60, 0.25) inset;
 }
 
 /* Top bar expands full width on hover */
@@ -107,9 +102,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgb(200, 0, 30) 40%,
-    rgb(255, 60, 60) 50%,
-    rgb(200, 0, 30) 60%,
+    rgb(255, 26, 60) 40%,
+    rgb(255, 80, 80) 50%,
+    rgb(255, 26, 60) 60%,
     transparent 100%
   );
 }
@@ -126,7 +121,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(200, 0, 30, 0.6) 50%,
+    rgba(255, 26, 60, 0.6) 50%,
     transparent 100%
   );
 }

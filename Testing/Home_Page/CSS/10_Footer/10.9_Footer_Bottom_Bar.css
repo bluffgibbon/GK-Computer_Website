@@ -18,9 +18,9 @@
   align-items: center;
   gap: 18px 28px;
 
-  background: linear-gradient(180deg, rgba(8, 8, 8, 0.7) 0%, rgba(8, 8, 8, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(4, 8, 16, 0.75) 0%, rgba(3, 6, 10, 0.95) 100%);
 
-  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(0, 212, 255, 0.25);
   border-radius: 0 0 14px 14px;
 
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -96,8 +96,8 @@
 /* === BOTTOM BAR HOVER === */
 /* .footer__bottom-bar:hover (Footer bottom bar hover state) */
 .footer__bottom-bar:hover {
-  background: linear-gradient(180deg, rgba(8, 8, 8, 0.85) 0%, rgba(8, 8, 8, 0.95) 100%);
-  border-top-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(180deg, rgba(4, 8, 16, 0.90) 0%, rgba(3, 6, 10, 1) 100%);
+  border-top-color: rgba(0, 212, 255, 0.55);
 }
 
 /* ============================================================
@@ -141,13 +141,13 @@
   letter-spacing: 0.3px;
   text-align: center;
 
-  background: linear-gradient(135deg, rgb(200, 0, 30) 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #00D4FF 0%, #ffffff 55%, rgba(255, 26, 60, 0.85) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  filter: drop-shadow(0 0 8px rgba(200, 0, 30, 0.3));
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.30));
 
   animation: gradientShift 6s ease infinite;
   transition: all 200ms ease;
@@ -156,7 +156,7 @@
 /* === TAGLINE HOVER === */
 /* .footer__tagline:hover (Footer tagline hover — green glow) */
 .footer__tagline:hover {
-  filter: drop-shadow(0 0 15px rgba(200, 0, 30, 0.5));
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.50));
   transform: scale(1.02);
 }
 
