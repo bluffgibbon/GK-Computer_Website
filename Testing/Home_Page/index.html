@@ -148,9 +148,6 @@
     <!-- Quote Estimator Modal -->
     <link rel="stylesheet" href="CSS/17_Quote_Modal/17.1_Quote_Modal.css">
 
-    <!-- Welcome Section Popup Modal -->
-    <link rel="stylesheet" href="CSS/16_Welcome_Modal/16.1_Welcome_Modal.css">
-
 
     <!-- Light Theme Overrides â€” loaded last so they win the cascade -->
     <link rel="stylesheet" href="CSS/13_Light_Theme/LT_01_Top_Banner.css">
@@ -318,29 +315,6 @@
         </div>
     </div>
 
-    <!-- Welcome Section Popup Modal -->
-    <div id="welcome-modal-backdrop"></div>
-    <div id="welcome-modal" role="dialog" aria-modal="true">
-        <button id="welcome-modal-close" aria-label="Close">&#x2715;</button>
-        <div class="welcome-modal__inner">
-            <span class="welcome-modal__badge">Welcome</span>
-            <div class="welcome-modal__content">
-                <h2 class="welcome-modal__heading">Professional IT Support &amp; Computer Repair Services</h2>
-                <div class="welcome-modal__separator"></div>
-                <button class="welcome-modal__cta" onclick="openAppointmentSchedulerFlyout(); document.getElementById('welcome-modal-backdrop').classList.remove('open'); document.getElementById('welcome-modal').classList.remove('open'); document.body.style.overflow='';">
-                    Schedule a Service Call
-                </button>
-                <p class="welcome-modal__description">
-                    GK Computer Business is a small business that provides reliable, professional, and secure IT solutions for individuals and small businesses.
-                    I specialize in troubleshooting, PC repair, custom builds, network setups, and full-service tech support in Naples, Florida.
-                </p>
-            </div>
-            <img src="HTML/Components/IMAGES/Welcome_To_GK_Computer_Business_Section.png"
-                 alt="PC Repair &amp; Tech Services"
-                 class="welcome-modal__image" />
-        </div>
-    </div>
-
     <!-- Free Quote Estimator Modal -->
     <div id="quote-backdrop"></div>
     <div id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
@@ -492,7 +466,6 @@
      JS_Init), then modules, then bootstrap last.
     ============================================================ -->
     <script src="HTML/Java_Script/JS_Consent.js"></script>
-    <script src="HTML/Java_Script/JS_Welcome_Modal.js"></script>
     <script src="HTML/Java_Script/JS_Quote_Modal.js"></script>
     <script src="HTML/Java_Script/04_Flyout_Panel.js"></script>
     <script src="HTML/Java_Script/05_Flyout_Calendar.js"></script>
