@@ -5,7 +5,7 @@
 #quote-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 9500;
+  z-index: 99000;
   background: rgba(2, 4, 10, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -22,7 +22,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 9501;
+  z-index: 99001;
   transform: translate(-50%, -54%) scale(0.95);
   width: min(640px, 94vw);
   max-height: 88vh;
@@ -287,3 +287,87 @@
   margin-top: 4px;
 }
 .quote-modal__email-success.visible { display: block; }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+============================================================ */
+body.light #quote-backdrop {
+  background: rgba(10, 20, 40, 0.72);
+}
+body.light #quote-modal {
+  background: linear-gradient(160deg, #f0f4f8 0%, #e8edf3 100%);
+  border-color: rgba(0, 100, 180, 0.25);
+  border-top-color: rgba(0, 80, 160, 0.55);
+  box-shadow: 0 0 60px rgba(0,0,0,0.2), 0 24px 64px rgba(0,0,0,0.12);
+}
+body.light .quote-modal__header {
+  background: rgba(0, 90, 200, 0.06);
+  border-bottom-color: rgba(0, 90, 200, 0.18);
+}
+body.light .quote-modal__eyebrow { color: rgba(0, 90, 200, 0.85); }
+body.light .quote-modal__title { color: var(--text-0); }
+body.light .quote-modal__close {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.1);
+  color: var(--text-2);
+}
+body.light .quote-modal__close:hover {
+  background: rgba(0,90,200,0.12);
+  color: rgb(0, 60, 160);
+}
+body.light .quote-modal__section-label { color: rgba(0, 90, 200, 0.85); }
+body.light .quote-modal__service-btn {
+  border-color: rgba(0, 90, 200, 0.15);
+  background: rgba(0, 90, 200, 0.04);
+  color: var(--text-1);
+}
+body.light .quote-modal__service-btn:hover {
+  border-color: rgba(0, 90, 200, 0.5);
+  background: rgba(0, 90, 200, 0.1);
+  color: var(--text-0);
+}
+body.light .quote-modal__service-btn.selected {
+  border-color: rgba(0, 90, 200, 0.85);
+  background: rgba(0, 90, 200, 0.14);
+  color: var(--text-0);
+  box-shadow: 0 0 14px rgba(0, 90, 200, 0.15);
+}
+body.light .quote-modal__price-box {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0, 90, 200, 0.15);
+}
+body.light .quote-modal__price-amount { color: var(--text-0); }
+body.light .quote-modal__price-amount.has-value { color: rgb(0, 80, 200); }
+body.light .quote-modal__price-note { color: var(--text-2); }
+body.light .quote-modal__fine-print {
+  color: var(--text-2);
+  border-left-color: rgba(0, 90, 200, 0.35);
+  background: rgba(0, 90, 200, 0.04);
+}
+body.light .quote-modal__email-input {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 90, 200, 0.2);
+  color: var(--text-0);
+}
+body.light .quote-modal__email-input::placeholder { color: var(--text-3); }
+body.light .quote-modal__email-input:focus { border-color: rgba(0, 90, 200, 0.5); }
+body.light .quote-modal__email-send {
+  background: rgba(0, 90, 200, 0.1);
+  border-color: rgba(0, 90, 200, 0.3);
+  color: rgb(0, 80, 200);
+}
+body.light .quote-modal__email-send:hover {
+  background: rgba(0, 90, 200, 0.2);
+  border-color: rgba(0, 90, 200, 0.6);
+  color: rgb(0, 50, 160);
+}
+body.light .quote-cta--ghost {
+  color: var(--text-2);
+  border-color: rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.04);
+}
+body.light .quote-cta--ghost:hover {
+  background: rgba(0,0,0,0.08);
+  color: var(--text-0);
+}
+body.light .quote-modal__email-success { color: rgb(0, 80, 200); }
