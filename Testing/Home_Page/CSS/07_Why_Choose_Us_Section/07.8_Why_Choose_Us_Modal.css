@@ -473,12 +473,18 @@
     border-radius: 14px;
   }
 
-  /* Label sits in flow, reduce size */
+  /* Label: already in flow inside modal, just shrink it */
   .modal-welcome-section-clone .content-section__label01 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
     font-size: 0.55rem;
     padding: 2px 10px;
     letter-spacing: 1px;
     margin-bottom: 4px;
+    align-self: start;
+    justify-self: start;
+    grid-column: 1 / -1;
   }
 
   .modal-welcome-section-clone .welcome__heading-row {
