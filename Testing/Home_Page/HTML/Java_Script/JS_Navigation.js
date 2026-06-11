@@ -10,10 +10,20 @@
 function initNavigation() {
 
     /* ---------- NAV POSITIONING ---------- */
+    var lastNavBottom = 0;
+
     function positionNav() {
+        var banner = document.getElementById("top-banner");
         var header = document.getElementById("header-logo-section");
         var nav = document.getElementById("main-navigation");
         if (!header || !nav) return;
+
+        // On mobile, snap header flush to banner's actual rendered bottom instead of
+        // relying on the hardcoded `top: 32px` CSS value (banner height varies).
+        if (window.innerWidth <= 480 && banner && !header.style.transform) {
+            var bannerBottom = Math.round(banner.getBoundingClientRect().bottom);
+            header.style.top = bannerBottom + 'px';
+        }
 
         var navTop = Math.round(header.getBoundingClientRect().bottom);
         nav.style.position = "fixed";
@@ -27,6 +37,7 @@ function initNavigation() {
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
                     var navBottom = navTop + nav.offsetHeight;
+                    lastNavBottom = navBottom;
                     var collapseBtn = document.getElementById('nav-collapse-btn');
                     if (collapseBtn && collapseBtn.dataset.collapsed !== 'true') {
                         collapseBtn.style.top = navBottom + 'px';
@@ -418,7 +429,10 @@ function initNavigation() {
             btn.innerHTML = '&#9652;';
             btn.dataset.collapsed = 'false';
             isCollapsed = false;
-            // Wait for the 0.28s CSS transition to finish before remeasuring positions
+            // Immediately slide the button to its resting position so it moves in sync
+            // with the elements (CSS transition: top 0.28s handles the animation).
+            if (lastNavBottom) btn.style.top = lastNavBottom + 'px';
+            // Remeasure after transition in case font/layout shifted
             setTimeout(positionNav, 320);
         }
 

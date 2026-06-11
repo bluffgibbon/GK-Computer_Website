@@ -127,8 +127,9 @@
   #main-navigation                { will-change: transform; transform: translateZ(0); }
 
   /* === HEADER WRAPPER === */
+  /* top is set dynamically by positionNav() to flush with actual banner height */
   #header-logo-section {
-    top: 32px;
+    top: 28px;
     padding: 4px 6px 5px;
   }
 
