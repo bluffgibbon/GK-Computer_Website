@@ -42,7 +42,8 @@ function initNavigation() {
                     if (collapseBtn && collapseBtn.dataset.collapsed !== 'true') {
                         collapseBtn.style.top = navBottom + 'px';
                     }
-                    var pad = navBottom + 30;
+                    // Button is 24px tall — content starts exactly at button bottom
+                    var pad = navBottom + 24;
                     document.body.style.setProperty('padding-top', pad + 'px', 'important');
                 });
             });
