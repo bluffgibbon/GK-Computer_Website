@@ -19,7 +19,7 @@
 
 /* Hide ::after underline at idle for flyout items */
 #sideMenu li.side-menu__item--has-flyout::after {
-  display: none;
+  display: none !important;
 }
 
 /* Restore underline on hover — even items red, odd items teal */
@@ -47,6 +47,8 @@
   width: 100%;
   cursor: pointer;
   user-select: none;
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 /* ---------- FLYOUT ARROW ---------- */

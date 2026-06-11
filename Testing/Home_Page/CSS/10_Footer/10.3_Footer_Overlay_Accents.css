@@ -11,50 +11,10 @@
  These styles work together to create visually appealing and effective corner brackets that add a distinctive
   touch to the design of the footer section. */
 
-/* === TOP-LEFT CORNER === */
-/* #site-footer::before (Top-left decorative corner bracket) */
-#site-footer::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 12px;
-
-  width: 40px;
-  height: 40px;
-
-  border-top: 2px solid rgba(0, 212, 255, 0.65);
-  border-left: 2px solid rgba(0, 212, 255, 0.65);
-
-  pointer-events: none;
-
-  transition: width 200ms ease, height 200ms ease;
-}
-
-/* === BOTTOM-RIGHT CORNER === */
-/* #site-footer::after (Bottom-right decorative corner bracket) */
+/* Corner brackets removed */
+#site-footer::before,
 #site-footer::after {
-  content: "";
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-
-  width: 40px;
-  height: 40px;
-
-  border-bottom: 2px solid rgba(255, 26, 60, 0.55);
-  border-right: 2px solid rgba(255, 26, 60, 0.55);
-
-  pointer-events: none;
-
-  transition: width 200ms ease, height 200ms ease;
-}
-
-/* === CORNER HOVER EXPANSION === */
-/* #site-footer:hover::before, #site-footer:hover::after (Corner bracket hover expansion) */
-#site-footer:hover::before,
-#site-footer:hover::after {
-  width: 55px;
-  height: 55px;
+  display: none;
 }
 
 /* ============================================================

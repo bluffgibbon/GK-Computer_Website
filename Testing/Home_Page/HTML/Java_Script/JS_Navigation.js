@@ -419,8 +419,11 @@ function initNavigation() {
             btn.style.top = '0px';
             btn.innerHTML = '&#9662;';
             btn.dataset.collapsed = 'true';
-            document.body.style.setProperty('padding-top', '28px', 'important');
             isCollapsed = true;
+            // Delay content jump until the 0.28s slide-up animation finishes
+            setTimeout(function () {
+                document.body.style.setProperty('padding-top', '28px', 'important');
+            }, 280);
         }
 
         function expand() {
