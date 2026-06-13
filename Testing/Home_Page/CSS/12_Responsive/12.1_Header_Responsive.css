@@ -122,9 +122,8 @@
   .top-banner__copyright          { display: none; }
   .site-header__status-dot        { animation: none; }
   .top-banner__status-indicator   { animation: none; }
-  #header-logo-section            { animation: none !important; will-change: transform; transform: translateZ(0); }
+  #header-logo-section            { animation: none !important; }
   #header-logo-section::before    { animation: none !important; }
-  #main-navigation                { will-change: transform; transform: translateZ(0); }
 
   /* === HEADER WRAPPER === */
   /* top is set dynamically by positionNav() to flush with actual banner height */

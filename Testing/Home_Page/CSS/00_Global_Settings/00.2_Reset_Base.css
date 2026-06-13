@@ -18,6 +18,7 @@ html {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  overflow-x: hidden;
   color-scheme: dark;
   scroll-padding-top: 250px;
   text-rendering: optimizeLegibility;
@@ -44,7 +45,6 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  overflow-x: hidden;
 
   font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
