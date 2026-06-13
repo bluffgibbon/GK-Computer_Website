@@ -21,5 +21,7 @@
 @media (max-width: 480px) {
   .scroll-button {
     z-index: 999;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
