@@ -18,22 +18,20 @@ function initNavigation() {
         var nav = document.getElementById("main-navigation");
         if (!header || !nav) return;
 
-        // On mobile, snap header flush to banner's actual rendered bottom instead of
-        // relying on the hardcoded `top: 32px` CSS value (banner height varies).
-        if (window.innerWidth <= 480 && banner && !header.style.transform) {
-            var bannerBottom = Math.round(banner.getBoundingClientRect().bottom);
-            header.style.top = bannerBottom + 'px';
-        }
+        if (window.innerWidth <= 480 && !header.style.transform) {
+            // Use offsetHeight (layout-stable) instead of getBoundingClientRect() so that
+            // iOS Safari / Android Chrome URL-bar show/hide (which fires resize and causes
+            // transient getBoundingClientRect() values) cannot cause a padding-top jump.
+            var bannerH = banner ? banner.offsetHeight : 0;
+            header.style.top = bannerH + 'px';
 
-        var navTop = Math.round(header.getBoundingClientRect().bottom);
-        nav.style.position = "fixed";
-        nav.style.top = navTop + "px";
-        nav.style.left = "0";
-        nav.style.width = "100%";
-        nav.style.zIndex = "9999";
+            var navTop = bannerH + header.offsetHeight;
+            nav.style.position = "fixed";
+            nav.style.top = navTop + "px";
+            nav.style.left = "0";
+            nav.style.width = "100%";
+            nav.style.zIndex = "9999";
 
-        // On mobile: position the collapse button below the nav, then set body padding.
-        if (window.innerWidth <= 480) {
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
                     var navBottom = navTop + nav.offsetHeight;
@@ -42,16 +40,28 @@ function initNavigation() {
                     if (collapseBtn && collapseBtn.dataset.collapsed !== 'true') {
                         collapseBtn.style.top = navBottom + 'px';
                     }
-                    // Button is 24px tall — content starts exactly at button bottom
                     var pad = navBottom + 24;
                     document.body.style.setProperty('padding-top', pad + 'px', 'important');
                 });
             });
+        } else {
+            var navTop = Math.round(header.getBoundingClientRect().bottom);
+            nav.style.position = "fixed";
+            nav.style.top = navTop + "px";
+            nav.style.left = "0";
+            nav.style.width = "100%";
+            nav.style.zIndex = "9999";
         }
     }
 
     positionNav();
-    window.addEventListener("resize", positionNav);
+    // Debounce resize so rapid URL-bar transitions on mobile don't re-run positionNav
+    // on every intermediate frame — only fires 150ms after the last resize event.
+    var _navResizeTimer;
+    window.addEventListener("resize", function () {
+        clearTimeout(_navResizeTimer);
+        _navResizeTimer = setTimeout(positionNav, 150);
+    });
 
 
     /* ---------- NAV SCROLL RESET ---------- */
