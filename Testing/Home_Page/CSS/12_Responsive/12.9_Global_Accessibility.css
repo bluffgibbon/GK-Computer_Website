@@ -7,3 +7,28 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================
+   PHONE SCROLL PERFORMANCE — 480px
+   background-position (diagonalFlow / gradientShift) and
+   border-color (borderPulse) are not GPU-compositable.
+   Every animation frame forces a CPU repaint of the element.
+   During a touch scroll all these compete with the scroll thread,
+   causing whole-page flicker. Kill them all on mobile.
+============================================================ */
+@media (max-width: 480px) {
+  #main-content,
+  #section-welcome,
+  #section-why-choose-us,
+  #section-services,
+  #site-footer,
+  #Animatedbackground-footer,
+  .why-choose-us__title,
+  .why-choose-us__heading,
+  .services__heading,
+  .footer__tagline,
+  .welcome__description-dot,
+  .service-card__text-dot {
+    animation: none !important;
+  }
+}
