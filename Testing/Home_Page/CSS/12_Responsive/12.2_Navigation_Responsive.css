@@ -118,9 +118,15 @@
     min-height: 0;
     overflow: visible;
     scrollbar-width: none;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+  }
+
+  /* Stop background animation and hover filter — both force repaints
+     on every scroll frame on mobile, causing nav flicker */
+  .main-navigation__Background_animated {
+    animation: none !important;
+  }
+  #main-navigation:hover .main-navigation__Background_animated {
+    filter: none;
   }
 
   /* Scroll container: no horizontal scroll on mobile */
