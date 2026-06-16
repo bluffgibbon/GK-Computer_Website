@@ -110,6 +110,14 @@
 }
 
 /* ============================================================
+   LOGO THEME SWAP
+============================================================ */
+.site-header__logo--light { display: none; }
+
+body.light .site-header__logo--dark  { display: none; }
+body.light .site-header__logo--light { display: block; }
+
+/* ============================================================
    MOBILE THEME TOGGLE (@media max-width: 768px)
 ============================================================ */
 @media (max-width: 768px) {
