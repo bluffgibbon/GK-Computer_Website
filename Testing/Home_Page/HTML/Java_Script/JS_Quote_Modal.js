@@ -13,7 +13,7 @@
         'custom-pc':    { name: 'Custom PC Build',          icon: '🔧',  min: 150, max: 500, note: 'Labor only — parts billed separately' },
         'data':         { name: 'Data Recovery',            icon: '💾',  min: 150, max: 400, note: 'Depends on drive type & severity' },
         'consulting':   { name: 'IT Consulting',            icon: '🤝',  min: 75,  max: 150, note: 'Per hour, minimum 1 hour' },
-        'other':        { name: 'Not Sure / Other',         icon: '❓',  min: 75,  max: null, note: 'We\'ll assess and give you a firm quote on-site' }
+        'other':        { name: 'Not Sure / Other',         icon: '❓',  min: 75,  max: null, note: 'I\'ll assess and give you a firm quote on-site' }
     };
 
     var selectedService = null;
