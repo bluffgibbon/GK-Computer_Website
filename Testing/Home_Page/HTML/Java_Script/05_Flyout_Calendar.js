@@ -22,13 +22,12 @@ function initFlyoutCalendar() {
     /* ---------- sample booked dates (replace with real data) ---------- */
     var bookedDates = [];
 
-    /* ---------- available time slots ---------- */
+    /* ---------- available time slots (Sat & Sun, 10 AM - 4 PM) ---------- */
     var timeSlots = [
-        "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
+        "10:00 AM", "10:30 AM",
         "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
         "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
-        "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM",
-        "5:00 PM", "5:30 PM"
+        "3:00 PM", "3:30 PM"
     ];
 
     function populateTimeSlots() {
@@ -53,6 +52,12 @@ function initFlyoutCalendar() {
         var d = new Date(year, month, day);
         var t = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         return d < t;
+    }
+
+    /* Only Saturday (6) and Sunday (0) are open for appointments */
+    function isClosedDay(year, month, day) {
+        var weekday = new Date(year, month, day).getDay();
+        return weekday !== 0 && weekday !== 6;
     }
 
     function renderMonth() {
@@ -84,6 +89,11 @@ function initFlyoutCalendar() {
                 cell.classList.add("flyout-calendar__day--empty");
                 cell.style.opacity = "0.3";
                 cell.style.cursor = "default";
+            } else if (isClosedDay(currentYear, currentMonth, d)) {
+                cell.classList.add("flyout-calendar__day--empty");
+                cell.style.opacity = "0.3";
+                cell.style.cursor = "default";
+                cell.title = "Closed (weekends only)";
             } else if (isBooked(currentYear, currentMonth, d)) {
                 cell.classList.add("flyout-calendar__day--booked");
             } else {
