@@ -3,7 +3,7 @@
 ============================================================ */
 
 /* Desktop: rounded professional nav with proper text fit */
-@media (min-width: 901px) {
+@media (min-width: 1301px) {
   #main-navigation {
     height: 56px;
     padding: 0 16px;
@@ -27,8 +27,8 @@
   }
 }
 
-/* 900px */
-@media (max-width: 900px) {
+/* 1300px */
+@media (max-width: 1300px) {
   #main-navigation {
     position: fixed;
     top: 110px;
