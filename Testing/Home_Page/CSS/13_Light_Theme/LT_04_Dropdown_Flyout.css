@@ -227,6 +227,13 @@ body.light .flyout-calendar__day {
   color: var(--text-2);
 }
 
+/* Empty/closed days (incl. weekdays that are closed for booking) —
+   stay blank instead of picking up the base day-cell background */
+body.light .flyout-calendar__day--empty {
+  background: transparent;
+  border: none;
+}
+
 /* Replace green available → teal */
 body.light .flyout-calendar__day--available {
   border-color: rgba(0, 153, 187, 0.50);
