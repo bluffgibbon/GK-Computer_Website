@@ -9,7 +9,6 @@
         'pc-repair':    { name: 'PC & Laptop Repair',       icon: '🖥️',  min: 75,  max: 200, note: 'Diagnosis + basic hardware/software repair' },
         'virus':        { name: 'Virus & Malware Removal',  icon: '🛡️',  min: 85,  max: 150, note: 'Full scan, removal & security hardening' },
         'software':     { name: 'Software & OS Help',       icon: '💻',  min: 75,  max: 150, note: 'Installation, updates, troubleshooting' },
-        'network':      { name: 'Network & Wi-Fi Setup',    icon: '📶',  min: 95,  max: 250, note: 'Router config, range extension, security' },
         'custom-pc':    { name: 'Custom PC Build',          icon: '🔧',  min: 150, max: 500, note: 'Labor only — parts billed separately' },
         'data':         { name: 'Data Recovery',            icon: '💾',  min: 150, max: 400, note: 'Depends on drive type & severity' },
         'consulting':   { name: 'IT Consulting',            icon: '🤝',  min: 75,  max: 150, note: 'Per hour, minimum 1 hour' },
