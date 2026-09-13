@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "HTML/Components/07_Side_Menu_Services/07b_Service_Laptop.html",
                 "HTML/Components/07_Side_Menu_Services/07c_Service_Software.html",
                 "HTML/Components/07_Side_Menu_Services/07d_Service_Custom_PC.html",
-                "HTML/Components/07_Side_Menu_Services/07e_Service_Networking.html",
                 "HTML/Components/07_Side_Menu_Services/07f_Service_Website.html",
                 "HTML/Components/07_Side_Menu_Services/07g_Service_Data_Recovery.html",
                 "HTML/Components/07_Side_Menu_Services/07h_Service_Virus.html",
