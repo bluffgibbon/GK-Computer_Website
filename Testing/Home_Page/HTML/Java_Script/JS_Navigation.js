@@ -154,6 +154,13 @@ function initNavigation() {
                 dropdown.style.left = rect.left + "px";
             }
         }
+
+        // Single-entry dropdowns (e.g. Payment Options) skip the extra click —
+        // go straight to the one flyout so it behaves like a flat, single-level tab.
+        var onlyEntry = dropdown.querySelectorAll(".main-navigation__dropdown-item--has-flyout");
+        if (onlyEntry.length === 1) {
+            onlyEntry[0].click();
+        }
     }
 
     navItems.forEach(function (item, index) {
